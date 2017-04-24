@@ -1,0 +1,69 @@
+# Strange way of testing for vortex...
+# #ifdef NON_VORTEX
+TITLE: Overview of course material: PHY 989 Nuclear Forces
+
+TOC: off
+# #else
+TITLE: Overview of course material: PHY 989 Nuclear Forces 
+AUTHOR: Scott Bogner
+AUTHOR: Morten Hjorth-Jensen
+AUTHOR: Andrea Shindler
+# #endif
+
+<%
+pub_url = 'https://manybodyphysics.github.io/NuclearForces/doc/pub'
+published = ['forces',]
+chapters = {
+ 'forces': 'Models for nuclear forces',
+}
+%>
+
+
+
+
+
+<%def name="text_types(name)">
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": "${pub_url}/${name}/pdf/${name}-print.pdf", compact: "6 pages per sheet": "${pub_url}/${name}/pdf/${name}-print6.pdf"
+   * For screen viewing:
+     * "standard Beamer format": "${pub_url}/${name}/pdf/${name}-beamer.pdf"
+ * HTML:
+   * "Plain html style": "${pub_url}/${name}/html/${name}.html"
+   * "Reveal html style for easy reading on mobile devices": "${pub_url}/${name}/html/${name}-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": "${pub_url}/${name}/html/${name}-bs.html"
+ * iPython notebook:
+   * "ipynb file": "${pub_url}/${name}/ipynb/${name}.ipynb"
+
+</%def>
+
+<%def name="slide_types(name)">
+</%def>
+
+The teaching material is produced in various formats for printing and on-screen reading.
+
+
+======= PHY 989 Nuclear Forces =======
+
+% for ch in published:
+===== ${chapters[ch]} =====
+
+${text_types(ch)}
+
+% endfor
+
+
+
+===== Selected Texts on Nuclear Structure and Many-body theory =====
+!bblock
+* Nuclear structure
+ * Heyde, *The Nuclear Shell Model*, Springer 1990
+ * Lawson, *Theory of the Nuclear Shell Model*, Oxford 1980
+ * Ring and Schuck, *Nuclear Many-Body Theory*, Springer 1980
+ * Talmi, *Simple Models of Complex Nuclei: The Shell Model and Interacting Boson Model*, Harwood Academic Publishers 1993.
+* Many-body theories
+ * Blaizot and Ripka, *Quantum Theory of Finite systems*, MIT press 1986
+ * Fetter and Walecka, *Quantum Theory of Many-Particle Systems*, McGraw-Hill, 1971.
+ * Dickhoff and Van Neck, *Many-Body Theory Exposed*, World Scientific, 2006.
+!eblock
