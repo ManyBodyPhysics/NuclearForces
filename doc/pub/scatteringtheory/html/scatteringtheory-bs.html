@@ -6,9 +6,9 @@ Automatically generated HTML file from DocOnce source
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
-<meta name="description" content="Non-relativistic and Relativistic Scatterng Theory">
+<meta name="description" content="Non-relativistic and Relativistic Scattering Theory">
 
-<title>Non-relativistic and Relativistic Scatterng Theory</title>
+<title>Non-relativistic and Relativistic Scattering Theory</title>
 
 <!-- Bootstrap style: bootstrap -->
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -40,9 +40,12 @@ Automatically generated HTML file from DocOnce source
 
 <!-- tocinfo
 {'highest level': 2,
- 'sections': [('Nuclear forces', 2, None, '___sec0'),
-              ('Dramatis Personae', 2, None, '___sec1'),
+ 'sections': [('Dramatis Personae', 2, None, '___sec0'),
               ('Components of the force and quantum numbers',
+               2,
+               None,
+               '___sec1'),
+              ('Relative and CoM system, quantum numbers',
                2,
                None,
                '___sec2'),
@@ -58,11 +61,11 @@ Automatically generated HTML file from DocOnce source
                2,
                None,
                '___sec5'),
-              ('Relative and CoM system, quantum numbers',
+              ('Phenomenology of nuclear forces', 2, None, '___sec6'),
+              ('The Lippman-Schwinger equation for two-nucleon scattering',
                2,
                None,
-               '___sec6'),
-              ('Phenomenology of nuclear forces', 2, None, '___sec7'),
+               '___sec7'),
               ('The Lippman-Schwinger equation for two-nucleon scattering',
                2,
                None,
@@ -279,14 +282,10 @@ Automatically generated HTML file from DocOnce source
                2,
                None,
                '___sec61'),
-              ('The Lippman-Schwinger equation for two-nucleon scattering',
+              ('Relativistc scattering theory, to be added',
                2,
                None,
-               '___sec62'),
-              ('Project 1: Program for the Lippman-Schwinger equation',
-               2,
-               None,
-               '___sec63')]}
+               '___sec62')]}
 end of tocinfo -->
 
 <body>
@@ -316,7 +315,7 @@ MathJax.Hub.Config({
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="scatteringtheory-bs.html">Non-relativistic and Relativistic Scatterng Theory</a>
+    <a class="navbar-brand" href="scatteringtheory-bs.html">Non-relativistic and Relativistic Scattering Theory</a>
   </div>
 
   <div class="navbar-collapse collapse navbar-responsive-collapse">
@@ -324,14 +323,14 @@ MathJax.Hub.Config({
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
-     <!-- navigation toc: --> <li><a href="._scatteringtheory-bs001.html#___sec0" style="font-size: 80%;">Nuclear forces</a></li>
-     <!-- navigation toc: --> <li><a href="._scatteringtheory-bs002.html#___sec1" style="font-size: 80%;">Dramatis Personae</a></li>
-     <!-- navigation toc: --> <li><a href="._scatteringtheory-bs003.html#___sec2" style="font-size: 80%;">Components of the force and quantum numbers</a></li>
+     <!-- navigation toc: --> <li><a href="._scatteringtheory-bs001.html#___sec0" style="font-size: 80%;">Dramatis Personae</a></li>
+     <!-- navigation toc: --> <li><a href="._scatteringtheory-bs002.html#___sec1" style="font-size: 80%;">Components of the force and quantum numbers</a></li>
+     <!-- navigation toc: --> <li><a href="._scatteringtheory-bs003.html#___sec2" style="font-size: 80%;">Relative and CoM system, quantum numbers</a></li>
      <!-- navigation toc: --> <li><a href="._scatteringtheory-bs004.html#___sec3" style="font-size: 80%;">Relative and CoM system, quantum numbers</a></li>
      <!-- navigation toc: --> <li><a href="._scatteringtheory-bs005.html#___sec4" style="font-size: 80%;">Relative and CoM system, quantum numbers</a></li>
      <!-- navigation toc: --> <li><a href="._scatteringtheory-bs006.html#___sec5" style="font-size: 80%;">Relative and CoM system, quantum numbers</a></li>
-     <!-- navigation toc: --> <li><a href="._scatteringtheory-bs007.html#___sec6" style="font-size: 80%;">Relative and CoM system, quantum numbers</a></li>
-     <!-- navigation toc: --> <li><a href="._scatteringtheory-bs008.html#___sec7" style="font-size: 80%;">Phenomenology of nuclear forces</a></li>
+     <!-- navigation toc: --> <li><a href="._scatteringtheory-bs007.html#___sec6" style="font-size: 80%;">Phenomenology of nuclear forces</a></li>
+     <!-- navigation toc: --> <li><a href="._scatteringtheory-bs008.html#___sec7" style="font-size: 80%;">The Lippman-Schwinger equation for two-nucleon scattering</a></li>
      <!-- navigation toc: --> <li><a href="._scatteringtheory-bs009.html#___sec8" style="font-size: 80%;">The Lippman-Schwinger equation for two-nucleon scattering</a></li>
      <!-- navigation toc: --> <li><a href="._scatteringtheory-bs010.html#___sec9" style="font-size: 80%;">The Lippman-Schwinger equation for two-nucleon scattering</a></li>
      <!-- navigation toc: --> <li><a href="._scatteringtheory-bs011.html#___sec10" style="font-size: 80%;">The Lippman-Schwinger equation for two-nucleon scattering</a></li>
@@ -386,8 +385,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._scatteringtheory-bs060.html#___sec59" style="font-size: 80%;">The Lippman-Schwinger equation for two-nucleon scattering</a></li>
      <!-- navigation toc: --> <li><a href="._scatteringtheory-bs061.html#___sec60" style="font-size: 80%;">The Lippman-Schwinger equation for two-nucleon scattering</a></li>
      <!-- navigation toc: --> <li><a href="._scatteringtheory-bs062.html#___sec61" style="font-size: 80%;">The Lippman-Schwinger equation for two-nucleon scattering</a></li>
-     <!-- navigation toc: --> <li><a href="._scatteringtheory-bs063.html#___sec62" style="font-size: 80%;">The Lippman-Schwinger equation for two-nucleon scattering</a></li>
-     <!-- navigation toc: --> <li><a href="._scatteringtheory-bs064.html#___sec63" style="font-size: 80%;">Project 1: Program for the Lippman-Schwinger equation</a></li>
+     <!-- navigation toc: --> <li><a href="._scatteringtheory-bs063.html#___sec62" style="font-size: 80%;">Relativistc scattering theory, to be added</a></li>
 
         </ul>
       </li>
@@ -407,10 +405,10 @@ MathJax.Hub.Config({
 
 
 <div class="jumbotron">
-<center><h1>Non-relativistic and Relativistic Scatterng Theory</h1></center>  <!-- document title -->
+<center><h1>Non-relativistic and Relativistic Scattering Theory</h1></center>  <!-- document title -->
 
 <p>
-<!-- author(s): Scott Bogner, Morten Hjorth-Jensen, and Andrea Shindler -->
+<!-- author(s): Scott Bogner, and Morten Hjorth-Jensen -->
 
 <center>
 <b>Scott Bogner</b> [1]
@@ -418,10 +416,6 @@ MathJax.Hub.Config({
 
 <center>
 <b>Morten Hjorth-Jensen</b> [1]
-</center>
-
-<center>
-<b>Andrea Shindler</b> [1]
 </center>
 
 <p>
@@ -454,7 +448,7 @@ MathJax.Hub.Config({
   <li><a href="._scatteringtheory-bs008.html">9</a></li>
   <li><a href="._scatteringtheory-bs009.html">10</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._scatteringtheory-bs064.html">65</a></li>
+  <li><a href="._scatteringtheory-bs063.html">64</a></li>
   <li><a href="._scatteringtheory-bs001.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
@@ -472,7 +466,7 @@ MathJax.Hub.Config({
 
 
 <center style="font-size:80%">
-<!-- copyright --> &copy; 2013-2017, Scott Bogner, Morten Hjorth-Jensen, Andrea Shindler. Released under CC Attribution-NonCommercial 4.0 license
+<!-- copyright --> &copy; 2013-2017, Scott Bogner, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
 </center>
 
 

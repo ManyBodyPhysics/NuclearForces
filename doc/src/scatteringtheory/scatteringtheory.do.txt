@@ -1,20 +1,9 @@
 # Slides for PHY989
-TITLE: Non-relativistic and Relativistic Scatterng Theory
+TITLE: Non-relativistic and Relativistic Scattering Theory
 AUTHOR: Scott Bogner {copyright, 2013-present|CC BY-NC} at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
 AUTHOR: Morten Hjorth-Jensen {copyright, 2013-present|CC BY-NC} at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
-AUTHOR: Andrea Shindler {copyright, 2013-present|CC BY-NC} at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
 DATE:  2017
 
-!split
-===== Nuclear forces =====
-!bblock
-To derive the above famous form of the nuclear force using field theoretical concepts, we will need some 
-elements from relativistic quantum mechanics. These derivations will be given below. 
-The material here gives some background to this.
-I know that many of you have not taken a course in quantum field theory. I hope however that you can see the basic ideas leading to the famous non-relativistic expressions for the nuclear force. 
-
-_Furthermore, when we analyze nuclear data, we will actually try to explain properties like spectra, single-particle energies etc in terms of the various terms of the nuclear force. Moreover, many of you will hear about these terms at various talks, workshops, seminars etc. Then, it is good to have an idea of what people actually mean!!_
-!eblock  
 
 !split
 ===== Dramatis Personae =====
@@ -39,7 +28,7 @@ _Furthermore, when we analyze nuclear data, we will actually try to explain prop
 !split
 ===== Components of the force and quantum numbers =====
 !bblock
-But before we proceed, we will look into specific quantum numbers of the relative system and study 
+Before we proceed, we will look into specific quantum numbers of the relative system and study 
 expectation vaues of the various terms of
 !bt
 \[
@@ -1326,52 +1315,5 @@ FIGURE: [figslides/pnDSG_at_199MeV.pdf, width=800 frac=0.8] Proton-neutron $^1S_
 
 
 !split
-===== Project 1: Program for the Lippman-Schwinger equation =====
-The aim here is to develop a program which solves the Lippman-Schwinger equation for a simple parametrization for the 
-$^1S_0$ partial wave. This partial wave is given by a central force only and is parametrized in coordinate space as
-!bt
-\[
-  V(r)=V_a \frac{e^{-ax}}{x}+V_b \frac{e^{-bx}}{x}+V_c \frac{e^{-cx}}{x}
-\]
-!et
-with $x=\mu r$, $\mu=0.7$ fm (the inverse of the pion mass),
-$V_a=-10.463$ MeV and $a=1$, $V_b=-1650.6$ MeV and $b=4$ and
-$V_c=6484.3$ MeV and $c=7$. 
-
-Find an analytical expression for 
-the Fourier-Bessel transform (Hankel transform)
-to momentum space for $l=0$ using
-!bt
-\[
-\left\langle k \right | V_{l} \left | k' \right\rangle
-= \int j_l(kr)V(r)j_l(k'r)r^2dr.
-\]
-!et
-
-Write a small program which calculates the latter expression
-and use this potential to compute the $T$-matrix at positive energies
-for $l=0$.
-Compare your results to those obtained with a  box potential given by
-!bt
-\[
-V(r)=\left\{ \begin{array}{cc} -V_0& r < R_0 \\
-                                0  & r > R_0 \end{array} \right.
-\]
-!et
-Make a plot of the
-two $T$-matrices for energies up to 300 MeV in the lab frame
-and comment your results.
-
-Finally, a warning, the above central potential is fitted  
-to data from approximately 
-20 MeV to some 300 MeV. This means that results outside
-the data set should be taken seriously.
-The parameters of the box potential are chosen to fit a
-potential with a bound state at zero energy. What does this mean
-for your $T$-matrix with this potential when
-$k\rightarrow 0$?
-
-
-
-
+===== Relativistc scattering theory, to be added =====
 

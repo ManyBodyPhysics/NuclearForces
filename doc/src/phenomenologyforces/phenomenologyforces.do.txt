@@ -566,6 +566,11 @@ it is repulsive. However, its overall strength is weak. This is discussed furthe
 
 
 
+!split
+===== Discuss chiral symmetry, Goldstone bosons, PCAC etc =====
+Add material here
+
+
 
 !split
 ===== Exercise: Allowed partial waves =====
