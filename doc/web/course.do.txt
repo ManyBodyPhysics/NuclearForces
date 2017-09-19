@@ -6,7 +6,7 @@ AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/"
 
 
 <%
-pub_url = 'http://nucleartalent.github.io/NuclearStructure/doc/pub'
+pub_url = 'https://manybodyphysics.github.io/NuclearForces/doc/pub'
 published = ['introduction', 'qft', 'phenomenologyforces', 'scatteringtheory', 'obemodels', 'eft',]
 chapters = {
  'introduction': 'Introduction and Overview',
@@ -88,7 +88,7 @@ ${text_types(ch)}
 
 !split
 ===== Teaching schedule Fall 2017 =====
-Lectures are Mondays 1230pm to 230pm. Wednesdays from 1230pm to 230pm are normally reserved for project work, exercises and self-study.
+Lectures are Mondays 12.30pm to 2.30pm. Wednesdays from 1230pm to 230pm are normally reserved for project work, exercises and self-study.
 However, during the first two weeks we may also have regular lectures the first hour. Teachers are "Scott Bogner (SB)":"https://www.pa.msu.edu/profile/bogner/" and "Morten Hjorth-Jensen (MHJ)":"http://mhjgit.github.io/info/doc/web/"
 
 The course consists of two projects which are graded and count 30% each of the final grade and a final oral presentation which counts 40% of the final grade. The projects are of a computational character and knowledge of programming languages like Python, C++/C, Fortran etc are recommended. If you are not familiar with these programming languages, we provide below links to online material on how to get started with C++, Python and Fortran. 
