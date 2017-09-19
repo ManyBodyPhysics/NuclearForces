@@ -1,0 +1,670 @@
+# Slides for PHY989
+TITLE: Phenomenology of Nuclear Forces
+AUTHOR: Scott Bogner {copyright, 2013-present|CC BY-NC} at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+AUTHOR: Morten Hjorth-Jensen {copyright, 2013-present|CC BY-NC} at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+DATE:  2017
+
+!split
+===== Components of the force and isospin =====
+!bblock
+ The nuclear forces are almost charge independent. If we assume they are, 
+we can introduce a new quantum number which is conserved. For nucleons only, that is a proton and neutron, we can limit ourselves
+to two possible values which allow us to distinguish between the two particles. If we assign an isospin value of $\tau=1/2$ for protons
+and neutrons (they belong to an isospin doublet, in the same way as we discussed the spin $1/2$ multiplet), we can define 
+the neutron to have isospin projection $\tau_z=+1/2$ and a proton to have $\tau_z=-1/2$. These assignements are the standard choices in low-energy nuclear physics.
+!eblock
+
+
+!split
+===== Phenomenology of nuclear forces =====
+!bblock  From Yukawa to Lattice QCD and Effective Field Theory
+
+* Chadwick (1932) discovers the neutron and Heisenberg (1932) proposes the first Phenomenology (Isospin).  
+* Yukawa (1935) and his Meson Hypothesis       
+* Discovery of the pion in cosmic ray (1947) and in the Berkeley Cyclotron Lab (1948).
+* Nobelprize awarded to Yukawa (1949).  Rabi (1948) measures quadrupole moment of the deuteron.
+* Taketani, Nakamura, Sasaki (1951): 3 ranges.      One-Pion-Exchange (OPE): o.k.
+* Multi-pion exchanges: Problems!   Taketani, Machida, Onuma (1952);
+* *Pion Theories* Brueckner, Watson (1953).
+
+!eblock
+
+!split
+===== Phenomenology of nuclear forces =====
+!bblock  From Yukawa to Lattice QCD and Effective Field Theory
+
+* Many pions = multi-pion resonances: $\sigma(600)$,  $\rho(770)$,  $\omega(782)$ etc. One-Boson-Exchange Model.
+* Refined Meson Theories
+* Sophisticated models for two-pion exchange:
+    *   Paris Potential (Lacombe et al., Phys.~Rev.~C _21_, 861 (1980))
+    *   Bonn potential (Machleidt et al., Phys.~Rep. _149_, 1 (1987))
+*Quark cluster models. Begin of effective field theory studies.
+
+!eblock
+
+!split
+===== Phenomenology of nuclear forces =====
+!bblock  From Yukawa to Lattice QCD and Effective Field Theory
+
+* 1990's
+  * 1993-2001: High-precision NN potentials: Nijmegen I, II, '93, Reid93 (Stoks et al. 1994), 
+  * Argonne V18 (Wiringa et al, 1995), CD-Bonn (Machleidt et al. 1996 and 2001. 
+  * Advances in effective field theory: Weinberg (1990); Ordonez, Ray, van Kolck and many more.
+* 3rd Millenium
+  * Another "pion theory"; but now right: constrained by chiral symmetry. Three-body and higher-body forces appear naturally at a given order of the chiral expansion. 
+
+Nucleon-nucleon interaction from Lattice QCD, final confirmation of meson hypothesis of Yukawa?  See for example Ishii *et al*, PRL 2007
+!eblock
+
+
+!split
+===== Phenomenology of nuclear forces =====
+!bblock Features of the Nucleon-Nucleon (NN) Force
+
+The aim is to give you an overview over central features of the nucleon-nucleon interaction and how it is constructed, with both technical and theoretical approaches. 
+
+* The existence of the deuteron with $J^{\pi}=1^+$ indicates that the force between protons and neutrons is attractive at least for the $^3S_1$ partial wave. Interference between Coulomb and nuclear scattering for the proton-proton partial wave $^1S_0$ shows that  the NN force is attractive at least for the $^1S_0$ partial wave. 
+* It has a short range and strong intermediate attraction.
+* Spin dependent, scattering lengths for triplet and singlet states are different,
+* Spin-orbit force. Observation of large polarizations of scattered nucleons perpendicular to the plane of scattering.
+
+!eblock
+
+!split
+===== Phenomenology of nuclear forces =====
+!bblock
+
+* Strongly repulsive core. The $s$-wave phase shift becomes negative at $\approx 250$ MeV implying that the singlet $S$ has a hard core with range $0.4-0.5$ fm. 
+* Charge independence (almost). Two nucleons in a given two-body state always (almost) experience the same force. Modern interactions break charge and isospin symmetry lightly. That means that the pp, neutron-neutron and pn parts of the interaction will be different for the same quantum numbers. 
+* Non-central. There is a tensor force. First indications from the quadrupole moment of the deuteron pointing to an admixture in the ground state of both $l=2$ ($^3D_1$) and $l=0$ ($^3S_1$) orbital momenta.
+
+!eblock
+
+!split
+===== Phenomenology of nuclear forces =====
+!bblock Short Range Evidence
+Comparison of the binding energies of
+${}^2\mbox{H}$ (deuteron), ${}^3\mbox{H}$ (triton), ${}^4\mbox{He}$ (alpha - particle) show that the nuclear force is of finite range ($1-2$ fm) and very strong within that range.
+
+For nuclei with $A>4$, the energy saturates: Volume and binding energies of nuclei are proportional to the mass number $A$ (as we saw from exercise 1).
+
+Nuclei are also bound. The average distance
+between nucleons in nuclei is about $2$ fm which
+must roughly correspond to the range of the
+attractive part.
+
+!eblock
+
+!split
+===== Phenomenology of nuclear forces =====
+!bblock Charge Dependence
+
+*  After correcting for the electromagnetic interaction, the forces between nucleons (pp, nn, or np) in the same state are almost the same.
+*  *Almost the same*: Charge-independence is slightly broken.
+*  Equality between the pp and nn forces: Charge symmetry.
+*  Equality between pp/nn force and np force: Charge independence.
+*  Better notation: Isospin symmetry, invariance under rotations in isospin
+
+
+!eblock
+
+!split
+===== Phenomenology of nuclear forces =====
+!bblock  Charge Dependence, $^1S_0$ Scattering Lengths
+
+Charge-symmetry breaking (CSB), after electromagnetic effects
+have been removed:
+* $a_{pp}=  -17.3 \pm 0.4 \hspace{0.cm} \mathrm{fm}$
+* $a_{nn}=-18.8 \pm 0.5 \hspace{0.cm} \mathrm{fm}$. Note however discrepancy from $nd$ breakup reactions resulting in  $a_{nn}=-18.72 \pm 0.13 \pm 0.65 \hspace{0.cm} \mathrm{fm}$ and $\pi^- + d \rightarrow \gamma + 2n$ reactions giving  $a_{nn}=-18.93 \pm 0.27 \pm 0.3 \hspace{0.cm} \mathrm{fm}$.
+
+Charge-independence breaking (CIB)
+* $a_{pn}=  -23.74 \pm 0.02 \hspace{0.cm} \mathrm{fm}$ 
+
+!eblock
+
+
+
+!split
+===== Symmetries of the Nucleon-Nucleon (NN) Force =====
+!bblock
+* Translation invariance
+* Galilean invariance
+* Rotation invariance in space
+* Space reflection invariance
+* Time reversal invariance
+* Invariance under the interchange of particle $1$ and $2$
+* Almost isospin symmetry
+
+!eblock
+
+
+
+!split
+===== A typical form of the nuclear force =====
+!bblock
+Here we display a typical way to parametrize (non-relativistic expression) the nuclear two-body force
+in terms of some operators, the central part, the spin-spin part and the central force.
+!bt
+\[
+V(\mathbf{r})= \left\{ C_c + C_\mathbf{\sigma} \mathbf{\sigma}_1\cdot\mathbf{\sigma}_2
+ + C_T \left( 1 + {3\over m_\alpha r} + {3\over\left(m_\alpha r\right)^2}\right) S_{12} (\hat r)\right. 
+\]
+!et
+!bt
+\[
+\left. + C_{SL} \left( {1\over m_\alpha r} + {1\over \left( m_\alpha r\right)^2}
+\right) \mathbf{L}\cdot \mathbf{S}
+\right\} \frac{e^{-m_\alpha r}}{m_\alpha r}
+\]
+!et
+How do we derive such terms?  (Note: no isospin dependence and that the above is an approximation)
+!eblock
+
+
+!split
+===== Nuclear forces =====
+!bblock
+To derive the above famous form of the nuclear force using field theoretical concepts, we will need some 
+elements from relativistic quantum mechanics. These derivations will be given below. 
+The material here gives some background to this.
+I know that many of you have not taken a course in quantum field theory. I hope however that you can see the basic ideas leading to the famous non-relativistic expressions for the nuclear force. 
+
+_Furthermore, when we analyze nuclear data, we will actually try to explain properties like spectra, single-particle energies etc in terms of the various terms of the nuclear force. Moreover, many of you will hear about these terms at various talks, workshops, seminars etc. Then, it is good to have an idea of what people actually mean!!_
+!eblock  
+
+!split
+===== Dramatis Personae =====
+!bblock
+
+|--------------------------------------------|
+| Baryons | Mass (MeV) | Mesons  |Mass (MeV) |
+|--------------------------------------------|
+| $p,n$   |938.926     | $\pi$   | 138.03    |
+|$\Lambda$| 1116.0     |$\eta$   |548.8      |
+|$\Sigma$ | 1197.3     |$\sigma$ |$\approx 550.0$|
+|$\Delta$|1232.0       |$\rho$   |770        |
+|        |             | $\omega$| 782.6 |
+|        |             |$\delta$|  983.0 |
+|        |             |$K$     |495.8 |
+|        |             |$K^{\star}$|  895.0 |
+|------------------------------------------|
+
+!eblock
+
+
+!split
+===== Components of the force and quantum numbers =====
+!bblock
+But before we proceed, we will look into specific quantum numbers of the relative system and study 
+expectation vaues of the various terms of
+!bt
+\[
+V(\mathbf{r})= \left\{ C_c + C_\mathbf{\sigma} \mathbf{\sigma}_1\cdot\mathbf{\sigma}_2
+ + C_T \left( 1 + {3\over m_\alpha r} + {3\over
+\left(m_\alpha r\right)^2}\right) S_{12} (\hat r)\right. 
+\]
+!et
+!bt
+\[
+\left. + C_{SL} \left( {1\over m_\alpha r} + {1\over \left( m_\alpha r\right)^2}
+\right) \mathbf{L}\cdot \mathbf{S}
+\right\} \frac{e^{-m_\alpha r}}{m_\alpha r}
+\]
+!et
+!eblock
+
+!split
+===== Relative and CoM system, quantum numbers =====
+!bblock
+
+When solving the scattering equation or solving the two-nucleon problem, it is convenient to rewrite the Schroedinger equation, due to
+the spherical symmetry of the Hamiltonian, in relative and center-of-mass coordinates. This will also define the quantum numbers of the relative and center-of-mass system and will aid us later in solving
+the so-called Lippman-Schwinger equation for the scattering problem. 
+
+We define the center-of-mass (CoM)  momentum as
+!bt
+ \[
+    \mathbf{K}=\sum_{i=1}^A\mathbf{k}_i,
+ \]
+!et
+with $\hbar=c=1$ the wave number $k_i=p_i$, with $p_i$ the pertinent momentum of a single-particle state. 
+We have also the relative momentum
+!bt
+\[
+    \mathbf{k}_{ij}=\frac{1}{2}(\mathbf{k}_i-\mathbf{k}_j).
+ \]
+!et
+We will below skip the indices $ij$ and simply write $\mathbf{k}$
+!eblock
+
+!split
+===== Relative and CoM system, quantum numbers =====
+!bblock
+
+In a similar fashion we can define the CoM coordinate
+!bt
+ \[
+     \mathbf{R}=\frac{1}{A}\sum_{i=1}^{A}\mathbf{r}_i,
+ \]
+!et
+ and the relative distance 
+!bt
+\[
+    \mathbf{r}_{ij}=(\mathbf{r}_i-\mathbf{r}_j).
+ \]
+!et
+!eblock
+
+!split
+===== Relative and CoM system, quantum numbers =====
+!bblock
+With the definitions
+!bt
+ \[
+    \mathbf{K}=\sum_{i=1}^A\mathbf{k}_i,
+ \]
+!et
+and
+!bt 
+\[
+    \mathbf{k}_{ij}=\frac{1}{2}(\mathbf{k}_i-\mathbf{k}_j).
+ \]
+!et
+we can rewrite the two-particle kinetic energy (note that we use $\hbar=c=1$ as 
+!bt
+\[
+\frac{\mathbf{k}_1^2}{2m_n}+\frac{\mathbf{k}_2^2}{2m_n}=\frac{\mathbf{k}^2}{m_n}+\frac{\mathbf{K}^2}{4m_n},
+\]
+!et
+where $m_n$ is the average of the proton and the neutron masses. 
+!eblock
+
+
+!split
+===== Relative and CoM system, quantum numbers =====
+!bblock
+
+Since the two-nucleon interaction depends only on the relative distance, this means that we can separate Schroedinger's equation in an equation for the center-of-mass motion and one for the relative motion.
+
+With an equation for the relative motion only and a separate one for the center-of-mass motion we need to redefine the two-body quantum numbers.
+
+Previously we had a two-body state vector defined as $|(j_1j_2)JM_J\rangle$ in a coupled basis. 
+We will now define the quantum numbers for the relative motion. Here we need to define new orbital momenta (since these are the quantum numbers which change). 
+We define 
+!bt
+\[
+\hat{l}_1+\hat{l}_2=\hat{\lambda}=\hat{l}+\hat{L},
+\]
+!et
+where $\hat{l}$ is the orbital momentum associated with the relative motion and
+$\hat{L}$ the corresponding one linked with the CoM. The total spin $S$ is unchanged since it acts in a different space. We have thus that
+!bt
+\[
+\hat{J}=\hat{l}+\hat{L}+\hat{S},
+\]
+!et
+which allows us to define the angular momentum of the relative motion
+!bt
+\[
+{ \cal J} =  \hat{l}+\hat{S},
+\]
+!et
+where ${ \cal J}$ is the total angular momentum of the relative motion.
+!eblock
+
+!split
+===== Phenomenology of nuclear forces =====
+!bblock
+
+The total two-nucleon state function has to be anti-symmetric. The total function contains a spatial part, a spin part and an isospin part. If isospin is conserved, this leads to in case we have an $s$-wave with spin $S=0$ to an isospin 
+two-body state with $T=1$ since the spatial part is symmetric and the spin part is anti-symmetric. 
+
+Since the projections for $T$ are $T_z=-1,0,1$, we can have a $pp$, an $nn$ and a $pn$ state.
+
+For $l=0$ and $S=1$, a so-called triplet state, $^3S_1$, we must have $T=0$, meaning that we have only one state, a $pn$ state. For other partial waves, the following table lists states up to $f$ waves.
+We can systemize this in a table as follows, recalling that $|\mathbf{l}-\mathbf{S}| \le |\mathbf{J}| \le |\mathbf{l}+\mathbf{S}|$,  
+
+|-------------------------------------------------------------------------------------------------|
+|$^{2S+1}l_J$ |$J$| $l$ | $S$  | $T$ | $\vert pp\rangle$ |$\vert pn\rangle$ |$\vert nn\rangle$  | 
+|-------------------------------------------------------------------------------------------------|
+|$^{1}S_0$|0 |0 |0 |1  |yes |yes |yes | 
+|$^{3}S_1$|1 |0 |1 |0  |no |yes |no | 
+|$^{3}P_0$|0 |1 |1 |1  |yes |yes |yes | 
+|$^{1}P_1$|1 |1 |0 |0  |no |yes |no | 
+|$^{3}P_1$|1 |1 |1 |1  |yes |yes |yes | 
+|$^{3}P_2$|2 |1 |1 |1  |yes |yes |yes | 
+|$^{3}D_1$|1 |2 |1 |0  |no |yes |no | 
+|$^{3}F_2$|2 |3 |1 |1  |yes |yes |yes | 
+|-------------------------------------------------------------------------------------------------|
+
+!eblock
+
+
+
+!split
+===== Components of the force and quantum numbers =====
+!bblock
+The tensor force is given by
+!bt
+\[
+S_{12} (\hat r) = \frac{3}{r^2}\left(\mathbf{\sigma}_1\cdot \mathbf{r}\right) \left(\mathbf{\sigma}_2\cdot \mathbf{r}\right) -\mathbf{\sigma}_1\cdot\mathbf{\sigma}_2\]
+!et
+where the Pauli matrices are defined as
+!bt
+\[
+\sigma_x =\begin{Bmatrix} 0 & 1 \\ 1 & 0 \end{Bmatrix},
+\]
+!et
+!bt
+\[
+\sigma_y =\begin{Bmatrix} 0 & -\imath \\ \imath & 0 \end{Bmatrix},
+\]
+!et
+and
+!bt
+\[
+\sigma_z =\begin{Bmatrix} 1 & 0 \\ 0 & -1 \end{Bmatrix},
+\]
+!et
+with the properties $\sigma = 2\mathbf{S}$ (the spin of the system, being $1/2$ for nucleons), 
+$\sigma^2_x=\sigma^2_y=\sigma_z=\mathbf{1}$ and
+obeying the commutation and anti-commutation relations $\{\sigma_x,\sigma_y\} =0$
+$[\sigma_x,\sigma_y] =\imath\sigma_z$ etc.
+!eblock
+
+!split
+===== Components of the force and quantum numbers =====
+!bblock
+When we look at the expectation value of 
+$\langle \mathbf{\sigma}_1\cdot\mathbf{\sigma}_2\rangle$, we can rewrite this expression in terms of the
+spin $\mathbf{S}=\mathbf{s}_1+\mathbf{s}_2$, resulting in 
+!bt
+\[
+\langle\mathbf{\sigma}_1\cdot\mathbf{\sigma}_2\rangle=2(S^2-s_1^2-s_2^2)=2S(S+1)-3,
+\]
+!et
+where we $s_1=s_2=1/2$ leading to
+!bt
+\[
+\left\{ \begin{array}{cc} \langle\mathbf{\sigma}_1\cdot\mathbf{\sigma}_2\rangle=1 &  \mathrm{if} \hspace{0.2cm} S=1\\
+\langle\mathbf{\sigma}_1\cdot\mathbf{\sigma}_2\rangle=-3 & \mathrm{if} \hspace{0.2cm} S=0\\\end{array}\right.
+\]
+!et
+!eblock
+
+!split
+===== Components of the force and quantum numbers =====
+!bblock
+
+Similarly, the expectation value of the spin-orbit term is 
+!bt
+\[
+\langle \mathbf{l}\mathbf{S} \rangle = \frac{1}{2}\left( J(J+1)-l(l+1)-S(S+1)\right),
+\]
+!et
+which means that for $s$-waves with either $S=0$ and thereby $J=0$ or $S=1$ and $J=1$, 
+the expectation value for the
+spin-orbit force is zero. With the above phenomenological model, the
+only contributions to the expectation value of the potential energy for $s$-waves
+stem  from the central and the spin-spin components since the
+expectation value of the tensor force is also zero.
+!eblock
+
+!split
+===== Components of the force and quantum numbers =====
+!bblock
+ For $s=1/2$ spin values only for two nucleons, the expectation value of the tensor force operator is 
+
+|-----------------------------------------------------|
+|           | $l'$     |          |                   |
+|-----------------------------------------------------| 
+|   $l$     |$J+1$|$J$|   $J-1$ |  
+|-----------------------------------------------------| 
+|           |          |          |                   |
+|$J+1$ | $-\frac{2J(J+2)}{2J+1}$  |0  |$\frac{6\sqrt{J(J+1)}}{2J+1}$  |
+|           |          |          |                   |
+|$J$|  0      |2      |    0    |
+|           |          |          |                   |
+|$J-1$| $\frac{6\sqrt{J(J+1)}}{2J+1}$|       0     | $-\frac{2(2J+1)}{2J+1}$|
+|           |          |          |                   |
+|-----------------------------------------------------| 
+
+We will derive these expressions after we have discussed the Wigner-Eckart theorem. 
+!eblock
+
+
+
+
+!split
+===== Components of the force and isospin =====
+!bblock
+If we now add isospin to our simple $V_4$ interaction model, we end up with $8$ operators, popularly dubbed $V_8$ interaction model. The explicit form reads
+!bt
+\[
+V(\mathbf{r})= \left\{ C_c + C_\mathbf{\sigma} \mathbf{\sigma}_1\cdot\mathbf{\sigma}_2
+ + C_T \left( 1 + {3\over m_\alpha r} + {3\over
+\left(m_\alpha r\right)^2}\right) S_{12} (\hat r)\right. 
+\]
+!et
+!bt
+\[
+\left. + C_{SL} \left( {1\over m_\alpha r} + {1\over \left( m_\alpha r\right)^2}
+\right) \mathbf{L}\cdot \mathbf{S}
+\right\} \frac{e^{-m_\alpha r}}{m_\alpha r}
+\]
+!et
+!bt
+\[
++ \left\{ C_{c\tau} + C_{\sigma\tau}\mathbf{\sigma}_1\cdot\mathbf{\sigma}_2
+ + C_{T\tau} \left( 1 + {3\over m_\alpha r} + {3\over
+\left(m_\alpha r\right)^2}\right) S_{12} (\hat r)\right. 
+\]
+!et
+!bt
+\[
+\left. + C_{SL\tau} \left( {1\over m_\alpha r} + {1\over \left( m_\alpha r\right)^2}
+\right) \mathbf{L}\cdot \mathbf{S}
+\right\}\mathbf{\tau}_1\cdot\mathbf{\tau}_2 \frac{e^{-m_\alpha r}}{m_\alpha r}
+\]
+!et
+!eblock
+
+!split
+===== Phenomenology of nuclear forces =====
+!bblock References for Various Phenomenological Interactions
+
+From 1950 till approximately 2000: One-Boson-Exchange (OBE) models dominate. These are models which typically include several low-mass mesons, that is with masses below 1 GeV.   Potentials which are based upon the standard non-relativistic operator structure
+ are called "Phenomenological Potentials" Some historically important examples are   
+* Gammel-Thaler potential ( Phys. Rev. _107_, 291, 1339 (1957) and the 
+* Hamada-Johnston potential, Nucl. Phys. _34_, 382 (1962)), both with a hard core.
+* Reid potential (Ann. Phys. (N.Y.) _50_, 411 (1968)), soft core.
+* Argonne $V_{14}$ potential (Wiringa et al., Phys. Rev. C _29_, 1207 (1984)) with 14 operators and  the  Argonne $V_{18}$ potential (Wiringa et al., Phys. Rev. C _51_, 38 (1995)), uses 18 operators
+* A good historical reference: R.~Machleidt, Adv.~Nucl.~Phys.  _19_, 189 (1989).
+
+Now: models based on chiral perturbation theory. These are effective models with nucleons and pions as degrees of freedom only. The other mesons which appeared in standard one-boson model appear as multi-pion resonances. 
+
+
+!eblock
+
+
+
+
+!split
+===== Phenomenology of nuclear forces =====
+!bblock
+The total two-nucleon state function has to be anti-symmetric. The total function contains a spatial part, a spin part and an isospin part. If isospin is conserved, this leads to in case we have an $s$-wave with spin $S=0$ to an isospin 
+two-body state with $T=1$ since the spatial part is symmetric and the spin part is anti-symmetric. 
+
+Since the projections for $T$ are $T_z=-1,0,1$, we can have a $pp$, an $nn$ and a $pn$ state.
+
+For $l=0$ and $S=1$, a so-called triplet state, $^3S_1$, we must have $T=0$, meaning that we have only one state, a $pn$ state. For other partial waves, see exercises below. 
+!eblock
+
+!split
+===== Phenomenology of nuclear forces =====
+!bblock  Phenomenology of one-pion exchange
+
+The one-pion exchange contribution (see derivation below), can be written as 
+!bt
+\[
+V_{\pi}(\mathbf{r})= -\frac{f_{\pi}^{2}}{4\pi m_{\pi}^{2}}\mathbf{ \tau}_1\cdot\mathbf{\tau}_2
+\frac{1}{3}\left\{\mathbf{ \sigma}_1\cdot\mathbf{ \sigma}_2+\left( 1 + {3\over m_\pi r} + {3\over\left(m_\pi r\right)^2}\right) S_{12} (\hat r)\right\} \frac{e^{-m_\pi r}}{m_\pi r}.
+\]
+!et
+Here the constant $f_{\pi}^{2}/4\pi\approx 0.08$ and the mass of the pion is $m_\pi\approx 140$ MeV/$\mbox{c}^2$.  
+
+!eblock
+!split
+===== Phenomenology of nuclear forces =====
+!bblock
+Let us look closer at specific partial waves for which one-pion exchange is applicable. If we have $S=0$ and $T=0$, the 
+orbital momentum has to be an odd number in order for the total anti-symmetry to be obeyed. For $S=0$, the tensor force component is zero, meaning that 
+the only contribution is 
+!bt
+\[
+V_{\pi}(\mathbf{r})=\frac{3f_{\pi}^{2}}{4\pi m_{\pi}^{2}}\frac{e^{-m_\pi r}}{m_\pi r},
+\]
+!et
+since $\langle\mathbf{ \sigma}_1\cdot\mathbf{ \sigma}_2\rangle=-3$, that is we obtain a repulsive contribution to partial waves like 
+$^1P_0$.
+
+!eblock
+!split
+===== Phenomenology of nuclear forces =====
+!bblock
+Since $S=0$ yields always a zero tensor force contribution, for the combination of $T=1$ and then even $l$ values, we get an attractive contribution
+!bt
+\[
+V_{\pi}(\mathbf{r})=-\frac{f_{\pi}^{2}}{4\pi m_{\pi}^{2}}\frac{e^{-m_\pi r}}{m_\pi r}.
+\]
+!et
+With $S=1$ and $T=0$, $l$ can only take even values in order to obey the anti-symmetry requirements and we get
+!bt
+\[
+V_{\pi}(\mathbf{r})= -\frac{f_{\pi}^{2}}{4\pi m_{\pi}^{2}}
+\left(1+( 1 + {3\over m_\pi r} + {3\over\left(m_\pi r\right))^2}) S_{12} (\hat r)\right) \frac{e^{-m_\pi r}}{m_\pi r},
+\]
+!et
+while for $S=1$ and $T=1$, $l$ can only take odd values, resulting in a repulsive contribution 
+!bt
+\[
+V_{\pi}(\mathbf{r})= \frac{1}{3}\frac{f_{\pi}^{2}}{4\pi m_{\pi}^{2}}\left(1+( 1 + {3\over m_\pi r} + {3\over\left(m_\pi r\right)^2}) S_{12} (\hat r)\right) \frac{e^{-m_\pi r}}{m_\pi r}.
+\]
+!et
+
+!eblock
+
+!split
+===== Phenomenology of nuclear forces =====
+!bblock
+
+The central part of one-pion exchange interaction, arising from the spin-spin term,  
+is thus attractive for $s$-waves and all even $l$ values. For $p$-waves and all other odd values
+it is repulsive. However, its overall strength is weak. This is discussed further in one of exercises below.
+
+!eblock
+
+
+
+
+!split
+===== Exercise: Allowed partial waves =====
+!bblock 
+!bsubex
+List all _allowed_ according to the Pauli principle partial waves with isospin $T$, their 
+projection $T_z$, spin $S$, orbital angular momentum $l$ and total spin $J$ for $J\le 3$.
+Use the standard spectroscopic notation $^{2S+1}L_J$ to label different partial waves. A proton-proton state
+has $T_Z=-1$, a proton-neutron state has $T_z=0$ and a neutron-neutron state has $T_z=1$.
+!esubex
+!eblock
+
+!split
+===== Exercise: Spin-orbit force and spin-spin terms =====
+!bblock 
+!bsubex
+Find the closed form expression for the spin-orbit force. Show that the spin-orbit force {\bf LS} gives a zero
+contribution for $S$-waves (orbital angular momentum $l=0$).   What is the value of the spin-orbit force for spin-singlet states ($S=0$)?  
+!esubex
+!bsubex
+ Find thereafter the expectation value of $\mathbf{\sigma}_1\cdot\mathbf{\sigma}_2$, where $\mathbf{\sigma}_i$ are so-called Pauli matrices. 
+!esubex
+!bsubex 
+Add thereafter isospin and find the expectation value of $\mathbf{\sigma}_1\cdot\mathbf{\sigma}_2\mathbf{\tau}_1\cdot\mathbf{\tau}_2$, where $\mathbf{\tau}_i$ are also so-called Pauli matrices. List all the cases with $S=0,1$ and $T=0,1$.
+!esubex
+!eblock
+
+
+!split
+===== Exercise: One-pion exchange =====
+!bblock 
+A simple parametrization of the nucleon-nucleon force is given by what is called the $V_8$ potential model,
+where we have kept eight different operators. These operators contain a central force, a spin-orbit force,
+a spin-spin force and a tensor force. Several features of the nuclei can be explained in terms of these four components. Without the Pauli matrices for isospin the final form of such an interaction model results in the following form: 
+!bt
+\[
+V(\mathbf{r})= \left\{ C_c + C_\mathbf{\sigma} \mathbf{\sigma}_1\cdot\mathbf{\sigma}_2
+ + C_T \left( 1 + {3\over m_\alpha r} + {3\over\left(m_\alpha r\right)^2}\right) S_{12} (\hat r)\right. 
+\]
+!et
+!bt
+\[
+\left. + C_{SL} \left( {1\over m_\alpha r} + {1\over \left( m_\alpha r\right)^2}
+\right) \mathbf{L}\cdot \mathbf{S}
+\right\} \frac{e^{-m_\alpha r}}{m_\alpha r}
+\]
+!et
+where $m_{\alpha}$ is the mass of the relevant meson and
+$S_{12}$ is the familiar tensor term. The various coefficients $C_i$ are normally fitted so that the potential reproduces experimental scattering cross sections. By adding terms which include the isospin Pauli matrices 
+results in an interaction model with eight operators.
+
+The expectaction value of the tensor operator is non-zero only for $S=1$. We will show this in a forthcoming lecture, after that we have derived the Wigner-Eckart theorem. 
+Here it suffices to know that the expectaction value of the tensor force for different partial values is  (with $l$ the orbital angular momentum and ${\cal J}$ the total angular momentum in the relative and center-of-mass frame of motion)
+!bt
+\[
+\langle l {\cal J}S=1| S_{12} | l' {\cal J}S=1\rangle = -\frac{2{\cal J}({\cal J}+2)}{2{\cal J}+1} \hspace{0.5cm} l= {\cal J}+1 \hspace{0.1cm}\mathrm{and} \hspace{0.1cm} l'={\cal J}+1,
+\]
+!et
+!bt
+\[
+\langle l {\cal J}S=1| S_{12} | l' {\cal J}S=1\rangle = \frac{6\sqrt{{\cal J}({\cal J}+1)}}{2{\cal J}+1} \hspace{0.5cm} l= {\cal J}+1 \hspace{0.1cm}\mathrm{and} \hspace{0.1cm} l'={\cal J}-1,
+\]
+!et
+!bt
+\[
+\langle l {\cal J}S=1| S_{12} | l' {\cal J}S=1\rangle = \frac{6\sqrt{{\cal J}({\cal J}+1)}}{2{\cal J}+1} \hspace{0.5cm} l= {\cal J}-1 \hspace{0.1cm}\mathrm{and} \hspace{0.1cm} l'={\cal J}+1,
+\]
+!et
+!bt
+\[
+\langle l {\cal J}S=1| S_{12} | l' {\cal J}S=1\rangle = -\frac{2({\cal J}-1)}{2{\cal J}+1} \hspace{0.5cm} l= {\cal J}-1 \hspace{0.1cm}\mathrm{and} \hspace{0.1cm} l'={\cal J}-1,
+\]
+!et
+!bt
+\[
+\langle l {\cal J}S=1| S_{12} | l' {\cal J}S=1\rangle = 2 \hspace{0.5cm} l= {\cal J} \hspace{0.1cm}\mathrm{and} \hspace{0.1cm} l'={\cal J},
+\]
+!et
+and zero else.   
+
+In this exercise we will focus only on the one-pion exchange term of the nuclear force, namely
+!bt
+\[
+V_{\pi}(\mathbf{r})= -\frac{f_{\pi}^{2}}{4\pi m_{\pi}^{2}}\mathbf{ \tau}_1\cdot\mathbf{\tau}_2
+\frac{1}{3}\left\{\mathbf{ \sigma}_1\cdot\mathbf{ \sigma}_2+\left( 1 + {3\over m_\pi r} + {3\over\left(m_\pi r\right)^2}\right) S_{12} (\hat r)\right\} \frac{e^{-m_\pi r}}{m_\pi r}.
+\]
+!et
+Here the constant $f_{\pi}^{2}/4\pi\approx 0.08$ and the mass of the pion is $m_\pi\approx 140$ MeV/c${}^{2}$. 
+
+!bsubex
+Compute the expectation value of the tensor force and the spin-spin  and isospin operators for the one-pion exchange potential for all partial waves you found in exercise 9. Comment your results. How does the one-pion exchange part behave as function of different $l$, ${\cal J}$ and $S$ values? Do you see some patterns?
+!esubex
+!bsubex
+For the binding energy of the deuteron, with the ground state defined by the quantum numbers $l=0$, $S=1$ and ${\cal J}=1$, the tensor force plays an important role due to the admixture from the $l=2$ state. Use the expectation values of the different operators of the one-pion exchange potential and plot the ratio of the tensor force component over the spin-spin component of the one-pion exchange part as function of $x=m_\pi r$ for the $l=2$ state (that is the case $l,l'={\cal J}+1$). Comment your results. 
+!esubex
+!eblock
+
+
+
+
+
+

@@ -1,0 +1,775 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="One-Boson Exchange Models">
+
+<title>One-Boson Exchange Models</title>
+
+
+<link href="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="http://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #93a1a1;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #eee8d5;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_yellow_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_yellow_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_yellow_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_yellow_question.png); }
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('A typical form of the nuclear force', 2, None, '___sec0'),
+              ('Nuclear forces', 2, None, '___sec1'),
+              ('Dramatis Personae', 2, None, '___sec2'),
+              ('Components of the force and quantum numbers',
+               2,
+               None,
+               '___sec3'),
+              ('Relative and CoM system, quantum numbers',
+               2,
+               None,
+               '___sec4'),
+              ('Relative and CoM system, quantum numbers',
+               2,
+               None,
+               '___sec5'),
+              ('Relative and CoM system, quantum numbers',
+               2,
+               None,
+               '___sec6'),
+              ('Relative and CoM system, quantum numbers',
+               2,
+               None,
+               '___sec7'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec8'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec9'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec10'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec11'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec12'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec13'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec14'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec15'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec16'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec17'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec18'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec19'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec20'),
+              ('Models for nuclear forces and derivation of non-relativistic expressions',
+               2,
+               None,
+               '___sec21')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+<!-- Slides for PHY989 -->
+
+
+<center><h1>One-Boson Exchange Models</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Scott Bogner, and Morten Hjorth-Jensen -->
+
+<center>
+<b>Scott Bogner</b> [1]
+</center>
+
+<center>
+<b>Morten Hjorth-Jensen</b> [1]
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<center>[1] <b><a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA</b></center>
+<br>
+<p>
+<center><h4>2017</h4></center> <!-- date -->
+<br>
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec0">A typical form of the nuclear force </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Here we display a typical way to parametrize (non-relativistic expression) the nuclear two-body force
+in terms of some operators, the central part, the spin-spin part and the central force.
+$$
+V(\mathbf{r})= \left\{ C_c + C_\mathbf{\sigma} \mathbf{\sigma}_1\cdot\mathbf{\sigma}_2
+ + C_T \left( 1 + {3\over m_\alpha r} + {3\over\left(m_\alpha r\right)^2}\right) S_{12} (\hat r)\right. 
+$$
+
+$$
+\left. + C_{SL} \left( {1\over m_\alpha r} + {1\over \left( m_\alpha r\right)^2}
+\right) \mathbf{L}\cdot \mathbf{S}
+\right\} \frac{e^{-m_\alpha r}}{m_\alpha r}
+$$
+
+How do we derive such terms?  (Note: no isospin dependence and that the above is an approximation)
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec1">Nuclear forces </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+To derive the above famous form of the nuclear force using field theoretical concepts, we will need some 
+elements from relativistic quantum mechanics. These derivations will be given below. 
+The material here gives some background to this.
+I know that many of you have not taken a course in quantum field theory. I hope however that you can see the basic ideas leading to the famous non-relativistic expressions for the nuclear force.
+
+<p>
+<b>Furthermore, when we analyze nuclear data, we will actually try to explain properties like spectra, single-particle energies etc in terms of the various terms of the nuclear force. Moreover, many of you will hear about these terms at various talks, workshops, seminars etc. Then, it is good to have an idea of what people actually mean!!</b>
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec2">Dramatis Personae </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<p>
+<table border="1">
+<thead>
+<tr><th align="center">   Baryons   </th> <th align="center">Mass (MeV)</th> <th align="center">     Mesons    </th> <th align="center">     Mass (MeV)    </th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   \( p,n \)        </td> <td align="center">   938.926       </td> <td align="center">   \( \pi \)          </td> <td align="center">   138.03                 </td> </tr>
+<tr><td align="center">   \( \Lambda \)    </td> <td align="center">   1116.0        </td> <td align="center">   \( \eta \)         </td> <td align="center">   548.8                  </td> </tr>
+<tr><td align="center">   \( \Sigma \)     </td> <td align="center">   1197.3        </td> <td align="center">   \( \sigma \)       </td> <td align="center">   \( \approx 550.0 \)    </td> </tr>
+<tr><td align="center">   \( \Delta \)     </td> <td align="center">   1232.0        </td> <td align="center">   \( \rho \)         </td> <td align="center">   770                    </td> </tr>
+<tr><td align="center">                    </td> <td align="center">                 </td> <td align="center">   \( \omega \)       </td> <td align="center">   782.6                  </td> </tr>
+<tr><td align="center">                    </td> <td align="center">                 </td> <td align="center">   \( \delta \)       </td> <td align="center">   983.0                  </td> </tr>
+<tr><td align="center">                    </td> <td align="center">                 </td> <td align="center">   \( K \)            </td> <td align="center">   495.8                  </td> </tr>
+<tr><td align="center">                    </td> <td align="center">                 </td> <td align="center">   \( K^{\star} \)    </td> <td align="center">   895.0                  </td> </tr>
+</tbody>
+</table>
+
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec3">Components of the force and quantum numbers </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+But before we proceed, we will look into specific quantum numbers of the relative system and study 
+expectation vaues of the various terms of
+$$
+V(\mathbf{r})= \left\{ C_c + C_\mathbf{\sigma} \mathbf{\sigma}_1\cdot\mathbf{\sigma}_2
+ + C_T \left( 1 + {3\over m_\alpha r} + {3\over
+\left(m_\alpha r\right)^2}\right) S_{12} (\hat r)\right. 
+$$
+
+$$
+\left. + C_{SL} \left( {1\over m_\alpha r} + {1\over \left( m_\alpha r\right)^2}
+\right) \mathbf{L}\cdot \mathbf{S}
+\right\} \frac{e^{-m_\alpha r}}{m_\alpha r}
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec4">Relative and CoM system, quantum numbers </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<p>
+When solving the scattering equation or solving the two-nucleon problem, it is convenient to rewrite the Schroedinger equation, due to
+the spherical symmetry of the Hamiltonian, in relative and center-of-mass coordinates. This will also define the quantum numbers of the relative and center-of-mass system and will aid us later in solving
+the so-called Lippman-Schwinger equation for the scattering problem.
+
+<p>
+We define the center-of-mass (CoM)  momentum as
+$$
+    \mathbf{K}=\sum_{i=1}^A\mathbf{k}_i,
+ $$
+
+with \( \hbar=c=1 \) the wave number \( k_i=p_i \), with \( p_i \) the pertinent momentum of a single-particle state. 
+We have also the relative momentum
+$$
+    \mathbf{k}_{ij}=\frac{1}{2}(\mathbf{k}_i-\mathbf{k}_j).
+ $$
+
+We will below skip the indices \( ij \) and simply write \( \mathbf{k} \)
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec5">Relative and CoM system, quantum numbers </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<p>
+In a similar fashion we can define the CoM coordinate
+$$
+     \mathbf{R}=\frac{1}{A}\sum_{i=1}^{A}\mathbf{r}_i,
+ $$
+
+ and the relative distance 
+$$
+    \mathbf{r}_{ij}=(\mathbf{r}_i-\mathbf{r}_j).
+ $$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec6">Relative and CoM system, quantum numbers </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+With the definitions
+$$
+    \mathbf{K}=\sum_{i=1}^A\mathbf{k}_i,
+ $$
+
+and
+$$
+    \mathbf{k}_{ij}=\frac{1}{2}(\mathbf{k}_i-\mathbf{k}_j).
+ $$
+
+we can rewrite the two-particle kinetic energy (note that we use \( \hbar=c=1 \) as 
+$$
+\frac{\mathbf{k}_1^2}{2m_n}+\frac{\mathbf{k}_2^2}{2m_n}=\frac{\mathbf{k}^2}{m_n}+\frac{\mathbf{K}^2}{4m_n},
+$$
+
+where \( m_n \) is the average of the proton and the neutron masses.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec7">Relative and CoM system, quantum numbers </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<p>
+Since the two-nucleon interaction depends only on the relative distance, this means that we can separate Schroedinger's equation in an equation for the center-of-mass motion and one for the relative motion.
+
+<p>
+With an equation for the relative motion only and a separate one for the center-of-mass motion we need to redefine the two-body quantum numbers.
+
+<p>
+Previously we had a two-body state vector defined as \( |(j_1j_2)JM_J\rangle \) in a coupled basis. 
+We will now define the quantum numbers for the relative motion. Here we need to define new orbital momenta (since these are the quantum numbers which change). 
+We define 
+$$
+\hat{l}_1+\hat{l}_2=\hat{\lambda}=\hat{l}+\hat{L},
+$$
+
+where \( \hat{l} \) is the orbital momentum associated with the relative motion and
+\( \hat{L} \) the corresponding one linked with the CoM. The total spin \( S \) is unchanged since it acts in a different space. We have thus that
+$$
+\hat{J}=\hat{l}+\hat{L}+\hat{S},
+$$
+
+which allows us to define the angular momentum of the relative motion
+$$
+{ \cal J} =  \hat{l}+\hat{S},
+$$
+
+where \( { \cal J} \) is the total angular momentum of the relative motion.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec8">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+To describe the interaction between the various baryons and mesons of the previous
+table we choose the following phenomenological
+lagrangians
+for spin \( 1/2 \) baryons
+$$
+   {\cal L}_{ps} =g^{ps}\overline{\Psi}\gamma^{5}
+   \Psi\phi^{(ps)},
+$$
+
+$$
+   {\cal L}_{s} =g^{s}\overline{\Psi}\Psi\phi^{(s)},
+$$
+
+and
+$$
+   {\cal L}_{v} =g^{v}\overline{\Psi}\gamma_{\mu}\Psi\phi_{\mu}^{(v)}
+   +g^{t}\overline{\Psi}\sigma^{\mu\nu}\Psi\left
+   (\partial_{\mu}\phi_{\nu}^{(v)}
+   -\partial_{\nu}\phi_{\mu}^{(v)}\right),
+$$
+
+for pseudoscalar (ps), scalar (s) and vector (v) coupling, respectively.
+The factors \( g^{v} \) and \( g^{t} \) are the vector
+and tensor coupling constants, respectively.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec9">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+For spin \( 1/2 \) baryons, the fields \( \Psi \) are expanded
+in terms of the Dirac spinors (positive energy
+solution shown here with \( \overline{u}u=1 \))
+$$
+   u(k\sigma)=\sqrt{\frac{E(k)+m}{2m}}
+	  \left(\begin{array}{c} \chi\\ \\
+	  \frac{\mathbf{\sigma}\mathbf{k}}{E(k)+m}\chi
+	  \end{array}\right), 
+$$
+
+with \( \chi \) the familiar Pauli spinor and \( E(k) =\sqrt{m^2 +|\mathbf{k}|^2} \). 
+The positive energy part of the field \( \Psi \) reads
+$$
+\Psi (x)={\displaystyle \frac{1}{(2\pi )^{3/2}}
+        \sum_{\mathbf{k}\mathbf{\sigma}}u(k\mathbf{\sigma})\exp{-(ikx)}a_{\mathbf{k}\mathbf{\sigma}}},
+$$
+
+with \( a \) being a fermion annihilation operator.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec10">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Expanding the free Dirac spinors
+in terms of \( 1/m \) (\( m \) is here the mass of the relevant baryon) 
+results, to lowest order, in the familiar non-relativistic
+expressions for baryon-baryon potentials.
+The configuration space version of the interaction can be approximated as
+$$
+V(\mathbf{r})= \left\{ C^0_C + C^1_C + C_\sigma 
+\mathbf{\sigma}_1\cdot\mathbf{\sigma}_2
+ + C_T \left( 1 + {3\over m_\alpha r} + {3\over
+\left(m_\alpha r\right)^2}
+\right) S_{12} (\hat r)\right.
+$$
+
+$$
++ C_{SL}\left. \left( {1\over m_\alpha r} + {1\over \left( m_\alpha r\right)^2}
+\right) \mathbf{L}\cdot \mathbf{S}
+\right\} \frac{\exp{-(m_\alpha r)}}{m_\alpha r},
+$$
+
+where \( m_{\alpha} \) is the mass of the relevant meson and
+\( S_{12} \) is the familiar tensor term.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec11">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We derive now the non-relativistic one-pion exchange interaction.
+
+<p>
+Here \( p_{1} \), \( p_{1}' \), \( p_{2} \), \( p_{2}' \) and \( k=p_{1}-p_{1}' \) denote 
+four-momenta.  
+The vertices are 
+given by the pseudovector Lagrangian
+$$
+{\cal L}_{pv}=\frac{f_{\pi}}{m_{\pi}}\overline{\psi}\gamma_{5}\gamma_{\mu}
+\psi\partial^{\mu}\phi_{\pi}.
+$$
+
+ From the Feynman diagram rules we can write the two-body interaction as  
+$$
+V^{pv}=\frac{f_{\pi}^{2}}{m_{\pi}^{2}}\frac{\overline{u}(p_{1}')\gamma_{5}
+\gamma_{\mu}(p_{1}-p_{1}')^{\mu}u(p_{1})\overline{u}(p_{2}')\gamma_{5}
+\gamma_{\nu}(p_{2}'-p_{2})^{\nu}u(p_{2})}{(p_{1}-p_{1}')^{2}-m_{\pi}^{2}}.
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec12">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The factors \( p_{1}-p_{1}'=p_{2}'-p_{2} \) are both the four-momentum of the 
+exchanged meson and come from the derivative of the meson field in 
+the interaction Lagrangian. 
+The Dirac spinors obey 
+$$
+\begin{eqnarray*}
+\gamma_{\mu}p^{\mu}u(p)&=&mu(p) \nonumber \\
+\overline{u}(p)\gamma_{\mu}p^{\mu}&=&m\overline{u}(p). \nonumber
+\end{eqnarray*} 
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec13">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Using these relations, together with \( \{\gamma_{5},\gamma_{\mu}\}=0 \), we find 
+$$
+\begin{eqnarray*}
+\overline{u}(p_{1}')\gamma_{5}\gamma_{\mu}(p_{1}-p_{1}')^{\mu}u(p_{1})
+&=&m\overline{u}(p_{1}')\gamma_{5}u(p_{1})+\overline{u}(p_{1}')\gamma_{\mu}
+p_{1}'^{\mu}\gamma_{5}u(p_{1}) \nonumber \\
+ &=&2m\overline{u}(p_{1}')\gamma_{5}u(p_{1}) \nonumber
+\end{eqnarray*}
+$$
+
+and 
+$$
+\overline{u}(p_{2}')\gamma_{5}\gamma_{\mu}(p_{2}'-p_{2})^{\mu}=
+-2m\overline{u}(p_{2}')\gamma_{5}u(p_{1}).
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec14">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We get
+$$
+V^{pv}=-\frac{f_{\pi}^{2}}{m_{\pi}^{2}}4m^{2}\frac{\overline{u}(p_{1}')
+\gamma_{5}u(p_{1})\overline{u}(p_{2}')\gamma_{5}u(p_{2})}{(p_{1}-p_{1}')
+^{2}-m_{\pi}^{2}}.
+$$
+
+By inserting expressions for the Dirac spinors, we find
+$$
+\begin{eqnarray*}
+\overline{u}(p_{1}')\gamma_{5}u(p_{1})&=&\sqrt{\frac{(E_{1}'+m)(E_{1}+m)}
+{4m^{2}}}\left(\begin{array}{cc}\chi^{\dagger}&-\frac{\sigma_{1}\cdot{
+\bf p_{1}}}{E_{1}'
++m}\chi^{\dagger}\end{array}\right)\left(\begin{array}{cc}0&1\\1&0\end{array}
+\right)\nonumber \\
+ &&\times \left(\begin{array}{c}\chi\\ \frac{\sigma_{1}\cdot\mathbf{p_{1}}}{E_{1}+m}\chi
+\end{array}\right) 
+\nonumber \\
+ &=&\sqrt{\frac{(E_{1}'+m)(E_{1}+m)}{4m^{2}}}\left(\frac{\sigma_{1}\cdot
+\mathbf{p_{1}}}{E_{1}+m}-\frac{\sigma_{1}\cdot\mathbf{p_{1}'}}{E_{1}'+m}\right) 
+\nonumber 
+\end{eqnarray*}
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec15">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Similarly
+$$
+\overline{u}(p_{2}')\gamma_{5}u(p_{2})=\sqrt{\frac{(E_{2}'+m)(E_{2}+m)}
+{4m^{2}}}\left(\frac{\sigma_{2}\cdot \mathbf{p}_{2}}{E_{2}+m}-
+\frac{\sigma_{2}\cdot\mathbf{p'}_{2}}{E_{2}'+m}\right).
+$$
+
+In the CM system we have \( \mathbf{p}_{2}=-\mathbf{p}_{1} \), \( \mathbf{p'}_{2}=
+-\mathbf{p'}_{1} \) and so \( E_{2}=E_{1} \), \( E_{2}'=E_{1}' \).  
+We can then write down the relativistic contribution 
+to the NN potential in the CM system: 
+$$
+\begin{eqnarray}
+V^{pv}&=&-\frac{f_{\pi}^{2}}{m_{\pi}^{2}}4m^{2}\frac{1}{(p_{1}-p_{1}')^{2}-
+m_{\pi}^{2}}\frac{(E_{1}+m)(E_{1}'+m)}{4m^{2}} \nonumber \\ 
+ &\times&\left(\frac{\sigma_{1}\cdot\mathbf{p}_{1}}{E_{1}+m}-\frac{\sigma_{1}
+\cdot\mathbf{p'}_{1}}{E_{1}'+m}\right)\left(\frac{\sigma_{2}\cdot\mathbf{p}_{1}}
+{E_{1}+m}-\frac{\sigma_{2}\cdot\mathbf{p'}_{1}}{E_{1}'+m}\right). \nonumber
+\end{eqnarray}
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec16">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+In the non-relativistic limit we have to lowest order 
+$$
+E_{1}=\sqrt{\mathbf{p}_{1}^{2}+m^{2}}\approx m \approx E_{1}'
+$$
+
+and then \( (p_{1}-p_{1}')^{2}=-\mathbf{k}^{2} \), so we get 
+for the contribution to the NN potential
+$$
+\begin{eqnarray}
+V^{pv}&=&-\frac{f_{\pi}^{2}}{m_{\pi}^{2}}4m^{2}\frac{1}{\mathbf{k}^{2}+m^{2}}
+\frac{2m\cdot 2m}{4m^{2}}\frac{\sigma_{1}}{2m}\cdot(\mathbf{p}_{1}-\mathbf{p'}_{1})
+\frac{\sigma_{2}}{2m}\cdot (\mathbf{p}_{1}-\mathbf{p'}_{1}) \nonumber \\ 
+ &=&-\frac{f_{\pi}^{2}}{m_{\pi}^{2}}
+\frac{(\sigma_{1}\cdot\mathbf{k})(\sigma_{2}\cdot\mathbf{k})}{\mathbf{k}^{2}+m_{\pi}^{2}}.
+\nonumber
+\end{eqnarray}
+$$
+
+We have omitted exchange terms and the isospin term \( \mathbf{\tau}_1\cdot\mathbf{\tau}_2 \).
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec17">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We have
+$$
+V^{pv}(k)=-\frac{f_{\pi}^{2}}{m_{\pi}^{2}}
+\frac{(\sigma_{1}\cdot\mathbf{k})(\sigma_{2}\cdot\mathbf{k})}{\mathbf{k}^{2}+m_{\pi}^{2}}.
+$$
+
+In coordinate space we have
+$$
+V^{pv}(r)=\int\frac{d^3k}{(2\pi)^3}e^{i\mathbf{kr}}V^{pv}(k)
+$$
+
+resulting in
+$$
+  V^{pv}(r)=-\frac{f_{\pi}^{2}}{m_{\pi}^{2}}
+\sigma_{1}\cdot{\nabla}\sigma_{2}\cdot{\nabla}
+\int\frac{d^3k}{(2\pi)^3}e^{i\mathbf{kr}}\frac{1}{\mathbf{k}^{2}+m_{\pi}^{2}}.
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec18">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We obtain
+$$
+V^{pv}(r)=-\frac{f_{\pi}^{2}}{m_{\pi}^{2}}\sigma_{1}\cdot{\nabla}\sigma_{2}\cdot{\nabla}\frac{e^{-m_{\pi}r}}{r}.
+$$
+
+<p>
+Carrying out the differentation of
+$$
+V^{pv}(r)=-\frac{f_{\pi}^{2}}{m_{\pi}^{2}}\sigma_{1}\cdot{\nabla}\sigma_{2}\cdot{\nabla}\frac{e^{-m_{\pi}r}}{r}.
+$$
+
+we arrive at the famous one-pion exchange potential with central and tensor parts
+$$
+V(\mathbf{r})= -\frac{f_{\pi}^{2}}{m_{\pi}^{2}}\left\{C_{\sigma}\mathbf{\sigma}_1\cdot\mathbf{\sigma}_2+ C_T \left( 1 + \frac{3}{m_\alpha r} + \frac{3}{\left(m_\alpha r\right)^2}\right) S_{12}(\hat r)\right\}\frac{\exp{-m_\pi r}}{m_\pi r}.
+$$
+
+For the full potential add the exchange part and the \( \mathbf{\tau}_1\cdot\mathbf{\tau}_2 \) term as well. (Subtle point: there is a divergence which gets cancelled by using cutoffs) This leads to coefficients \( C_{\sigma} \) and \( C_T \) which are fitted to data.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec19">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+When we perform similar non-relativistic expansions for scalar and vector mesons we obtain
+for the \( \sigma \) meson
+$$
+V^{\sigma}= g_{\sigma NN}^{2}\frac{1}{\mathbf{k}^{2}+m_{\sigma}^{2}}\left (-1+\frac{\mathbf{q}^{2}}{2M_N^2}
+-\frac{\mathbf{k}^{2}}{8M_N^2}-\frac{\mathbf{LS}}{2M_N^2}\right).
+$$
+
+We note an attractive central force and spin-orbit force. This term has an intermediate range.
+We have defined \( 1/2(p_{1}+p_{1}')=\mathbf{q} \).
+For the full potential add the exchange part and the isospin dependence as well.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec20">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We obtain
+for the \( \omega \) meson
+$$
+V^{\omega}= g_{\omega NN}^{2}\frac{1}{\mathbf{k}^{2}+m_{\omega}^{2}}\left (1-3\frac{\mathbf{LS}}{2M_N^2}\right).
+$$
+
+We note a repulsive central force and an attractive spin-orbit force. This term has  short range.
+For the full potential add the exchange part and the isospin dependence as well.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec21">Models for nuclear forces and derivation of non-relativistic expressions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Finally 
+for the \( \rho \) meson
+$$
+V^{\rho}= g_{\rho NN}^{2}\frac{\mathbf{k}^{2}}{\mathbf{k}^{2}+m_{\rho}^{2}}\left (
+-2\sigma_{1}\sigma_{2}+S_{12}(\hat{k})\right)\tau_{1}\tau_{2}.
+$$
+
+We note a tensor force with sign opposite to that of the pion. This term has  short range. For the full potential add the exchange part and the isospin dependence as well.
+</div>
+
+
+<p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 2013-2017, Scott Bogner, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+
+
+</body>
+</html>
+    
+
