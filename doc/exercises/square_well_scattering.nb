@@ -1,0 +1,991 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     35787,        982]
+NotebookOptionsPosition[     32852,        892]
+NotebookOutlinePosition[     33357,        912]
+CellTagsIndexPosition[     33314,        909]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Scattering from a Spherical Square Well", "Title"]], \
+"Subtitle",
+ CellChangeTimes->{{3.5789917721988163`*^9, 3.578991784649598*^9}},
+ TextAlignment->Center,
+ TextJustification->0],
+
+Cell[CellGroupData[{
+
+Cell["Preliminaries", "Section",
+ CellChangeTimes->{{3.578992161892858*^9, 3.5789921673167067`*^9}, {
+  3.578992899535861*^9, 3.5789929065819273`*^9}}],
+
+Cell["\<\
+In this notebook, we compute the phase shifts of the potential with V = -V0 \
+for r<R and V=0 for r>R with an analytic formula and using the Variable Phase \
+Approach (VPA). The reduced mass is \[Mu].\
+\>", "Text",
+ CellChangeTimes->{{3.578991804189644*^9, 3.578991896814013*^9}}],
+
+Cell["\<\
+Work in units where \[HBar]=1 and we measure mass in units of \[Mu] and \
+lengths in terms of R.  Thus we set \[Mu] and R to 1. However, we will \
+continue to make them explicit in the formulas.\
+\>", "Text",
+ CellChangeTimes->{{3.578991905906199*^9, 3.5789920613401957`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Mu]", " ", "=", " ", "1"}], ";", " ", 
+  RowBox[{"R", "=", "1."}], ";"}]], "Input",
+ CellChangeTimes->{{3.5789594635175257`*^9, 3.578959474759516*^9}, {
+  3.578960179079566*^9, 3.578960180672069*^9}, {3.578960284597147*^9, 
+  3.578960291575789*^9}, {3.5789883511098747`*^9, 3.578988353326708*^9}, {
+  3.578992020177764*^9, 3.578992026252306*^9}}],
+
+Cell["\<\
+The only parameter to adjust now is the depth V0.\
+\>", "Text",
+ CellChangeTimes->{{3.578992033285995*^9, 3.578992072167925*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Vsw", "[", 
+   RowBox[{"r_", ",", "V0_"}], "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"-", "V0"}], " ", 
+   RowBox[{"HeavisideTheta", "[", 
+    RowBox[{"R", "-", "r"}], "]"}], "  ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Define", " ", "the", " ", "square", " ", "well"}], " ", 
+    "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.578960476927094*^9, 3.5789604854430857`*^9}, 
+   3.5789605656171083`*^9, {3.5789886930244207`*^9, 3.578988696136908*^9}, {
+   3.578992857563777*^9, 3.578992873761244*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"Vsw", "[", 
+     RowBox[{"r", ",", "5"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"r", ",", "0", ",", "4"}], "}"}], ",", 
+    RowBox[{"Exclusions", "\[Rule]", "None"}]}], "]"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Uncomment", " ", "to", " ", "check", " ", "potential"}], " ", 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.578960567351787*^9, 3.578960577113687*^9}, {
+  3.5789876970863*^9, 3.578987700518033*^9}, {3.5789934615811243`*^9, 
+  3.578993524017034*^9}, {3.579002475247075*^9, 3.57900248579283*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Ek", "[", "k_", "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"k", "^", "2"}], "/", 
+   RowBox[{"(", 
+    RowBox[{"2", "\[Mu]"}], ")"}], "   ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Convenient", " ", "definition", " ", "of", " ", "kinetic", " ", 
+     "energy"}], " ", "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.578960129640374*^9, 3.5789601399502563`*^9}, {
+  3.57899210878828*^9, 3.5789921150698347`*^9}, {3.578992238020005*^9, 
+  3.578992251253972*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Analytic result for the phase shift\
+\>", "Section",
+ CellChangeTimes->{{3.578992161892858*^9, 3.5789921673167067`*^9}}],
+
+Cell["\<\
+Use the formula for \[Delta](E) from one of the problems, converting it to \
+\[Delta](k) using Ek(k):\
+\>", "Text",
+ CellChangeTimes->{{3.5789922901147614`*^9, 3.578992318170765*^9}, {
+  3.579163313578528*^9, 3.579163332937916*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"deltaAnalytic", "[", 
+   RowBox[{"k_", ",", "V0_"}], "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"ArcTan", "[", 
+    RowBox[{
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{"Ek", "[", "k", "]"}], "/", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Ek", "[", "k", "]"}], "+", "V0"}], ")"}]}], "]"}], " ", 
+     RowBox[{"Tan", "[", 
+      RowBox[{"R", " ", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{"2", "\[Mu]", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Ek", "[", "k", "]"}], "+", "V0"}], ")"}]}], "]"}]}], 
+      "]"}]}], "]"}], "-", 
+   RowBox[{"R", " ", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{"2", " ", "\[Mu]", " ", 
+      RowBox[{"Ek", "[", "k", "]"}]}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.578960156468554*^9, 3.578960252677409*^9}, {
+  3.578992262485491*^9, 3.578992280068061*^9}, {3.578992325937764*^9, 
+  3.578992347220014*^9}, {3.578992472192412*^9, 3.578992473539826*^9}}],
+
+Cell[TextData[{
+ "Use Cell->Convert  to->TraditionalForm to get it in a form easier to check \
+we have entered it correctly:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"deltaAnalytic", "(", 
+     RowBox[{"k_", ",", "V0_"}], ")"}], ":=", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["tan", 
+       RowBox[{"-", "1"}]], "(", 
+      RowBox[{
+       SqrtBox[
+        FractionBox[
+         RowBox[{"Ek", "(", "k", ")"}], 
+         RowBox[{
+          RowBox[{"Ek", "(", "k", ")"}], "+", "V0"}]]], " ", 
+       RowBox[{"tan", "(", 
+        RowBox[{"R", " ", 
+         SqrtBox[
+          RowBox[{"2", " ", "\[Mu]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"Ek", "(", "k", ")"}], "+", "V0"}], ")"}]}]]}], ")"}]}], 
+      ")"}], "-", 
+     RowBox[{"R", " ", 
+      SqrtBox[
+       RowBox[{"2", " ", "\[Mu]", " ", 
+        RowBox[{"Ek", "(", "k", ")"}]}]]}]}]}], TraditionalForm]], "Text",
+  CellChangeTimes->{{3.578960156468554*^9, 3.578960252677409*^9}, {
+   3.578992262485491*^9, 3.578992280068061*^9}, {3.578992325937764*^9, 
+   3.5789923728313217`*^9}, {3.579163235490621*^9, 3.579163250926553*^9}}]
+}], "Text",
+ CellChangeTimes->{{3.578992385989189*^9, 3.578992416529379*^9}, {
+  3.5791632643927794`*^9, 3.5791632846526613`*^9}}],
+
+Cell["\<\
+Always check that the function actually produces a number.\
+\>", "Text",
+ CellChangeTimes->{{3.578992486490327*^9, 3.578992500352096*^9}}],
+
+Cell[BoxData[
+ RowBox[{"deltaAnalytic", "[", 
+  RowBox[{"5", ",", "0.5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.578960258785399*^9, 3.578960265725395*^9}, {
+  3.5789891657659492`*^9, 3.578989165938911*^9}, {3.5789924569677677`*^9, 
+  3.578992478327364*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"deltaAnalytic", "[", 
+    RowBox[{"k", ",", "0.5"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.578960298716509*^9, 3.578960307992738*^9}, {
+  3.5789891819172897`*^9, 3.578989184912376*^9}, {3.5789925127956944`*^9, 
+  3.578992523997209*^9}}],
+
+Cell["\<\
+What is going on with the steps?  Why are they there?  Is the phase shift \
+really discontinuous?  How would you fix it?\
+\>", "Text",
+ CellChangeTimes->{{3.578987782524703*^9, 3.578987815194057*^9}}],
+
+Cell["\<\
+Here is one \[OpenCurlyDoubleQuote]fix\[CloseCurlyDoubleQuote] that makes the \
+result continuous for this example, but we will still have issues when V0 is \
+large enough to support bound states.\
+\>", "Text",
+ CellChangeTimes->{{3.578992557677102*^9, 3.578992620072345*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"ArcTan", "[", 
+    RowBox[{"Tan", "[", 
+     RowBox[{"deltaAnalytic", "[", 
+      RowBox[{"k", ",", "0.5"}], "]"}], "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.578960298716509*^9, 3.578960307992738*^9}, {
+  3.5789891819172897`*^9, 3.578989208233379*^9}, {3.578992542334622*^9, 
+  3.578992547944518*^9}, {3.578992585410527*^9, 3.578992593478003*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"deltaAnalyticAdjusted", "[", 
+   RowBox[{"k_", ",", "V0_"}], "]"}], " ", ":=", " ", 
+  RowBox[{"ArcTan", "[", 
+   RowBox[{"Tan", "[", 
+    RowBox[{"deltaAnalytic", "[", 
+     RowBox[{"k", ",", "V0"}], "]"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.578989241459766*^9, 3.578989265473454*^9}, {
+  3.578992635705599*^9, 3.578992652394421*^9}}],
+
+Cell[TextData[{
+ "We can also avoid this issue by looking at ",
+ StyleBox["k Cot[\[Delta](k)] instead, which doesn\[CloseCurlyQuote]t have \
+these ambiguities.  ", "InlineFormula"]
+}], "Text",
+ CellChangeTimes->{{3.578992704481989*^9, 3.578992724905175*^9}, {
+  3.578992788977806*^9, 3.578992832971444*^9}, {3.579163368252248*^9, 
+  3.579163379703837*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"k", " ", 
+    RowBox[{"Cot", "[", 
+     RowBox[{"deltaAnalytic", "[", 
+      RowBox[{"k", ",", "0.5"}], "]"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5789603309180307`*^9, 3.5789603492591*^9}, {
+  3.578992692238751*^9, 3.5789926966953993`*^9}, {3.578992778126183*^9, 
+  3.578992780765614*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Phase shift from the Variable Phase Approach\
+\>", "Section",
+ CellChangeTimes->{{3.578992161892858*^9, 3.5789921673167067`*^9}, {
+  3.578993425907629*^9, 3.578993440455696*^9}}],
+
+Cell[TextData[{
+ "Use the formula: ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["deltarho", "\[Prime]",
+     MultilineFunction->None], 
+    RowBox[{"(", "r", ")"}]}], "\[LongEqual]", 
+   RowBox[{"-", 
+    FractionBox[
+     RowBox[{"2", " ", "\[Mu]", " ", 
+      RowBox[{"Vsw", "(", "r", ")"}], " ", 
+      RowBox[{
+       SuperscriptBox["sin", "2"], "(", 
+       RowBox[{
+        RowBox[{"deltarho", "(", "r", ")"}], "+", 
+        RowBox[{"k", " ", "r"}]}], ")"}]}], "k"]}]}]],
+  CellChangeTimes->{{3.578993663719919*^9, 3.578993697044615*^9}}],
+ " with the initial condition that deltarho(0) = 0."
+}], "Text",
+ CellChangeTimes->{{3.5789937039335747`*^9, 3.578993718524221*^9}, {
+  3.579163435683668*^9, 3.57916345380762*^9}}],
+
+Cell[TextData[{
+ "We\[CloseCurlyQuote]ll need a numerical differential equation solver.  In \
+",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " this is NDSolve:"
+}], "Text",
+ CellChangeTimes->{{3.579163428226066*^9, 3.579163431296524*^9}, {
+  3.5791634613447104`*^9, 3.579163489245023*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"?", "NDSolve"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.578960381545372*^9, 3.578960386002426*^9}}],
+
+Cell["\<\
+In principle we integrate out to infinity.  In practice, we choose a value of \
+k and integrate out to Rmax, chosen to be well beyond the range of the \
+potential (at which point the right side of the equation for deltarho\
+\[CloseCurlyQuote](r) is zero), and then evaluate deltarho(Rmax), which is \
+the phase shift for momentum k.  Here is an implementation:\
+\>", "Text",
+ CellChangeTimes->{{3.579163517584667*^9, 3.579163674172127*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"deltaVPA", "[", 
+   RowBox[{"k_", ",", "V0_"}], "]"}], " ", ":=", 
+  RowBox[{"(", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Rmax", " ", "=", " ", "10"}], ";", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{"integrate", " ", "out", " ", "to", " ", "Rmax"}], ";", " ", 
+      RowBox[{
+       RowBox[{"just", " ", "need", " ", "Rmax"}], " ", ">", " ", 
+       RowBox[{"R", " ", "for", " ", "square", " ", "well"}]}]}], " ", "*)"}], 
+    RowBox[{"ans", " ", "=", " ", 
+     RowBox[{"NDSolve", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"deltarho", "'"}], "[", "r", "]"}], "==", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{"1", "/", "k"}], ")"}]}], "2", "\[Mu]", " ", 
+           RowBox[{"Vsw", "[", 
+            RowBox[{"r", ",", "V0"}], "]"}], " ", 
+           RowBox[{
+            RowBox[{"Sin", "[", 
+             RowBox[{
+              RowBox[{"k", " ", "r"}], " ", "+", " ", 
+              RowBox[{"deltarho", "[", "r", "]"}]}], "]"}], "^", "2"}]}]}], 
+         ",", 
+         RowBox[{
+          RowBox[{"deltarho", "[", "0", "]"}], "==", "0"}]}], "}"}], ",", 
+       "deltarho", ",", 
+       RowBox[{"{", 
+        RowBox[{"r", ",", "0", ",", "Rmax"}], "}"}], ",", 
+       RowBox[{"AccuracyGoal", "\[Rule]", "6"}], ",", 
+       RowBox[{"PrecisionGoal", "\[Rule]", "6"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"deltarho", "[", "r", "]"}], " ", "/.", " ", "ans"}], ")"}], 
+      "[", 
+      RowBox[{"[", "1", "]"}], "]"}], " ", "/.", " ", 
+     RowBox[{"r", "\[Rule]", "Rmax"}]}]}], "  ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"evaluate", " ", "at", " ", "r"}], "=", "Rmax"}], " ", "*)"}], 
+   "\[IndentingNewLine]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.578960634560461*^9, 3.578960651838499*^9}, {
+   3.578960688184009*^9, 3.5789607454202414`*^9}, 3.578960790353992*^9, 
+   3.5789875055620537`*^9, {3.5789875541816883`*^9, 3.578987594613688*^9}, {
+   3.578987838456044*^9, 3.578987844514599*^9}, {3.578993632308796*^9, 
+   3.5789936348403063`*^9}, {3.578993758939348*^9, 3.578993792339139*^9}, {
+   3.57899392463302*^9, 3.578994092073127*^9}, {3.579163526664806*^9, 
+   3.579163536947357*^9}, {3.579163814878038*^9, 3.57916383301299*^9}, {
+   3.579163877047821*^9, 3.579163887429225*^9}, {3.579164002318115*^9, 
+   3.579164100335245*^9}}],
+
+Cell["\<\
+Do a quick check against the analytic result with sample values for k and V0 \
+to see the accuracy we are getting (we use NumberForm to get 10 digits \
+displayed):\
+\>", "Text",
+ CellChangeTimes->{{3.578994130639861*^9, 3.578994156070169*^9}, {
+  3.579163685131627*^9, 3.57916369320712*^9}, {3.57916372523689*^9, 
+  3.5791637868182*^9}}],
+
+Cell[BoxData[
+ RowBox[{"NumberForm", "[", " ", 
+  RowBox[{
+   RowBox[{"deltaVPA", "[", 
+    RowBox[{"2", ",", ".5"}], "]"}], ",", "10"}], "]"}]], "Input",
+ CellChangeTimes->{{3.578993988362669*^9, 3.578993991291052*^9}, {
+  3.578994096910334*^9, 3.578994099414207*^9}, {3.579163700700739*^9, 
+  3.579163742989375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"NumberForm", "[", " ", 
+  RowBox[{
+   RowBox[{"deltaAnalyticAdjusted", "[", 
+    RowBox[{"2", ",", ".5"}], "]"}], ",", " ", "10"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5789941159829493`*^9, 3.578994121487341*^9}, {
+  3.579163747590488*^9, 3.5791637556226683`*^9}}],
+
+Cell["\<\
+Does it work?  Check a few more values to be sure.\
+\>", "Text",
+ CellChangeTimes->{{3.581534274427188*^9, 3.581534285290297*^9}}],
+
+Cell["\<\
+To get more digits correct, increase AccuracyGoal and PrecisionGoal (at the \
+cost of slower evaluation of the function).\
+\>", "Text",
+ CellChangeTimes->{{3.57916411510503*^9, 3.5791641527125797`*^9}}],
+
+Cell["\<\
+Check the cutoff phase shift out to Rmax.  Does this plot make sense?\
+\>", "Text",
+ CellChangeTimes->{{3.578994252430023*^9, 3.5789942717884693`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Evaluate", "[", 
+    RowBox[{
+     RowBox[{"deltarho", "[", "r", "]"}], "/.", "ans"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "0", ",", "Rmax"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.578987615833385*^9, 3.578987630250229*^9}, {
+  3.5789879646499357`*^9, 3.57898796923606*^9}, {3.578988061577444*^9, 
+  3.5789880925678062`*^9}, {3.578994207373496*^9, 3.578994239800764*^9}}],
+
+Cell["\<\
+Now that it seems to be working, try plots of the k Cot[\[Delta]] and \
+\[Delta] for two different depths.  How do you explain the results in terms \
+of Levinson\[CloseCurlyQuote]s theorem?\
+\>", "Text",
+ CellChangeTimes->{{3.581534321816457*^9, 3.5815343930134153`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"V0", " ", "=", " ", "1."}], ";"}], "  "}]], "Input",
+ CellChangeTimes->{{3.578994312613879*^9, 3.578994317186401*^9}, {
+   3.5789943581195793`*^9, 3.57899436074286*^9}, {3.5789944302582703`*^9, 
+   3.578994449520911*^9}, 3.581534300990264*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"k", " ", 
+       RowBox[{"Cot", "[", 
+        RowBox[{"deltaAnalytic", "[", 
+         RowBox[{"k", ",", "V0"}], "]"}], "]"}]}], ",", 
+      RowBox[{"k", " ", 
+       RowBox[{"Cot", "[", 
+        RowBox[{"deltaVPA", "[", 
+         RowBox[{"k", ",", "V0"}], "]"}], "]"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "10"}], "}"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "]"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Check", " ", "that", " ", "both", " ", "plots", " ", "are", " ", "really",
+     " ", 
+    RowBox[{"here", "!"}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.5789603309180307`*^9, 3.5789603492591*^9}, {
+  3.578988222315962*^9, 3.578988273229315*^9}, {3.5789942945139303`*^9, 
+  3.5789943292765617`*^9}, {3.5789943720400333`*^9, 3.5789943999943*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"deltaAnalyticAdjusted", "[", 
+      RowBox[{"k", ",", "V0"}], "]"}], ",", 
+     RowBox[{"deltaVPA", "[", 
+      RowBox[{"k", ",", "V0"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0.001", ",", "10"}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.578960298716509*^9, 3.578960307992738*^9}, {
+  3.5789881350431223`*^9, 3.57898813536278*^9}, {3.578988195975576*^9, 
+  3.5789882035373573`*^9}, {3.578989278218079*^9, 3.578989280561844*^9}, {
+  3.57899440818211*^9, 3.578994415289714*^9}, {3.5789944632662086`*^9, 
+  3.578994468780992*^9}, {3.5791641873534327`*^9, 3.5791641882185698`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"V0", " ", "=", " ", "2."}], ";"}], "  "}]], "Input",
+ CellChangeTimes->{{3.578994312613879*^9, 3.578994317186401*^9}, {
+   3.5789943581195793`*^9, 3.57899436074286*^9}, {3.5789944302582703`*^9, 
+   3.578994449520911*^9}, {3.579165065492917*^9, 3.5791650733668213`*^9}, 
+   3.581534306198038*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"k", " ", 
+       RowBox[{"Cot", "[", 
+        RowBox[{"deltaAnalytic", "[", 
+         RowBox[{"k", ",", "V0"}], "]"}], "]"}]}], ",", 
+      RowBox[{"k", " ", 
+       RowBox[{"Cot", "[", 
+        RowBox[{"deltaVPA", "[", 
+         RowBox[{"k", ",", "V0"}], "]"}], "]"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "10"}], "}"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "]"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Check", " ", "that", " ", "both", " ", "plots", " ", "are", " ", "really",
+     " ", 
+    RowBox[{"here", "!"}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.5789603309180307`*^9, 3.5789603492591*^9}, {
+  3.578988222315962*^9, 3.578988273229315*^9}, {3.5789942945139303`*^9, 
+  3.5789943292765617`*^9}, {3.5789943720400333`*^9, 3.5789943999943*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"deltaAnalyticAdjusted", "[", 
+      RowBox[{"k", ",", "V0"}], "]"}], ",", 
+     RowBox[{"deltaVPA", "[", 
+      RowBox[{"k", ",", "V0"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0.001", ",", "10"}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.578960298716509*^9, 3.578960307992738*^9}, {
+  3.5789881350431223`*^9, 3.57898813536278*^9}, {3.578988195975576*^9, 
+  3.5789882035373573`*^9}, {3.578989278218079*^9, 3.578989280561844*^9}, {
+  3.57899440818211*^9, 3.578994415289714*^9}, {3.5789944632662086`*^9, 
+  3.578994468780992*^9}, {3.5791641873534327`*^9, 3.5791641882185698`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Now it\[CloseCurlyQuote]s time to play!", "Section",
+ CellChangeTimes->{{3.578992161892858*^9, 3.5789921673167067`*^9}, {
+  3.578993425907629*^9, 3.578993440455696*^9}, {3.578994504664263*^9, 
+  3.5789945085398197`*^9}}],
+
+Cell["\<\
+Check whether Levinson\[CloseCurlyQuote]s theorem holds by calculating phase \
+shifts for increasing depths V0 and noting the jump to \[Delta](0) = n\[Pi], \
+where n is the number of bound states (found, for example, from the \
+square_well_example.nb notebook).\
+\>", "Text",
+ CellChangeTimes->{{3.578996224192925*^9, 3.578996340835588*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"deltaVPA", "[", 
+        RowBox[{"k", ",", "V0"}], "]"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "0.001", ",", "20"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"V0", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "0.5", ",", "1.0", ",", "2.0", ",", "5.0", ",", "10.0", ",", "20.0"}], 
+       "}"}]}], "}"}]}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Try", " ", "for", " ", "V0"}], " ", "=", " ", 
+    RowBox[{"0.5", " ", "to", " ", "20"}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.578989345329733*^9, 3.578989375653373*^9}, {
+   3.5789904565047407`*^9, 3.578990461264996*^9}, {3.57899050577595*^9, 
+   3.578990506558255*^9}, {3.578990635597796*^9, 3.578990642088243*^9}, {
+   3.5789910962934027`*^9, 3.578991105518475*^9}, {3.578991210019278*^9, 
+   3.57899121083936*^9}, {3.578994485451626*^9, 3.578994486258993*^9}, {
+   3.578994536843831*^9, 3.578994537998517*^9}, 3.578994610299131*^9, {
+   3.5789963742939796`*^9, 3.5789963880193233`*^9}, {3.579164234749921*^9, 
+   3.5791642355699863`*^9}}],
+
+Cell["\<\
+Does it works?  [Note: we start at k=0.001 to avoid numerical issues at k=0.]\
+\
+\>", "Text",
+ CellChangeTimes->{{3.5791642649774733`*^9, 3.5791643113373957`*^9}, {
+  3.581534407524272*^9, 3.581534413270306*^9}}],
+
+Cell["This is really fun using Manipulate!  ", "Text",
+ CellChangeTimes->{{3.578996421170898*^9, 3.578996446485091*^9}, 
+   3.5791651071729927`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"deltaVPA", "[", 
+      RowBox[{"k", ",", "V0"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0.001", ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"V0", ",", "0", ",", "20", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.578990358174251*^9, 3.5789904120415163`*^9}, {
+  3.5789905646838207`*^9, 3.5789905648489017`*^9}, {3.5789963973383408`*^9, 
+  3.5789963993614264`*^9}, {3.5789964349304*^9, 3.578996435041732*^9}, {
+  3.578996809557146*^9, 3.5789968099827414`*^9}, {3.578996893651107*^9, 
+  3.5789968960572968`*^9}, {3.578996929122736*^9, 3.5789969339496098`*^9}, {
+  3.579164834284719*^9, 3.579164834800334*^9}}],
+
+Cell["\<\
+Verify that the threshold bound state appears at the V0 corresponding to the \
+jump in \[Delta](0).
+Check that these two formulas are correct:\
+\>", "Text",
+ CellChangeTimes->{{3.578997311348178*^9, 3.5789973451054688`*^9}, {
+  3.581534427085465*^9, 3.581534434832963*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "\[Mu]"}], ")"}]}], 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"Pi", "/", 
+      RowBox[{"(", 
+       RowBox[{"2", "R"}], ")"}]}], ")"}], "^", "2"}]}], " ", "//", "N", "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Value", " ", "of", " ", "V0", " ", "for", " ", "a", " ", "single", " ", 
+     "bound", " ", "state", " ", "at", " ", "E"}], "=", "0"}], " ", 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.578997265470022*^9, 3.5789972919380083`*^9}, {
+  3.57899741591504*^9, 3.578997419784335*^9}, {3.578997479858987*^9, 
+  3.578997497962212*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "\[Mu]"}], ")"}]}], 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"3", 
+      RowBox[{"Pi", "/", 
+       RowBox[{"(", 
+        RowBox[{"2", "R"}], ")"}]}]}], ")"}], "^", "2"}]}], " ", "//", "N", 
+  "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Value", " ", "of", " ", "V0", " ", "for", " ", "two", " ", "bound", " ", 
+     "states", " ", "at", " ", "E"}], "=", "0"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.578997265470022*^9, 3.5789972919380083`*^9}, {
+  3.57899741591504*^9, 3.578997419784335*^9}, {3.578997479858987*^9, 
+  3.578997497962212*^9}, {3.57900119154235*^9, 3.5790011992957067`*^9}}],
+
+Cell["\<\
+Check that k Cot[\[Delta]] behaves as expected (and Cot[\[Delta]] close to a \
+zero-energy bound state):\
+\>", "Text",
+ CellChangeTimes->{{3.5791652054981823`*^9, 3.5791652539734993`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"k", " ", 
+      RowBox[{"Cot", "[", 
+       RowBox[{"deltaVPA", "[", 
+        RowBox[{"k", ",", "V0"}], "]"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0.001", ",", ".2"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"V0", ",", "0", ",", "20", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.578990358174251*^9, 3.5789904120415163`*^9}, {
+   3.5789905646838207`*^9, 3.5789905648489017`*^9}, {3.5789963973383408`*^9, 
+   3.5789963993614264`*^9}, {3.5789964349304*^9, 3.578996435041732*^9}, {
+   3.578996809557146*^9, 3.5789968099827414`*^9}, {3.578996893651107*^9, 
+   3.5789968960572968`*^9}, {3.578996929122736*^9, 3.5789969339496098`*^9}, {
+   3.579001461125684*^9, 3.579001499373006*^9}, {3.579001536055017*^9, 
+   3.579001538887104*^9}, {3.579001598636341*^9, 3.579001600268301*^9}, 
+   3.579001748972109*^9}],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", " ", 
+    RowBox[{
+     RowBox[{"Cot", "[", 
+      RowBox[{"deltaVPA", "[", 
+       RowBox[{"k", ",", "V0"}], "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0.001", ",", ".2"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"V0", ",", "0", ",", "20", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.578990358174251*^9, 3.5789904120415163`*^9}, {
+  3.5789905646838207`*^9, 3.5789905648489017`*^9}, {3.5789963973383408`*^9, 
+  3.5789963993614264`*^9}, {3.5789964349304*^9, 3.578996435041732*^9}, {
+  3.578996809557146*^9, 3.5789968099827414`*^9}, {3.578996893651107*^9, 
+  3.5789968960572968`*^9}, {3.578996929122736*^9, 3.5789969339496098`*^9}, {
+  3.579001461125684*^9, 3.579001499373006*^9}, {3.579001536055017*^9, 
+  3.579001538887104*^9}, {3.579001598636341*^9, 3.579001600268301*^9}, {
+  3.579001754045992*^9, 3.579001757157138*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Other potentials . . .", "Section",
+ CellChangeTimes->{{3.578992161892858*^9, 3.5789921673167067`*^9}, {
+  3.578993425907629*^9, 3.578993440455696*^9}, {3.578994504664263*^9, 
+  3.5789945085398197`*^9}, {3.579002223778813*^9, 3.579002226486261*^9}}],
+
+Cell["\<\
+Add a short-range repulsive square well:\
+\>", "Text",
+ CellChangeTimes->{{3.5791652810754623`*^9, 3.579165307332039*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Vdoublesw", "[", 
+   RowBox[{"r_", ",", "V0_", ",", " ", "Vc_", ",", "Rc_"}], "]"}], " ", ":=", 
+  " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"Vc", "+", "V0"}], ")"}], " ", 
+    RowBox[{"HeavisideTheta", "[", 
+     RowBox[{"Rc", "-", "r"}], "]"}]}], "-", 
+   RowBox[{"V0", " ", 
+    RowBox[{"HeavisideTheta", "[", 
+     RowBox[{"R", "-", "r"}], "]"}], "  ", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Define", " ", "the", " ", "square", " ", "well"}], " ", 
+     "*)"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.578960476927094*^9, 3.5789604854430857`*^9}, 
+   3.5789605656171083`*^9, {3.5789886930244207`*^9, 3.578988696136908*^9}, {
+   3.578992857563777*^9, 3.578992873761244*^9}, {3.579002230274667*^9, 
+   3.579002317450686*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Vdoublesw", "[", 
+    RowBox[{"r", ",", "5", ",", "10", ",", ".2"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "0", ",", "5"}], "}"}], ",", 
+   RowBox[{"Exclusions", "\[Rule]", "None"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5790023346751957`*^9, 3.579002382672777*^9}, {
+  3.579002458439423*^9, 3.579002463817383*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"deltaVPAdoublesw", "[", 
+   RowBox[{"k_", ",", "V0_", ",", " ", "Vc_", ",", "Rc_"}], "]"}], " ", ":=", 
+  
+  RowBox[{"(", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Rmax", " ", "=", " ", "10"}], ";", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{"integrate", " ", "out", " ", "to", " ", "Rmax"}], ";", " ", 
+      RowBox[{
+       RowBox[{"just", " ", "need", " ", "Rmax"}], " ", ">", " ", 
+       RowBox[{"R", " ", "for", " ", "square", " ", "well"}]}]}], " ", "*)"}], 
+    RowBox[{"ans", " ", "=", " ", 
+     RowBox[{"NDSolve", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"deltarho", "'"}], "[", "r", "]"}], "==", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{"1", "/", "k"}], ")"}]}], "2", "\[Mu]", " ", 
+           RowBox[{"Vdoublesw", "[", 
+            RowBox[{"r", ",", "V0", " ", ",", "Vc", ",", "Rc"}], "]"}], " ", 
+           RowBox[{
+            RowBox[{"Sin", "[", 
+             RowBox[{
+              RowBox[{"k", " ", "r"}], " ", "+", " ", 
+              RowBox[{"deltarho", "[", "r", "]"}]}], "]"}], "^", "2"}]}]}], 
+         ",", 
+         RowBox[{
+          RowBox[{"deltarho", "[", "0", "]"}], "==", "0"}]}], "}"}], ",", 
+       "deltarho", ",", 
+       RowBox[{"{", 
+        RowBox[{"r", ",", "0", ",", "Rmax"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"deltarho", "[", "r", "]"}], " ", "/.", " ", "ans"}], ")"}], 
+      "[", 
+      RowBox[{"[", "1", "]"}], "]"}], " ", "/.", " ", 
+     RowBox[{"r", "\[Rule]", "Rmax"}]}]}], " ", "\[IndentingNewLine]", 
+   ")"}]}]], "Input",
+ CellChangeTimes->{{3.578960634560461*^9, 3.578960651838499*^9}, {
+   3.578960688184009*^9, 3.5789607454202414`*^9}, 3.578960790353992*^9, 
+   3.5789875055620537`*^9, {3.5789875541816883`*^9, 3.578987594613688*^9}, {
+   3.578987838456044*^9, 3.578987844514599*^9}, {3.578993632308796*^9, 
+   3.5789936348403063`*^9}, {3.578993758939348*^9, 3.578993792339139*^9}, {
+   3.57899392463302*^9, 3.578994092073127*^9}, {3.579002551421173*^9, 
+   3.579002581626534*^9}, {3.57916533847639*^9, 3.579165350455681*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"deltaVPAdoublesw", "[", 
+      RowBox[{"k", ",", "V0", ",", "Vc", ",", "Rc"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0.001", ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "Pi"}], ",", "Pi"}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"V0", ",", "5"}], "}"}], ",", "0", ",", "20", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Vc", ",", "0"}], "}"}], ",", "0", ",", "100", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Rc", ",", ".2"}], "}"}], ",", "0", ",", "20", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.578990358174251*^9, 3.5789904120415163`*^9}, {
+   3.5789905646838207`*^9, 3.5789905648489017`*^9}, {3.5789963973383408`*^9, 
+   3.5789963993614264`*^9}, {3.5789964349304*^9, 3.578996435041732*^9}, {
+   3.578996809557146*^9, 3.5789968099827414`*^9}, {3.578996893651107*^9, 
+   3.5789968960572968`*^9}, {3.578996929122736*^9, 3.5789969339496098`*^9}, {
+   3.579001461125684*^9, 3.579001499373006*^9}, {3.579001536055017*^9, 
+   3.579001538887104*^9}, {3.579001598636341*^9, 3.579001600268301*^9}, 
+   3.579001748972109*^9, {3.5790026384673*^9, 3.579002767710725*^9}, {
+   3.5790029227046757`*^9, 3.579002933172247*^9}, {3.579003074831972*^9, 
+   3.5790030785116377`*^9}}],
+
+Cell["\<\
+Start with the repulsive well at zero height and then see what happens when \
+you increase it (go up to 100 eventually).\
+\>", "Text",
+ CellChangeTimes->{{3.579165380378083*^9, 3.579165411754384*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{944, 760},
+WindowMargins->{{65, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.25, 1.25 Inherited],
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 205, 4, 160, "Subtitle"],
+Cell[CellGroupData[{
+Cell[809, 30, 151, 2, 100, "Section"],
+Cell[963, 34, 290, 5, 61, "Text"],
+Cell[1256, 41, 286, 5, 61, "Text"],
+Cell[1545, 48, 383, 7, 35, "Input"],
+Cell[1931, 57, 139, 3, 37, "Text"],
+Cell[2073, 62, 533, 13, 36, "Input"],
+Cell[2609, 77, 590, 14, 57, "Input"],
+Cell[3202, 93, 496, 13, 36, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3735, 111, 130, 3, 100, "Section"],
+Cell[3868, 116, 242, 5, 37, "Text"],
+Cell[4113, 123, 974, 27, 57, "Input"],
+Cell[5090, 152, 1271, 35, 116, "Text"],
+Cell[6364, 189, 148, 3, 37, "Text"],
+Cell[6515, 194, 259, 5, 36, "Input"],
+Cell[6777, 201, 376, 9, 36, "Input"],
+Cell[7156, 212, 210, 4, 61, "Text"],
+Cell[7369, 218, 286, 5, 61, "Text"],
+Cell[7658, 225, 490, 11, 36, "Input"],
+Cell[8151, 238, 383, 9, 36, "Input"],
+Cell[8537, 249, 356, 7, 37, "Text"],
+Cell[8896, 258, 434, 11, 36, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9367, 274, 188, 4, 100, "Section"],
+Cell[9558, 280, 741, 21, 74, "Text"],
+Cell[10302, 303, 295, 8, 37, "Text"],
+Cell[10600, 313, 152, 3, 57, "Input"],
+Cell[10755, 318, 450, 7, 109, "Text"],
+Cell[11208, 327, 2513, 61, 141, "Input"],
+Cell[13724, 390, 347, 7, 61, "Text"],
+Cell[14074, 399, 318, 7, 35, "Input"],
+Cell[14395, 408, 291, 6, 36, "Input"],
+Cell[14689, 416, 140, 3, 37, "Text"],
+Cell[14832, 421, 212, 4, 61, "Text"],
+Cell[15047, 427, 161, 3, 37, "Text"],
+Cell[15211, 432, 457, 10, 35, "Input"],
+Cell[15671, 444, 281, 5, 61, "Text"],
+Cell[15955, 451, 290, 6, 35, "Input"],
+Cell[16248, 459, 919, 24, 57, "Input"],
+Cell[17170, 485, 751, 16, 57, "Input"],
+Cell[17924, 503, 342, 7, 35, "Input"],
+Cell[18269, 512, 919, 24, 57, "Input"],
+Cell[19191, 538, 751, 16, 57, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19979, 559, 226, 3, 100, "Section"],
+Cell[20208, 564, 351, 6, 85, "Text"],
+Cell[20562, 572, 1248, 29, 78, "Input"],
+Cell[21813, 603, 222, 5, 37, "Text"],
+Cell[22038, 610, 148, 2, 37, "Text"],
+Cell[22189, 614, 876, 19, 57, "Input"],
+Cell[23068, 635, 283, 6, 61, "Text"],
+Cell[23354, 643, 650, 19, 36, "Input"],
+Cell[24007, 664, 708, 20, 35, "Input"],
+Cell[24718, 686, 198, 4, 37, "Text"],
+Cell[24919, 692, 1067, 23, 57, "Input"],
+Cell[25989, 717, 1060, 22, 57, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27086, 744, 255, 3, 100, "Section"],
+Cell[27344, 749, 132, 3, 37, "Text"],
+Cell[27479, 754, 778, 20, 78, "Input"],
+Cell[28260, 776, 392, 9, 35, "Input"],
+Cell[28655, 787, 2261, 55, 183, "Input"],
+Cell[30919, 844, 1692, 38, 99, "Input"],
+Cell[32614, 884, 210, 4, 61, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

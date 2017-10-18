@@ -1,0 +1,540 @@
+% %
+% \LaTeX\ file with exercises for the TALENT/INT course in July, 2013.
+%
+%###########################################################################%
+%###########################################################################%
+
+
+% Now for the preamble, where the document declarations (like 12pt and
+%  what style to use) are given.
+
+% Options for documentstyle:
+%  Currently using ntgaip, but this needs a lot of tuning.
+
+\documentclass[12pt]{article}
+
+% set up paper size
+
+\setlength{\textwidth}{6.9in}
+\setlength{\textheight}{9.5in}
+\setlength{\evensidemargin}{-0.2in}
+\setlength{\oddsidemargin}{-0.2in}
+\setlength{\topmargin}{-0.8in}
+\setlength{\parindent}{0pt}
+\setlength{\itemsep}{0pt}
+\def\pls{$^+$}
+\def\ts{\textstyle\mathstrut}
+\def\askip{\hspace*{1in}}
+\renewcommand{\baselinestretch}{1.2}
+
+\setlength{\tabcolsep}{10pt}
+\newcommand{\ol}[1]{\overrightarrow{\bf #1}}
+\newcommand{\I}{\item}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+
+\newcommand{\beq}[0]{\begin{small}\[}
+\newcommand{\eeq}[0]{\]\end{small}}
+\newcommand{\beqa}[0]{\begin{small}\begin{eqnarray*}}
+\newcommand{\eeqa}[0]{\end{eqnarray*}\end{small}}
+\newcommand{\bsm}[0]{\begin{small}}
+\newcommand{\esm}[0]{\end{small}}
+\newcommand{\bst}[0]{\begin{small}}
+\newcommand{\est}[0]{\end{small}}
+\newcommand{\bfn}[0]{\begin{footnotesize}}
+\newcommand{\efn}[0]{\end{footnotesize}}
+
+\def\nab{\overrightarrow{\nabla}}
+\def\galnab{\stackrel{\leftrightarrow}{\nabla}}
+
+
+
+\newcommand{\rvec}{{\bf r}}
+\newcommand{\xvec}{{\bf r}}
+\newcommand{\pvec}{{\bf p}}
+\newcommand{\qvec}{{\bf q}}
+\newcommand{\kvec}{{\bf k}}
+
+\newcommand{\adag}{a^\dagger}
+\newcommand{\ad}{a^{\dagger}}
+
+\newcommand{\Nmax}{N_{\rm max}}
+
+
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+
+\newcommand{\Vext}{v_{\rm ext}}
+\newcommand{\Egs}{E_{\rm gs}}
+\newcommand{\fmi}{\mbox{\,fm}^{-1}}
+
+\newcommand{\Hhat}{{\widehat H}}
+\newcommand{\Nhat}{{\widehat N}}
+\newcommand{\Vhat}{{\widehat V}}
+\newcommand{\That}{{\widehat T}}
+\newcommand{\Uhat}{{\widehat U}}
+\newcommand{\Ohat}{{\widehat O}}
+\newcommand{\Shat}{{\widehat S}}
+\newcommand{\rhat}{\widehat{\bf r}}
+\newcommand{\jhat}{\widehat\jmath}
+\newcommand{\khat}{\widehat k}
+\newcommand{\hhat}{\widehat h}
+\newcommand{\nhat}{\widehat n}
+
+\newcommand{\kf}{k_{\scriptscriptstyle\rm F}}
+
+
+
+\newcommand{\flow}{s}
+
+
+%\pagestyle{empty}    % no page numbers
+
+\usepackage{graphicx}  % has \includegraphics, etc.
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage[long,us,hhmmss]{datetime}
+
+%###########################################################################%
+%###########################################################################%
+
+% Now for the manuscript.  The text always starts with a \begin{document}
+%  line and ends with a \end{document} line.  Everything after \end{document}
+%  is ignored.
+
+
+\begin{document}
+
+\raggedright
+
+\begin{center}
+{\large\bf
+  PHY 982: Nuclear Forces \\
+  Exercises for Module 1:\\
+Overview of QCD and Scattering Theory} \\
+   \relax [Last revised on \today\ at \currenttime.]
+\end{center}
+
+\vspace{.1in}
+\textbf{Overview of exercises and discussion questions.}
+
+The problems here range from basic and short (i.e., taking on the order of a few minutes to answer with little or no math) to more sophisticated and/or lengthy (marked with an asterisk). Many of these were shamelessly pilfered from the 2013 Nuclear TALENT course on Nuclear Forces taught by Dick Furnstahl and Achim Schwenk at the Institute for Nuclear Theory in Seattle. Comments on the pedagogy and logistics:
+\bi
+  \I Our underlying philosophy is that students learn most effectively when
+  they actively fill in details of arguments and explicitly address conceptual
+  questions with their classmates.  Some of the problems here are designed to lead the student
+  to go back over particular lecture material to make sure it is understood,
+  while others extend the lectures and still others introduce new topics or topics that were only lightly touched upon. (Note: besides discussing with your classmates, we strongly encourage google-sleuthing if you get stuck!)
+  
+  \I Given our time constraints, we do not attempt to develop the type of
+  problem-solving skills that require students to struggle for hours over a single problem.  Rather,
+  we try to point the way rather explicitly and let the student fill in details. 
+  
+  
+  \I It is essential to try the exercises and to ask questions incessantly.
+  Not everyone will be prepared to do all of the exercises completely, but with help from your instructors and fellow classmates, we are hopeful that everyone can take away the essential points.
+  If you are unsure of what a word or phrase means in some context  or what a symbol stands for, please ask during the lectures or any of the instructors afterwards!
+  
+
+   \I
+  The exercises are divided into categories (sometimes implicitly) 
+  according to the type of problem: conceptual discussion questions, two-minute
+  questions (if the material was understood, an answer is possible in
+  a couple of minutes), basic skills problems, synthetic problems
+  (putting skills together),
+  rich context (real-life problems), and advanced problems (for those who already have
+  additional background or problems that might take a long time). For all of these, we strongly encourage (demand!) that you work together. 
+
+  \I
+  The exercises will not be graded, apart from checking that you made a good-faith effort to work on them. We have decided not to provide written solutions, as our goal is to encourage you all to work together and reach a consensus. At the end of the semester (time permitting), we might revisit any open questions 
+
+
+\ei
+
+
+%###########################################################################%
+%###########################################################################%
+\newpage
+
+\bigskip{\large\textbf{Questions on the Overview of QCD }}
+\be
+  \I Short exercises and discussion questions on QCD.
+    \be
+      \I With respect to what scale(s) are the $c,b,t$ quarks called heavy?
+
+      \I Have you heard about the $s$ quark before? If yes, in what context?
+
+      \I A possible way to ``see'' quarks and gluons is in jets. What
+      happens in these events?
+
+      \I Using the Particle Data Group website
+      \texttt{http://pdg.lbl.gov/}, discuss which properties of the
+      neutron and proton are similar and what are differences?
+      What about for the three pions?
+
+%      \I Explore some other hadrons using the Particle Data Group
+%      website. Which fit into your picture of hadrons from the lecture
+ %     and which don't?
+
+      \I Which is more important in making a neutron more massive than
+      a proton: the light quark mass difference or the electromagnetic
+      contribution? Or do you think such considerations are too
+      simplistic?
+
+      \I What is the evidence for \emph{spontaneous} chiral symmetry 
+      breaking in
+        \be
+          \I the mass spectrum of pseudoscalar ($J^\pi = 0^-$) mesons;
+          \I the mass spectrum of vector and axial vector 
+          ($J^\pi = 1^\mp$) mesons?
+        \ee
+
+      \I What is the evidence for \emph{explicit} chiral symmetry breaking
+      in the  spectrum of pseudoscalar ($J^\pi = 0^-$) mesons? 
+      
+      \I If you and your friend each do a QCD calculation with the
+      same diagrams but use $\alpha_s$ at different scales, will you
+      get the same answer? If not, how could that happen?
+
+      \I Does the running coupling in QCD mean that the QCD
+      Hamiltonian is not unique? Would you say that if you used
+      $\alpha_s$ at two different scales that you were using two
+      different Hamiltonians?
+
+      \I If the neutron lifetime is so short, why are there \emph{any}
+      stable nuclei?
+
+      \I One observes a marked resonance when a $\pi^+$ pion is
+      scattering off a proton. Which baryon does this correspond to
+      and at which energy of the $\pi^+$ does this occur (the proton
+      is at rest)?
+
+      \I At sufficient energy in proton-proton collisions it is
+      possible to create a pion, $p + p \rightarrow p + n + \pi^+$. At
+      which energy in the center-of-mass frame does pion production
+      start?
+    \ee
+\ee
+\newpage
+\bigskip{\large\textbf{Questions on Scattering Theory}}
+\be
+  \I Short exercises on units and conversions and dimensional analysis.
+   \be
+      \I We typically use units in which $\hbar = c = 1$ and express
+      quantities as powers of MeV or fm or both, using $\hbar c \approx
+      197.33\,$MeV--fm to convert between them. If we take for the nucleon
+      mass $M_N = 939\,$MeV/$c^2$, what is $\hbar^2/M_N$ numerically
+      in terms of MeV and fm? 
+      [Hint: This should be almost immediate if you insert the right factors
+      of $c$.]
+
+      \I For the scattering of equal mass (nonrelativistic) particles, 
+      if the laboratory energy $E_{\rm lab}$ is related to the magnitude of the relative momentum 
+      $k_{\rm rel}$ (i.e., the momentum each particle has in the center-of-mass
+      frame) by $E_{\rm lab} = C k_{\rm rel}^2$, what is $C$?  If the mass
+      is $M_N = 939\,$MeV, what is the value of $C$ in MeV--fm$^2$? 
+
+      \I We write the partial-wave momentum space Schr\"odinger equation
+      (following the conventions in Landau, \textit{Quantum Mechanics II})
+      as
+      \beq
+        \frac{k^2}{2\mu}\la klm | \psi \ra + \frac{2}{\pi}\sum_{l'm'}
+        \int_0^\infty\! dk'\,k'{}^2\, 
+        \la klm | V | k'l'm' \ra \la k'l'm' | \psi \ra = E_k \la klm | \psi \ra \;,
+      \eeq 
+      what are the units of $V_{ll'}(k,k') \equiv   \la klm | V | k'l'm \ra$? In coordinate space the potential is local, $V(r)$, with units of MeV, and $k$ is given in $\fmi$.  If you see a plot in a journal
+      article
+      of $V_{ll'}(k,k')$ with units of fm, how would you convert it to the units you just found?
+      [Hint: use part (a).]
+
+      \I In Fig.~18 of the review by S.\ K.\ Bogner {\it et al.},
+      Prog.  Nucl. Part. Phys. {\bf 65}, 94 (2010) the momentum-space
+      matrix elements of different chiral effective field theory
+      potentials are given in units of fm. Consider the value at zero
+      relative momenta. For the EGM potentials this is given by
+      $\tilde{C}_{^1S_0}$, see Eq.~(2.5) in EGM, Nucl. Phys.  {\bf
+        A747}, 362 (2005). The values for $\tilde{C}_{^1S_0}$ are
+      given in Table 2 of that paper in GeV$^{-2}$. How do you convert
+      to fm units? Do the values for the matrix elements then match?
+
+   \ee
+
+  
+  \I Short exercises reviewing basic scattering theory:
+   \be
+     \I What do ``on-shell'' and ``off-shell'' mean in the context of scattering?
+
+     \I Under what conditions is a partial-wave expansion of the potential useful?
+
+     \I Derive the standard result:
+     \beq
+       \frac{e^{i\delta_l(k)}\sin\delta_l(k)}{k}
+            = \frac{1}{k\cot\delta_l(k) - i k}
+     \eeq
+     [Hint 1: First move 
+  $e^{i\delta_l}$ to the denominator, then replace it by $\cos + i\sin$.]
+  %\\ \relax
+  %   [Hint 2: Divide top and bottom by $\sin$.]
+
+
+     \I Given a potential that is not identically zero as $r\rightarrow\infty$ (e.g., a Yukawa),
+     how would you know in practice where the asymptotic (large $r$) region starts?
+
+    \I What is the physical interpretation of the relation between the (partial-wave)
+    S-matrix and the scattering amplitude?  (Note that $S_l(k) = 1 + 2 i k f_l(k)$.) 
+
+  %  \I Advanced: what is the structure of 
+  %    the T-matrix near a bound-state energy?  
+  %    [\emph{Or give the result
+  %    and ask a question about it.}]
+
+  %  \I What are the consequences of having a real potential for the scattering
+  %  wave function and the K-matrix? [\emph{This may be too obscure.}]
+
+   \ee 
+
+
+ 
+ \I Exploring the Lippmann-Schwinger equation. [The conventions here follow Taylor.] 
+   \be
+    
+    \I Using the Schr\"odinger equation for the scattering of two particles with mass $m$,
+     \beq
+       (H_0 + V)|\psi_E\rangle = E |\psi_E\rangle \;,
+     \eeq
+     where $H_0$ is the free Hamiltonian, show that the Lippmann-Schwinger equation for the wave function,
+     \beq
+       |\psi_E^{\pm}\rangle = |\phi_k\rangle + \frac{1}{E-H_0\pm i\epsilon}V
+         |\psi_E^{\pm}\rangle \;, 
+     \eeq
+     is satisfied.
+     Here $E = k^2/m$ and the plane wave state satisfies $H_0 |\phi_k\rangle = E |\phi_k\rangle$.
+     Why do you need the $\pm i\epsilon$?
+
+    
+    \I
+    We can define the $T$-matrix on-shell as the transition matrix that acting on the plane wave state 
+    yields the same result as the potential acting on the full scattering state.  That is,
+     $T^{(\pm)}(E = k^2/m)|\phi_k\rangle = V |\psi_E^{\pm}\rangle$. 
+    What does it mean that the $T$-matrix is ``on-shell''? (This is a really quick question!) 
+
+    \I
+     Show that matrix elements of the $T$-matrix satisfy the Lippmann-Schwinger equation
+    \beq
+       \langle {\bf k}'|T^{(\pm)}(E)|{\bf k}\rangle =
+       \langle {\bf k}'|V|{\bf k}\rangle +
+       \int\! d^3p\, \frac{\langle {\bf k}'|V|{\bf p}\rangle
+         \langle {\bf p}|T^{(\pm)}(E)|{\bf k}\rangle}{E-\frac{p^2}{m}\pm i\epsilon}
+         \;.
+    \eeq
+    What normalization is used for the momentum states?
+    [See the Morrison and A.N. Feldt pedagogical article under Program$\rightarrow$References
+    on the webpage.]
+    Are the matrix elements of the $T$-matrix on the right side on-shell?
+
+    \I 
+    Write the Lippmann-Schwinger equation for the wave function in coordinate space for a local potential $V = V({\bf r})$.
+    To this end, show first that the free Green's function 
+    \beq
+      G^{\pm}({\bf r}',{\bf r}; E = k^2/m) = \langle {\bf r} | \frac{1}{E-H_0\pm i\epsilon} | {\bf r}'\rangle
+    \eeq
+      is given by 
+     \beq
+       G^{\pm}({\bf r}',{\bf r}; E = k^2/m) = 
+          -\frac{m}{4\pi}\frac{e^{\pm ik|{\bf r}-{\bf r}'|}}{|{\bf r}-{\bf r}'|}
+          \;.
+     \eeq
+
+    \I Show that when the $T$-matrix is evaluated on-shell, it is proportional to the scattering amplitude, $T^+(E =k^2/m) = -\frac{1}{4\pi^2 m}f(k,\theta)$, by analyzing the asymptotic form of the Lippmann-Schwinger equation and comparing to
+    \beq
+       \langle {\bf r} | \psi_E^+ \rangle \stackrel{r\rightarrow\infty}{\longrightarrow} 
+         (2\pi)^{-3/2} \left( e^{i\bm{k\cdot r}} + f(k,\theta) \frac{e^{ikr}}{r} \right)
+       \;.
+    \eeq
+
+
+    \I Start from the momentum-space partial wave expansion of the potential,
+    \beq
+    \langle {\bf k'} | V | {\bf k} \rangle
+    = \frac{2}{\pi}\sum_{l,m} V_l(k',k)Y^{\ast}_{lm}(\Omega_{k'})Y_{lm}(\Omega_k)
+    \eeq
+    and a similar expansion of the $T$-matrix to 
+    derive the partial wave version of the Lippmann-Schwinger equation (with the
+    correct factor for the integral):
+    \beq
+     T_l(k',k;E) = V_l(k',k) + \frac{2}{\pi} \int_0^\infty \! dp\, p^2
+      \frac{V_l(k',q)T_l(q,k;E)}{E - p^2/m + i\epsilon} \;.
+     \eeq
+
+
+   \ee
+
+
+  \I Consider two momentum-space potentials, 
+    $V_1(\kvec,\kvec') = V_0\, e^{-(k^2 + k'{}^2)/\mu^2}$ and
+    $V_2(\kvec,\kvec') = V_0\, e^{-(\kvec - \kvec')^2/\mu^2}$.
+    \be
+     \I Are they local or non-local?  
+     \I Do they have P-wave projections? (That is, if you wrote it in the partial-wave expansion
+     would there be an $L=1$ term?)
+     \I Do they have higher angular momentum projections?
+    \ee 
+
+  \I Show directly from the Fourier transform expression of a local potential, without
+  specifying its functional form, that the momentum space version will only depend on the
+ momentum transfer $\kvec'-\kvec$.
+
+  
+  \I Scattering phase shifts for a square well
+  potential.
+   \be
+    \I Calculate the S-wave scattering phase shifts for an attractive
+    square-well potential $V(r) = -V_0 \theta(R-r)$ and show that
+     \beq
+       \delta_0(E) = \arctan\left[
+         \sqrt{\frac{E}{E+V_0}}\tan\bigl(R\sqrt{2\mu(E+V_0)\bigr)}
+         \right] - R\sqrt{2\mu E}
+     \eeq
+
+    \I Let's consider the analytic structure of the corresponding partial-wave S matrix,
+    which is given by
+    \beq
+      S_0(k) = e^{-2 i k R} \frac{k_0 \cot k_0 R + ik}{k_0 \cot k_0 R - ik} \,
+    \eeq 
+    where $E = k^2/2\mu$ and $k_0^2 = k^2 + 2\mu V_0$.
+    \be
+     \I Show that $S_l(k) = e^{2i\delta_l(k)}$ for $l=0$ is satisfied. 
+     [Hint: write $e^{2i\delta} = e^{i\delta}/e^{-i\delta}$.]
+     \I Treat $S_0(k)$ as a function of the complex variable $k$ and find its
+     singularities.  
+     \I
+     Bound states are associated with poles on the imaginary axis
+     in the upper half plane.  Show that the condition for such a pole here gives
+     the same eigenvalue condition (a transcendental equation) that you would get
+     from a conventional solution to the square well by matching logarithmic derivatives. 
+     [Define $k= i\kappa$ with $\kappa>0$ when analyzing such a pole.]
+    \ee
+   \ee  
+
+  \I Variable phase approach (VPA) for finding phase shifts from a local
+  potential.  Here we consider s-waves.
+  [References: Taylor, \textit{Scattering Theory}, pp.~197-201,
+  Calogero, \textit{The Variable Phase Approach to Potential Scattering},
+  (Academic Press, New York, 1967).]  
+   \be
+     \I Define the truncated potential $V_\rho(r)$ by
+     \beq
+        V_\rho(r) = V(r) \theta(\rho-r) \;.
+     \eeq
+     That is, it is the usual potential for $r \leq \rho$, but identically
+     zero beyond that.  Then we define $\delta(k,\rho)$ as the phase shift
+     for $V_\rho$ at momentum $k$.  The phase shift we want is
+     $\delta(k) = \lim_{\rho\rightarrow\infty} \delta(k,\rho)$.  The basis
+     of the variable phase method is a differential equation for $\delta(k,r)$
+     at fixed $k$ (again, this is the s-wave equation):
+     \beq
+       \frac{d\delta(k,r)}{dr} = -\frac{1}{k} 2M V(r) \sin^2[kr + \delta(k,r)]
+       \;,
+     \eeq
+     which is a nonlinear first-order differential equation with initial
+     condition $\delta(k,0) = 0$.  Think about how you would implement
+     this in your favorite programming language.  
+    \I The Mathematica notebook \texttt{square\_well\_scattering.nb} implements
+     the VPA for a square well.  Changing to a different potential is
+     trivial (see the illustration at the end with a combined short-range repulsive
+     square well and a mid-range attractive square well).
+     Show that it reproduces the known phase shifts for the square well
+     result.
+      \I Show from the VPA differential equation that a fully attractive potential gives
+     a positive phase shift and a fully negative potential gives a
+     negative phase shift. This is the cleanest way to see why the s-wave phaseshifts (which change from positive to negative values at $E_{lab}\approx 270$ MeV in the $^1$S$_0$ partial wave) imply a strong short-range repulsion for local NN potentials.
+      \I The VPA automatically builds in Levinson's theorem about the number
+     of bound states and the phase shift at zero.  How?  [Hint: what is the
+     condition imposed on the phase shift at large energy for Levinson's theorem?  Consider
+     integrating $d\delta(k,r)/dr$ in $r$ from zero to infinity.  Use $\sin^2 x \leq 1$
+     to put a bound on $\delta(k)$.]
+     \I Things to try numerically with the Mathematica or Python notebooks:
+       \bi
+         \I Try out Levinson's theorem in practice (e.g., for a square well where
+         the number of bound states versus depth is easily found in parallel).
+         \I Explore the effective range expansion by extracting the $a$ and $r_0$ parameters for 2 different functional forms of $V(r)$ (e.g., square well and a gaussian). Then, try to tune one of the potentials so it gives the same ERE parameters as the other one. 
+       \ei
+
+   \ee
+
+
+ 
+
+  \I More on the Lippmann-Schwinger (LS) equation.  
+    \be
+     \I In the ``Exploring the LS equation'' 
+     problem we used the momentum space matrix elements of the operator LS
+     equation (we omit the hats here):
+       \beq
+         T^{(\pm)}(E) = V + V\frac{1}{E - H_0 \pm i\epsilon} T^{(\pm)}(E) \;.
+       \eeq
+
+    Show that this can also be written as 
+    \beq
+               T^{(\pm)}(E) = V + V\frac{1}{E - H \pm i\epsilon} V \;,
+    \eeq
+    where now the full Green's function appears (it has $H$ instead of $H_0$).
+    Do this by repeating the derivation but now using the alternative LS equation
+    for the wave function (show that it works!):
+     \beq
+       |\psi_E^{\pm}\rangle = |\phi_k\rangle + \frac{1}{E-H\pm i\epsilon}V
+         |\phi_k\rangle \;. 
+     \eeq
+
+   \I Now use the ``spectral representation'' 
+   \beq
+     \frac{1}{E-H\pm i\epsilon} = \sum_n \frac{|\psi_n\ra \la \psi_n|}{E - E_n}
+       + \int\!d^3p\, \frac{|\psi_p^+\ra \la \psi_p^+|}{E - p^2/m \pm i\epsilon}
+       \;,
+   \eeq
+   which follows by inserting a complete set of bound and scattering eigenstates of $H$,
+   to show that as a function of energy $E$, the momentum-space $T$-matrix has simple poles at the
+   bound-state energies $E_n$ with separable residues $\la \kvec' | V | \psi_n\ra\la \psi_n | V | \kvec\ra$. 
+   
+   \ee
+ \I $T$-matrix for a separable potential [adapted from Taylor, Scattering Theory].  
+  A separable potential has the form 
+  \beq
+             \Vhat = g |\eta\ra \la\eta| \;,
+  \eeq
+  where we usually choose $|\eta\ra$ to be a normalized vector given, for
+  example, by its momentum space function $ \eta(\kvec) \equiv \la\kvec|\eta\ra$
+  (note that we're not in partial waves here).
+  Recall the Lippmann-Schwinger equation for the operator $T(z)$ :
+  \beq
+    \That(z) = \Vhat + \Vhat\frac{1}{z-\Hhat_0}\That(z)
+      = \Vhat + \Vhat\frac{1}{z-\Hhat_0}\Vhat + 
+       \Vhat\frac{1}{z-\Hhat_0}\Vhat\frac{1}{z-\Hhat_0}\Vhat + \cdots 
+       \;.
+       \label{eq:LS_op}
+  \eeq
+  \be
+    \I Show that $T(z)$ is given explicitly by
+      \beq
+         T(z) = \frac{g\, |\eta\ra\la\eta|}{1 - g\Delta(z)} \;,
+      \eeq
+      where
+      \beq
+        \Delta(z) = \la\eta|\frac{1}{z-H_0}|\eta\ra
+          = \int\! d^3k\, \frac{|\eta(\kvec)|^2}{z-E_k} 
+      \eeq
+      with $E_k = k^2/2\mu$. [Hint: substitute the separable form for $\Vhat$
+      into the Born series for $T(z)$ and note the form of each term.]
+    \I Show that the Born series for $T(z)$ is convergent for $g$ small
+    but divergent for $g$ large.
+    \I The poles of $T(z)$ as a function of complex energy $z$ tells of about
+    the bound states of the potential.  Show that the separable potential has
+    either one or no bound states.  
+  \ee
+
+\ee
+
+\end{document}
