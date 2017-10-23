@@ -1,0 +1,425 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+%%
+
+
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% --- fancyhdr package for fancy headers ---
+\usepackage{fancyhdr}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[LE,RO]{\thepage}
+% Ensure copyright on titlepage (article style) and chapter pages (book style)
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{{\footnotesize \copyright\ 1999-2017, Nuclear Forces PHY989. Released under CC Attribution-NonCommercial 4.0 license}}
+%  \renewcommand{\footrulewidth}{0mm}
+  \renewcommand{\headrulewidth}{0mm}
+}
+% Ensure copyright on titlepages with \thispagestyle{empty}
+\fancypagestyle{empty}{
+  \fancyhf{}
+  \fancyfoot[C]{{\footnotesize \copyright\ 1999-2017, Nuclear Forces PHY989. Released under CC Attribution-NonCommercial 4.0 license}}
+  \renewcommand{\footrulewidth}{0mm}
+  \renewcommand{\headrulewidth}{0mm}
+}
+
+\pagestyle{fancy}
+
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+\newenvironment{doconceexercise}{}{}
+\newcounter{doconceexercisecounter}
+
+
+% ------ header in subexercises ------
+%\newcommand{\subex}[1]{\paragraph{#1}}
+%\newcommand{\subex}[1]{\par\vspace{1.7mm}\noindent{\bf #1}\ \ }
+\makeatletter
+% 1.5ex is the spacing above the header, 0.5em the spacing after subex title
+\newcommand\subex{\@startsection*{paragraph}{4}{\z@}%
+                  {1.5ex\@plus1ex \@minus.2ex}%
+                  {-0.5em}%
+                  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+Selected Exercises
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf Nuclear Forces PHY989}
+\end{center}
+
+    \begin{center}
+% List of all institutions:
+\centerline{{\small National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, USA}}
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Fall semester 2017
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+% --- begin exercise ---
+\begin{doconceexercise}
+\refstepcounter{doconceexercisecounter}
+
+\exercisesection*{Exercise \thedoconceexercisecounter: Questions on the Overview of QCD}
+
+
+This collection of problems contain short exercises and discussion questions on QCD.
+
+
+\subex{a)}
+With respect to what scale(s) are the $c,b,t$ quarks called heavy?
+
+\subex{b)}
+Have you heard about the $s$ quark before? If yes, in what context?
+
+\subex{c)}
+A possible way to \emph{see} quarks and gluons is in jets. What happens in these events?
+
+\subex{d)}
+Using the \href{{http://pdg.lbl.gov/}}{Particle Data Group website}, discuss which properties of the
+neutron and proton are similar and what are differences? What about for the three pions?
+
+\subex{e)}
+Which is more important in making a neutron more massive than a proton: the light quark mass difference or the electromagnetic
+contribution? Or do you think such considerations are too simplistic?
+
+\subex{f)}
+What is the evidence for \emph{spontaneous} chiral symmetry  breaking in
+\begin{itemize}
+   \item the mass spectrum of pseudoscalar ($J^\pi = 0^-$) mesons;
+
+   \item the mass spectrum of vector and axial vector ($J^\pi = 1^\mp$) mesons?
+\end{itemize}
+
+\noindent
+\subex{g)}
+What is the evidence for \emph{explicit} chiral symmetry breaking
+      in the  spectrum of pseudoscalar ($J^\pi = 0^-$) mesons?
+
+\subex{h)}
+If you and your friend each do a QCD calculation with the
+      same diagrams but use $\alpha_s$ at different scales, will you
+      get the same answer? If not, how could that happen?
+
+\subex{i)}
+Does the running coupling in QCD mean that the QCD
+      Hamiltonian is not unique? Would you say that if you used
+      $\alpha_s$ at two different scales that you were using two
+      different Hamiltonians?
+
+\subex{j)}
+If the neutron lifetime is so short, why are there \emph{any} stable nuclei?
+
+\subex{k)}
+One observes a marked resonance when a $\pi^+$ pion is
+      scattering off a proton. Which baryon does this correspond to
+      and at which energy of the $\pi^+$ does this occur (the proton
+      is at rest)?
+
+\subex{l)}
+At sufficient energy in proton-proton collisions it is
+      possible to create a pion, $p + p \rightarrow p + n + \pi^+$. At
+      which energy in the center-of-mass frame does pion production
+      start?
+
+\end{doconceexercise}
+% --- end exercise ---
+
+
+
+
+% --- begin exercise ---
+\begin{doconceexercise}
+\refstepcounter{doconceexercisecounter}
+
+\exercisesection*{Exercise \thedoconceexercisecounter: Basic Scattering Theory}
+
+
+
+\subex{a)}
+We typically use units in which $\hbar=c=1$ and express
+      quantities as powers of MeV or fm or both, using $\hbar c\approx 197.33$ MeVfm to convert between them. If we take for the nucleon
+      mass $M_N=939$ MeV/$c^2$, what is $\hbar^2/M_N$ numerically
+      in terms of MeV and fm?
+
+% --- begin hint in exercise ---
+
+\paragraph{Hint.}
+Hint: This should be almost immediate if you insert the right factors of $c$.
+
+% --- end hint in exercise ---
+
+\subex{b)}
+For the scattering of equal mass (nonrelativistic) particles, 
+      if the laboratory energy $E_{\rm lab}$ is related to the magnitude of the relative momentum 
+      $k_{\rm rel}$ (i.e., the momentum each particle has in the center-of-mass
+      frame) by $E_{\rm lab} = C k_{\rm rel}^2$, what is $C$?  If the mass
+      is $M_N=939$ MeV, what is the value of $C$ in MeVfm$^2$?
+
+\subex{c)}
+We write the partial-wave momentum space Schroedinger equation (\href{{https://manybodyphysics.github.io/NuclearForces/doc/pub/scatteringtheory/html/scatteringtheory.html}}{see Lecture notes}) as
+\[
+\frac{k^2}{2\mu}\langle klm | \psi \rangle + \frac{2}{\pi}\sum_{l'm'}
+        \int_0^\infty\! dk'\,k'{}^2\, 
+        \langle klm | V | k'l'm' \rangle \langle k'l'm' | \psi \rangle = E_k \langle klm | \psi \rangle \;,
+\]
+      what are the units of $V_{ll'}(k,k') \equiv   \langle klm | V | k'l'm \rangle$? In coordinate space the potential is local, $V(r)$, with units of MeV, and $k$ is given in inverse fm.  If you see a plot in a journal
+      article
+      of $V_{ll'}(k,k')$ with units of fm, how would you convert it to the units you just found?
+
+% --- begin hint in exercise ---
+
+\paragraph{Hint.}
+Hint: use the results from the first exercise here.
+
+% --- end hint in exercise ---
+
+\subex{d)}
+In Figure 18 of the review by Scott Bogner \emph{et al.},
+      \href{{http://www.sciencedirect.com/science/article/pii/S0146641010000347?via%3Dihub}}{Prog.  Nucl. Part. Phys. \textbf{65}, 94 (2010)} the momentum-space
+      matrix elements of different chiral effective field theory
+      potentials are given in units of fm. Consider the value at zero
+      relative momenta. 
+      $\tilde{C}_{^1S_0}$, see Eq.~(2.5) and 
+     the \href{{http://www.sciencedirect.com/science/article/pii/S0375947404010747}}{article by Epelbaum} \emph{et al.}  in GeV$^{-2}$. How do you convert
+      to fm units? Do the values for the matrix elements then match?
+
+\subex{e)}
+What do \emph{on-shell} and \emph{off-shell} mean in the context of scattering?
+
+\subex{f)}
+Under what conditions is a partial-wave expansion of the potential useful?
+
+\subex{g)}
+Derive the standard result:
+\[
+       \frac{e^{i\delta_l(k)}\sin\delta_l(k)}{k}
+            = \frac{1}{k\cot\delta_l(k) - i k}
+\]
+
+\subex{h)}
+Given a potential that is not identically zero as $r\rightarrow\infty$ (e.g., a Yukawa),
+     how would you know in practice where the asymptotic (large $r$) region starts?
+
+\subex{i)}
+What is the physical interpretation of the relation between the (partial-wave)
+    $S$-matrix and the scattering amplitude?  (Note that $S_l(k) = 1 + 2 i k f_l(k)$.)
+
+
+\end{doconceexercise}
+% --- end exercise ---
+
+
+
+
+% --- begin exercise ---
+\begin{doconceexercise}
+\refstepcounter{doconceexercisecounter}
+
+\exercisesection*{Exercise \thedoconceexercisecounter: More on the Lippmann-Schwinger equation}
+
+
+
+\subex{a)}
+Using the Schr\"odinger equation for the scattering of two particles with mass $m$,
+\[
+       (H_0 + V)|\psi_E\rangle = E |\psi_E\rangle \;,
+\]
+     where $H_0$ is the free Hamiltonian, show that the Lippmann-Schwinger equation for the wave function,
+\[
+       |\psi_E^{\pm}\rangle = |\phi_k\rangle + \frac{1}{E-H_0\pm i\epsilon}V
+         |\psi_E^{\pm}\rangle \;, 
+\]
+     is satisfied.
+     Here $E = k^2/m$ and the plane wave state satisfies $H_0 |\phi_k\rangle = E |\phi_k\rangle$.
+     Why do you need the $\pm i\epsilon$?
+
+\subex{b)}
+We can define the $T$-matrix on-shell as the transition matrix that acting on the plane wave state 
+    yields the same result as the potential acting on the full scattering state.  That is,
+     $T^{(\pm)}(E = k^2/m)|\phi_k\rangle = V |\psi_E^{\pm}\rangle$. 
+    What does it mean that the $T$-matrix is \emph{on-shell}? (This is a really quick question!)
+
+\subex{c)}
+Show that matrix elements of the $T$-matrix satisfy the Lippmann-Schwinger equation
+\[
+       \langle {\bf k}'|T^{(\pm)}(E)|{\bf k}\rangle =
+       \langle {\bf k}'|V|{\bf k}\rangle +
+       \int\! d^3p\, \frac{\langle {\bf k}'|V|{\bf p}\rangle
+         \langle {\bf p}|T^{(\pm)}(E)|{\bf k}\rangle}{E-\frac{p^2}{m}\pm i\epsilon}.
+\]
+    What normalization is used for the momentum states?
+    Are the matrix elements of the $T$-matrix on the right side on-shell?
+
+\subex{d)}
+Write the Lippmann-Schwinger equation for the wave function in coordinate space for a local potential $V = V({\bf r})$.
+    To this end, show first that the free Green's function 
+\[
+      G^{\pm}({\bf r}',{\bf r}; E = k^2/m) = \langle {\bf r} | \frac{1}{E-H_0\pm i\epsilon} | {\bf r}'\rangle,
+\]
+is given by 
+\[
+       G^{\pm}({\bf r}',{\bf r}; E = k^2/m) = 
+          -\frac{m}{4\pi}\frac{e^{\pm ik|{\bf r}-{\bf r}'|}}{|{\bf r}-{\bf r}'|}.
+\]
+
+\subex{e)}
+Show that when the $T$-matrix is evaluated on-shell, it is proportional to the scattering amplitude, $T^+(E =k^2/m) = -\frac{1}{4\pi^2 m}f(k,\theta)$, by analyzing the asymptotic form of the Lippmann-Schwinger equation and comparing to
+\[
+       \langle {\bf r} | \psi_E^+ \rangle \stackrel{r\rightarrow\infty}{\longrightarrow} 
+         (2\pi)^{-3/2} \left( e^{i\bm{k\cdot r}} + f(k,\theta) \frac{e^{ikr}}{r} \right).
+ \]
+
+\subex{f)}
+Start from the momentum-space partial wave expansion of the potential,
+\[
+    \langle {\bf k'} | V | {\bf k} \rangle
+    = \frac{2}{\pi}\sum_{l,m} V_l(k',k)Y^{\ast}_{lm}(\Omega_{k'})Y_{lm}(\Omega_k),
+\]
+    and a similar expansion of the $T$-matrix to 
+    derive the partial wave version of the Lippmann-Schwinger equation (with the
+    correct factor for the integral):
+\[
+     T_l(k',k;E) = V_l(k',k) + \frac{2}{\pi} \int_0^\infty \! dp\, p^2
+      \frac{V_l(k',q)T_l(q,k;E)}{E - p^2/m + i\epsilon}.
+\]
+
+
+\subex{g)}
+Scattering phase shifts for a square well potential. Calculate the S-wave scattering phase shifts for an attractive
+    square-well potential $V(r) = -V_0 \theta(R-r)$ and show that
+\[
+       \delta_0(E) = \arctan\left[
+         \sqrt{\frac{E}{E+V_0}}\tan\bigl(R\sqrt{2\mu(E+V_0)\bigr)}
+         \right] - R\sqrt{2\mu E}.
+\]
+
+
+\subex{h)}
+Let's consider the analytic structure of the corresponding partial-wave S matrix,
+    which is given by
+\[
+      S_0(k) = e^{-2 i k R} \frac{k_0 \cot k_0 R + ik}{k_0 \cot k_0 R - ik},
+\]
+where $E = k^2/2\mu$ and $k_0^2 = k^2 + 2\mu V_0$.
+Show that $S_l(k) = e^{2i\delta_l(k)}$ for $l=0$ is satisfied. 
+Treat $S_0(k)$ as a function of the complex variable $k$ and find its  singularities.
+
+% --- begin hint in exercise ---
+
+\paragraph{Hint.}
+Hint: write $e^{2i\delta} = e^{i\delta}/e^{-i\delta}$.
+
+% --- end hint in exercise ---
+
+\subex{i)}
+Bound states are associated with poles on the imaginary axis
+     in the upper half plane.  Show that the condition for such a pole here gives
+     the same eigenvalue condition (a transcendental equation) that you would get
+     from a conventional solution to the square well by matching logarithmic derivatives.
+
+% --- begin hint in exercise ---
+
+\paragraph{Hint.}
+Hint: Define $k= i\kappa$ with $\kappa>0$ when analyzing such a pole.
+
+% --- end hint in exercise ---
+
+\end{doconceexercise}
+% --- end exercise ---
+
+
+% ------------------- end of main content ---------------
+
+\end{document}
+
