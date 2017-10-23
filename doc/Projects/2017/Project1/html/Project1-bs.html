@@ -1,0 +1,561 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="Project 1, deadline  November 17">
+
+<title>Project 1, deadline  November 17</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Nucleon-nucleon scattering', 2, None, '___sec0'),
+              ('Project 1a): Setting up the integration domain, mesh points and weights',
+               3,
+               None,
+               '___sec1'),
+              ('Project 1b): Adding a potential model', 3, None, '___sec2'),
+              ('Project 1c): Handling the principal value problem',
+               3,
+               None,
+               '___sec3'),
+              ('Project 1d): Adding realistic models for the nuclear forces',
+               3,
+               None,
+               '___sec4'),
+              ('Introduction to numerical projects', 2, None, '___sec5'),
+              ('Format for electronic delivery of report and programs',
+               2,
+               None,
+               '___sec6')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="Project1-bs.html">Project 1, deadline  November 17</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>Nucleon-nucleon scattering</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Project 1a): Setting up the integration domain, mesh points and weights</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Project 1b): Adding a potential model</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Project 1c): Handling the principal value problem</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Project 1d): Adding realistic models for the nuclear forces</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;"><b>Introduction to numerical projects</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;"><b>Format for electronic delivery of report and programs</b></a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0000"></a>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>Project 1, deadline  November 17</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Nuclear Forces PHY989 -->
+
+<center>
+<b>Nuclear Forces PHY989</b> 
+</center>
+
+<p>
+<!-- institution -->
+
+<center><b>National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, USA</b></center>
+<br>
+<p>
+<center><h4>Fall semester 2017</h4></center> <!-- date -->
+<br>
+<p>
+</div> <!-- end jumbotron -->
+
+<h2 id="___sec0" class="anchor">Nucleon-nucleon scattering </h2>
+
+<p>
+The aim of this project is to solve the Lippman-Schwinger equation for two interacting nucleons and relate the obtained phase shifts with those extracted from the experimental cross sections.
+
+<p>
+We are going to solve the Schr\{"o}dinger equation (SE) 
+for the neutron-proton system 
+in momentum space for positive energies \( E \) in order to obtain
+the phase shifts. 
+We can rewrite the SE 
+in momentum space as
+
+$$
+\begin{equation}
+     \frac{k^2}{m}\psi_l(k)+\frac{2}{\pi}\int_0^{\infty}dqq^2V_l(k,q)\psi_l(q)=E\psi_l(k).
+\tag{1}
+\end{equation}
+$$
+
+Here we have used units \( \hbar=c=1 \). This means that \( k \) has dimension energy. 
+\( k \) is the relative momentum between the two particles. A partial
+wave expansion has been used in order to reduce the problem to an integral
+over the magnitude of momentum only. The subscript \( l \) refers therefore to a partial wave with a given orbital momentum \( l \).
+To obtain the potential in momentum space we used 
+the Fourier-Bessel transform (Hankel transform)
+
+$$
+\begin{equation}
+      V_l(k,k')= \int j_l(kr)V(r)j_l(k'r)r^2dr,
+\tag{2}
+\end{equation}
+$$
+
+where \( j_l \) is the spherical Bessel function. 
+We will just study the case
+\( l=0 \), which means that \( j_0(kr)=sin(kr)/kr \).
+
+<p>
+For scattering states, \( E>0 \), the corresponding equation to solve is 
+the so-called Lippman-Schwinger equation. This is an integral equation
+where we have to deal with the amplitude \( R(k,k') \) (reaction matrix) 
+defined through the integral equation
+
+$$
+\begin{equation}
+    R_l(k,k') = V_l(k,k') +\frac{2}{\pi}\hat{P}
+                \int_0^{\infty}dqq^2V_l(k,q)\frac{1}{E-q^2/m}R_l(q,k'),
+\tag{3}
+\end{equation}
+$$
+
+where the total kinetic energy of the two 
+incoming particles in the center-of-mass system
+is
+
+$$
+\begin{equation}
+    E=\frac{k_0^2}{m}.
+\tag{4}
+\end{equation}
+$$
+
+The symbol \( \hat{P} \) indicates that Cauchy's principal-value prescription
+is used in order to avoid the singularity arising from the zero of the denominator.
+We will discuss below how to solve this problem. Eq. <a href="#mjx-eqn-3">(3)</a> represents
+then the problem you will have to solve numerically.
+
+<p>
+The matrix \( R_l(k,k') \) relates to the 
+the  phase shifts through its diagonal elements as
+
+$$
+\begin{equation}
+     R_l(k_0,k_0)=-\frac{tan\delta_l}{mk_0}.
+\tag{5}
+\end{equation}
+$$
+
+<p>
+From now on we will drop the subscript \( l \) in all equations.
+
+<p>
+In order to solve the Lippman-Schwinger equation 
+in momentum space, we need first to write 
+a function which sets up the mesh points. 
+We need to do that since we are going to approximate an integral
+through
+
+$$
+\begin{equation*}
+   \int_a^bf(x)dx\approx\sum_{i=1}^Nw_if(x_i),
+\end{equation*}
+$$
+
+where we have fixed \( N \) lattice points through the corresponding weights
+\( w_i \) and points \( x_i \).
+
+<h3 id="___sec1" class="anchor">Project 1a): Setting up the integration domain, mesh points and weights </h3>
+
+Start writing your main program by setting up the mesh points
+and the corresponding weights.
+Fix first the number of mesh points \( N \).
+Use the included function <em>gauleg</em> in the file lib.cpp (see also lib.h) to set up the 
+weights \( \omega_i \) and the points \( k_i \). Before you go on 
+you need to keep in mind that <em>gauleg</em> uses 
+the Legendre polynomials to fix
+the mesh points and weights. This means that the integral is for the 
+interval [-1,1]. Your integral is for the interval [0,$\infty$]. 
+You will need to map the weights  from <em>gauleg</em> to your interval.
+To do this, call first <em>gauleg(a,b,x[],w[],N)</em>, 
+with \( a=-1 \), \( b=1 \).
+It returns the mesh points \( x_i \) and weights \( w_i \). 
+You map these points over to the limits in your integral. You can then
+use the following mapping
+
+$$
+\begin{equation*}
+          k_i=const\times tan\left\{\frac{\pi}{4}(1+x_i)\right\},
+        \end{equation*}
+$$
+
+and
+
+$$
+\begin{equation*}
+            \omega_i= const\frac{\pi}{4}\frac{w_i}{cos^2\left(\frac{\pi}{4}(1+x_i)\right)}.
+         \end{equation*}
+$$
+
+If you opt for units fm$^{-1}$ for \( k \), set \( const=1 \). If you opt to work
+with MeV, set \( const\sim 200 \) (\( \hbar c=197 \) MeVfm).
+You must decide which units to use.
+
+<h3 id="___sec2" class="anchor">Project 1b): Adding a potential model </h3>
+
+The next step is to write a function which calculates the potential
+in momentum space. The potential we will use here is a parametrized  potential
+between a proton and neutron for the partial wave  \( ^1S_0 \), 
+i.e., spin \( S=0 \) and
+orbital momentum \( l=0 \), a singlet S-state. 
+This state does not have a bound state
+for the deuteron (only the triplet S-state has). 
+The parametrized version of this potential fits the experimental
+phase-shifts. It is given by
+
+$$
+\begin{equation}
+  V(r)=V_a \frac{e^{-ax}}{x}+V_b \frac{e^{-bx}}{x}+V_c \frac{e^{-cx}}{x}
+\tag{6}
+\end{equation}
+$$
+
+with \( x=\mu r \), \( \mu=0.7 \) fm$^{-1}$ (the inverse of the pion mass),
+\( V_a=-10.463 \) MeV and \( a=1 \), \( V_b=-1650.6 \) MeV and \( b=4 \) and
+\( V_c=6484.3 \) MeV and \( c=7 \). 
+Find the potential in momentum space using Eq. <a href="#mjx-eqn-2">(2)</a>
+with \( j_0(kr)=sin(kr)/kr \). 
+The transform of a potential on the form 
+\( V(r)=V_0\exp{(-\mu r)}/r \) is
+
+$$
+\begin{equation}
+     V(k',k)= \frac{V_0}{4k'k}ln\left(\frac{(k'+k)^2+\mu^2}{(k'-k)^2+\mu^2}\right).
+\tag{7}
+\end{equation}
+$$
+
+<p>
+Write a function which calculates the expressions for the
+potential in momentum space.
+
+<h3 id="___sec3" class="anchor">Project 1c): Handling the principal value problem </h3>
+
+The principal value in Eq. <a href="#mjx-eqn-3">(3)</a> is rather tricky
+to evaluate numerically, mainly since computers have limited
+precision. We will here use a subtraction trick often used
+when dealing with singular integrals in numerical calculations.
+We introduce first the calculus relation
+
+$$
+\begin{equation}
+  \int_{-\infty}^{\infty} \frac{dk}{k-k_0} =0.
+\tag{8}
+\end{equation}
+$$
+
+It means that the curve \( 1/(k-k_0) \) has equal and opposite
+areas on both sides of the singular point \( k_0 \). If we break
+the integral into one over positive \( k \) and one over 
+negative \( k \), a change of variable \( k\rightarrow -k \) 
+allows us to rewrite the last equation as
+
+$$
+\begin{equation}
+  \int_{0}^{\infty} \frac{dk}{k^2-k_0^2} =0.
+\tag{9}
+\end{equation}
+$$
+
+We can use this to express a principal values integral
+as
+
+$$
+\begin{equation}
+  {\cal P}\int_{0}^{\infty} \frac{f(k)dk}{k^2-k_0^2} =
+  \int_{0}^{\infty} \frac{(f(k)-f(k_0))dk}{k^2-k_0^2},
+\tag{10}
+\end{equation}
+$$
+
+where the right-hand side is no longer singular at 
+\( k=k_0 \), it is proportional to the derivative \( df/dk \),
+and can be evaluated numerically as any other integral.
+
+<p>
+We can then use the trick in Eq. <a href="#mjx-eqn-10">(10)</a> to rewrite
+Eq. <a href="#mjx-eqn-3">(3)</a> as
+
+$$
+\begin{equation}
+    R(k,k') = V(k,k') +\frac{2}{\pi}
+                \int_0^{\infty}dq
+                \frac{q^2V(k,q)R(q,k')-k_0^2V(k,k_0)R(k_0,k')  }
+                     {(k_0^2-q^2)/m}.
+\tag{11}
+\end{equation}
+$$
+
+This is the equation you are going to solve numerically in order
+to calculate the phase shifts of 
+Eq. <a href="#mjx-eqn-5">(5)</a>.We are interested in obtaining
+\( R(k_0,k_0) \).
+
+<p>
+How do we proceed in order to solve Eq. <a href="#mjx-eqn-11">(11)</a>?
+
+<p>
+The first step consists in using the mesh points \( k_j \) and the weights \( \omega_j \). We can rewrite Eq. <a href="#mjx-eqn-11">(11)</a> as
+$$
+\begin{equation} \tag{12}
+R(k,k') = V(k,k') +\frac{2}{\pi}\sum_{j=1}^N\frac{\omega_jk_j^2V(k,k_j)R(k_j,k')}{(k_0^2-k_j^2)/m}-\frac{2}{\pi}k_0^2V(k,k_0)R(k_0,k')\sum_{n=1}^N\frac{\omega_n}{(k_0^2-k_n^2)/m}.                           
+\end{equation}
+$$
+
+This equation contains now the unknowns \( R(k_i,k_j) \)
+(with dimension \( N\times N \)) and \( R(k_0,k_0) \).
+We can turn Eq. <a href="#mjx-eqn-12">(12)</a> into an equation with dimension \( (N+1)\times (N+1) \) with  a mesh which contains the original mesh points \( k_j \) for \( j=1,N \) and the point which corresponds to the energy \( k_0 \). Consider the latter as the 'observable' point. The mesh points become then \( k_j \) for \( j=1,n \) and \( k_{N+1}=k_0 \).
+
+<p>
+With these new mesh points we define the matrix
+$$
+\begin{equation}        \tag{13}
+A_{i,j}=\delta_{i,j}-V(k_i,k_j)u_j,
+\end{equation}
+$$
+
+where \( \delta \) is the Kronecker \( \delta \)
+and
+
+$$
+\begin{equation}
+     u_j=\frac{2}{\pi}
+         \frac{\omega_jk_j^2}{(k_0^2-k_j^2)/m}\hspace{1cm}
+         j=1,N
+\tag{14}
+\end{equation}
+$$
+
+and
+
+$$
+\begin{equation}
+     u_{N+1}=-\frac{2}{\pi}
+          \sum_{j=1}^N\frac{k_0^2\omega_j}{(k_0^2-k_j^2)/m}.
+\tag{15}
+\end{equation}
+$$
+
+The first task is then to 
+set up the matrix \( A \) for a given \( k_0 \). This is an
+\( (N+1)\times (N+1) \) matrix. It can be convenient
+to have an outer loop which runs over the chosen
+observable values for the energy \( k_0^2/m \).
+{\em Note that all mesh points \( k_j \) for \( j=1,N \) must be
+different from \( k_0 \). Note also that
+\( V(k_i,k_j) \) is an
+\( (N+1)\times (N+1) \) matrix}. Write a small function
+which sets up \( A \).
+
+<p>
+With the matrix \( A \) we can rewrite Eq. <a href="#mjx-eqn-12">(12)</a>    as a matrix problem of dimension \( (N+1)\times (N+1) \).   All matrices \( R \), \( A \) and \( V \) have this dimension   and we get
+$$
+\begin{equation}
+A_{i,l}R_{l,j}=V_{i,j},
+\tag{16}
+\end{equation}
+$$
+
+or just
+
+$$
+\begin{equation}
+    AR=V.
+\tag{17}
+\end{equation}
+$$
+
+Since you already have defined \( A \) and \( V \) (these are stored as \( (N+1)\times (N+1) \) matrices)  Eq. <a href="#mjx-eqn-17">(17)</a> involves only the unknown \( R \). We obtain it by matrix inversion, i.e.,
+$$
+\begin{equation} \tag{18}
+R=A^{-1}V.     
+\end{equation}
+$$
+
+Thus, to obtain \( R \), you will need to set up the matrices
+\( A \) and \( V \) and invert the matrix \( A \). To do that
+you must call the function
+<em>matinv</em> in the program library lib.cpp (see also lib.h).
+With the inverse \( A^{-1} \), performing
+a matrix multiplication with \( V \) results in \( R \).
+
+<p>
+With \( R \) you can then evaluate the phase shifts
+by noting that
+
+$$
+\begin{equation}
+      R(k_{N+1},k_{N+1})=R(k_0,k_0),
+\tag{19}
+\end{equation}
+$$
+
+and you are done.
+
+<p>
+You can choose to read \( k_0 \) from file or screen, or set up
+a loop over chosen values of \( k_0 \) and for each
+\( k_0 \) solve Eq. <a href="#mjx-eqn-18">(18)</a>.
+
+<p>
+When you have \( R(k,k') \) for the given potential, evaluate now the phase-shifts  using
+$$
+\begin{equation*}
+R(k_0,k_0)=-\frac{tan\delta}{mk_0}.
+\end{equation*}
+$$
+
+<p>
+Compare the phase shifts for the potential of Eq. <a href="#mjx-eqn-6">(6)</a> with the  experimental phase shifts that can be found  in the article  of the Nijmegen group in Physical Review C <b>48</b>, 792 (1993).  Alternatively look up "their website:"http://nn-online.org/"
+
+<h3 id="___sec4" class="anchor">Project 1d): Adding realistic models for the nuclear forces </h3>
+
+The code can easily be extended to include realistic nucleon-nucleon interactions. More text to come here.
+
+<h2 id="___sec5" class="anchor">Introduction to numerical projects </h2>
+
+<p>
+Here follows a brief recipe and recommendation on how to write a report for each
+project.
+
+<ul>
+  <li> Give a short description of the nature of the problem and the eventual  numerical methods you have used.</li>
+  <li> Describe the algorithm you have used and/or developed. Here you may find it convenient to use pseudocoding. In many cases you can describe the algorithm in the program itself.</li>
+  <li> Include the source code of your program. Comment your program properly.</li>
+  <li> If possible, try to find analytic solutions, or known limits in order to test your program when developing the code.</li>
+  <li> Include your results either in figure form or in a table. Remember to        label your results. All tables and figures should have relevant captions        and labels on the axes.</li>
+  <li> Try to evaluate the reliabilty and numerical stability/precision of your results. If possible, include a qualitative and/or quantitative discussion of the numerical stability, eventual loss of precision etc.</li>
+  <li> Try to give an interpretation of you results in your answers to  the problems.</li>
+  <li> Critique: if possible include your comments and reflections about the  exercise, whether you felt you learnt something, ideas for improvements and  other thoughts you've made when solving the exercise. We wish to keep this course at the interactive level and your comments can help us improve it.</li>
+  <li> Try to establish a practice where you log your work at the  computerlab. You may find such a logbook very handy at later stages in your work, especially when you don't properly remember  what a previous test version  of your program did. Here you could also record  the time spent on solving the exercise, various algorithms you may have tested or other topics which you feel worthy of mentioning.</li>
+</ul>
+
+<h2 id="___sec6" class="anchor">Format for electronic delivery of report and programs </h2>
+
+<p>
+The preferred format for the report is a PDF file. You can also use DOC or postscript formats or as an ipython notebook file.  As programming language we prefer that you choose between C/C++, Fortran2008 or Python. The following prescription should be followed when preparing the report:
+
+<ul>
+  <li> Use your github repository to upload your report. Indicate where the report is by creating for example a <b>Report</b> folder. Please send us as soon as possible your github username.</li>
+  <li> Place your programs in a folder called for example <b>Programs</b> or <b>src</b>, in order to indicate where your programs are. You can use a README file to tell us how your github folders are organized.</li> 
+  <li> In your git repository, please include a folder which contains selected results. These can be in the form of output from your code for a selected set of runs and input parameters.</li>
+  <li> In this and all later projects, you should include tests (for example unit tests) of your code(s).</li>
+  <li> Comments  from us on your projects, with score and detailed feedback will be emailed to you.</li> 
+</ul>
+
+Finally, 
+we encourage you to work two and two together. Optimal working groups consist of 
+2-3 students. You can then hand in a common report. 
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+  <li class="active"><a href="._Project1-bs000.html">1</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2017, Nuclear Forces PHY989. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+
+
+</body>
+</html>
+    
+
