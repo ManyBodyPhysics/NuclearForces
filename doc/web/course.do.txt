@@ -67,7 +67,16 @@ ${text_types(ch)}
 
 
 
-===== Projects Fall 2017 =====
+===== Exercises and Projects Fall 2017 =====
+
+=== Selected Exercises ===
+ * LaTeX and PDF:
+     * "LaTex file":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Exercises/pdf/Exercises.tex"
+     * "PDF file":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Exercises/pdf/Exercises.pdf"
+ * HTML:
+   * "Plain html":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Exercises/html/Exercises.html"
+   * "Bootstrap  slide style, easy for reading on mobile devices":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Exercises/html/Exercises-bs.html"
+
 
 === Project 1 ===
  * LaTeX and PDF:
@@ -97,37 +106,35 @@ The course consists of two projects which are graded and count 30% each of the f
 |----------------------------------------------------------------------------------------------------------------------------|
 |  Week and days  |  Topics to be covered | Projects and exercises | Reading assignments| 
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 43 |  Introduction and review of basic QFT    (SB and MHJ)            | Dirac equation                                  |   |  
+| Week 43 | Mon: Introduction and review of basic QFT    (SB and MHJ)            | Wedn: Presentation of project 1 (MHJ) and selected exercises                                 |   | Wedn:  Discussion of nucleon-nucleon scattering
 | Oct/23 and Oct/25        |          |                                   |   |  
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 44|  Scattering theory and phenomenology of nuclear forces   (MHJ)      | Presentation of project 1 (MHJ) | Lecture notes on scattering theory |
+| Week 44|  Mon: Scattering theory and phenomenology of nuclear forces   (MHJ)      | Wedn: Work and discussion of project 1 (MHJ) | Lecture notes on scattering theory |
 | Oct/30 and Nov/1       |           |                                  |   | 
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 45| Scattering theory and one-boson exchange models (MHJ) | Work on project 1 (MHJ)  |  Lecture notes on scattering theory and OBEs |
+| Week 45| Mon: Review of QFT and one-boson exchange models (MHJ) | Wedn: Work on project 1 (MHJ)  |  Lecture notes on scattering theory and OBEs |
 | Nov/6 and Nov/8       |                      |                                  |   |
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 46|  One-boson exchange models (MHJ) | Work on project 1, deadline Nov 17    | Lecture notes on OBEs |
-| Nov/13 and Nov/15       |                      |  Presentation of project 2                                |                  |  
+| Week 46|  Mon: One-boson exchange models (MHJ) | Wedn: Work on project 1, deadline Nov 17    | Lecture notes on OBEs |
+| Nov/13 and Nov/15       |                      |  Wedn: Presentation of project 2                                |                  |  
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 47 |     From one-boson exchange models to effective field theory (SB and MHJ)| Work on project 2  |  |   
+| Week 47 |  Mon: From one-boson exchange models to effective field theory (SB and MHJ)| Wedn: Work on project 2  |  |   
 | Nov/20 and Nov/22       |                      |                                  |   |  
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 48 |   Effective field theory (SB) |  Work on project 2                           |  |  
+| Week 48 |  Mon: Effective field theory (SB) |  Wedn: Work on project 2                           |  |  
 | Nov/27 and Nov/29        |                   |                                  |                            |
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 49 | Effective field theory and Lattice QCD (SB) | Finalize project 2, deadline Dec 8                                |  |  
+| Week 49 | Wedn: Effective field theory and Lattice QCD (SB) | Wedn: Finalize project 2, deadline Dec 8                                |  |  
 | Dec/4 and Dec/6        |                   |                                  |                            |
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 50 |                      |   Final oral presentations                                |  |  
-| Finals week        |                   |                                  |                            |
-|----------------------------------------------------------------------------------------------------------------------------|
+
 
 
 
 !split
 ===== Basic Syllabus =====
 
-The syllabus for this course consists of the lecture notes on the webpage with suggested reading assignments as well as the two projects. These projects count 30% each of the final grade. A final oral presentation based on the material from the projects and the lectures stands for the final 40% of the grade.
+The syllabus for this course consists of the lecture notes on the webpage with suggested reading assignments as well as the two projects. These projects count 50% each of the final grade. 
 The weekly plans (see the table above) will be updated with links to reading suggestions and the relevant material.
 
 !split
