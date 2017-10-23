@@ -13,7 +13,7 @@ The course contains several hands-on exercises and projects, ranging from the so
 8. (Time Permitting) Connections with nuclear few- and many-body theories and implications for nuclear structure and reaction studies
 ## Learning outcomes
 The course aims at giving a basic overview of central aspects of nuclear forces and in particular how we can establish functional expressions for these based on effective field theories. The participants will get an overview of the basic phenomenology of nuclear forces and how these can be interpreted in terms of effective degrees of freedom based on nucleons and pions as the constituents. 
-The course is project based and taught in an active learning model, with roughly 40-50% of class time devoted to project work and group exercises. Through the 2 course projects and group exercises, the participants will be exposed to fundamental research problems in the field of nuclear forces, and will acquire tools needed to reproduce state of the art scientific results. More specifically, after this course you will
+The course is project based and taught in an active learning model, with roughly 40-50% of class time devoted to project work and group exercises. Through the 2 course projects (graded) and group exercises (not graded), the participants will be exposed to fundamental research problems in the field of nuclear forces, and will acquire tools needed to reproduce state of the art scientific results. More specifically, after this course you will
 
 
 - Learn about basic properties of nuclear forces, spanning from fundamental symmetries to understanding how data implies certain features of the forces (e.g., tensor and spin-orbit components, short-range repulsion, etc.);
