@@ -71,19 +71,19 @@ ${text_types(ch)}
 
 === Project 1 ===
  * LaTeX and PDF:
-     * "LaTex file":"https://github.com/ManyBodyPhysics/NuclearForces/"
-     * "PDF file":"https://github.com/ManyBodyPhysics/NuclearForces/"
+     * "LaTex file":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project1/pdf/Project1.tex"
+     * "PDF file":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project1/pdf/Project1.pdf"
  * HTML:
-   * "Plain html":"https://github.com/ManyBodyPhysics/NuclearForces/"
-   * "Bootstrap  slide style, easy for reading on mobile devices":"https://github.com/ManyBodyPhysics/NuclearForces/"
+   * "Plain html":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project1/html/Project1.html"
+   * "Bootstrap  slide style, easy for reading on mobile devices":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project1/html/Project1-bs.html"
 
 === Project 2 ===
  * LaTeX and PDF:
-     * "LaTex file":"https://github.com/ManyBodyPhysics/NuclearForces/"
-     * "PDF file":"https://github.com/ManyBodyPhysics/NuclearForces/"
+     * "LaTex file":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project2/pdf"
+     * "PDF file":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project2/pdf"
  * HTML:
-   * "Plain html":"https://github.com/ManyBodyPhysics/NuclearForces/"
-   * "Bootstrap  slide style, easy for reading on mobile devices":"https://github.com/ManyBodyPhysics/NuclearForces/"
+   * "Plain html":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project2/html"
+   * "Bootstrap  slide style, easy for reading on mobile devices":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project2/html"
 
 
 !split
