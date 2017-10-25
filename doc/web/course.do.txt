@@ -97,7 +97,7 @@ ${text_types(ch)}
 
 !split
 ===== Teaching schedule Fall 2017 =====
-Lectures are Mondays 12.30pm to 2.30pm. Wednesdays from 1230pm to 230pm are normally reserved for project work, exercises and self-study.
+Lectures are Mondays 12.30pm to 2.30pm and Wednesdays from 1230pm to 230pm. We plan  normally to reserve Mondays for project work, exercises and self-study.
 However, during the first two weeks we may also have regular lectures the first hour. Teachers are "Scott Bogner (SB)":"https://www.pa.msu.edu/profile/bogner/" and "Morten Hjorth-Jensen (MHJ)":"http://mhjgit.github.io/info/doc/web/"
 
 The course consists of two projects which are graded and count 30% each of the final grade and a final oral presentation which counts 40% of the final grade. The projects are of a computational character and knowledge of programming languages like Python, C++/C, Fortran etc are recommended. If you are not familiar with these programming languages, we provide below links to online material on how to get started with C++, Python and Fortran. 
@@ -112,19 +112,19 @@ The course consists of two projects which are graded and count 30% each of the f
 | Week 44|  Mon: Scattering theory and phenomenology of nuclear forces   (MHJ)      | Wedn: Work and discussion of project 1 (MHJ) | Lecture notes on scattering theory |
 | Oct/30 and Nov/1       |           |                                  |   | 
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 45| Mon: Review of QFT and one-boson exchange models (MHJ) | Wedn: Work on project 1 (MHJ)  |  Lecture notes on scattering theory and OBEs |
+| Week 45| Wedn: Review of QFT and one-boson exchange models (MHJ) | Mon: Work on project 1 (MHJ)  |  Lecture notes on scattering theory and OBEs |
 | Nov/6 and Nov/8       |                      |                                  |   |
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 46|  Mon: One-boson exchange models (MHJ) | Wedn: Work on project 1, deadline Nov 17    | Lecture notes on OBEs |
-| Nov/13 and Nov/15       |                      |  Wedn: Presentation of project 2                                |                  |  
+| Week 46|  Wedn: One-boson exchange models (MHJ) | Mon: Work on project 1, deadline Nov 17    | Lecture notes on OBEs |
+| Nov/13 and Nov/15       |                      |  Mon: Presentation of project 2                                |                  |  
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 47 |  Mon: From one-boson exchange models to effective field theory (SB and MHJ)| Wedn: Work on project 2  |  |   
+| Week 47 |  Wedn: From one-boson exchange models to effective field theory (SB and MHJ)| Mon: Work on project 2  |  |   
 | Nov/20 and Nov/22       |                      |                                  |   |  
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 48 |  Mon: Effective field theory (SB) |  Wedn: Work on project 2                           |  |  
+| Week 48 |  Wedn: Effective field theory (SB) |  Mon: Work on project 2                           |  |  
 | Nov/27 and Nov/29        |                   |                                  |                            |
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 49 | Wedn: Effective field theory and Lattice QCD (SB) | Wedn: Finalize project 2, deadline Dec 8                                |  |  
+| Week 49 | Wedn: Effective field theory and Lattice QCD (SB) | Mon: Finalize project 2, deadline Dec 8                                |  |  
 | Dec/4 and Dec/6        |                   |                                  |                            |
 |----------------------------------------------------------------------------------------------------------------------------|
 
