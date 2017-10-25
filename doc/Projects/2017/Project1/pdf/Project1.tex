@@ -216,7 +216,7 @@ weights $\omega_i$ and the points $k_i$. Before you go on
 you need to keep in mind that if you use Legendre polynomials (the function GaussLegendreQuadrature),
 the Legendre polynomials are defined in the  
 interval $x\in [-1,1]$. Your integral is for the interval $r\in [0,\infty)$. 
-You will need to map the weights  from GaussLegendreQuadrature to your interval.
+You will need to map the weights  from the function GaussLegendreQuadrature (C++ version) to your interval.
 To do this, call first \href{{https://github.com/ManyBodyPhysics/NuclearForces/blob/master/doc/Programs/ScatteringTheory/Cpp/IntegrationExample/integrationexample.cpp}}{GaussLegendreQuadrature(a,b,x[],w[],N)} (similar links for the Fortran version), 
 with $a=-1$, $b=1$.
 It returns the mesh points $x_i$ and weights $w_i$. 
@@ -238,7 +238,7 @@ You must decide which units to use.
 \paragraph{Project 1b): Adding a potential model.}
 The next step is to write a function which calculates the potential
 in momentum space. The potential we will use here is a parametrized  potential
-between a proton and neutron for the partial wave  $^1S_0$, 
+between a proton and neutron for the partial wave  $^1S_{0}$, 
 i.e., spin $S=0$ and
 orbital momentum $l=0$, a singlet S-state. 
 This state does not have a bound state
@@ -391,7 +391,7 @@ When you have $R(k,k')$ for the given potential, evaluate now the phase-shifts  
 R(k_0,k_0)=-\frac{tan\delta}{mk_0}.
 \end{equation*}
 
-Compare the phase shifts for the potential of Eq. (\ref{eq:realp}) with the  experimental phase shifts that can be found  in the article  of the Nijmegen group in Physical Review C \textbf{48}, 792 (1993).  Alternatively look up "their website:"http://nn-online.org/"
+Compare the phase shifts for the potential of Eq. (\ref{eq:realp}) with the  experimental phase shifts that can be found  in the article  of the Nijmegen group in Physical Review C \textbf{48}, 792 (1993).  Alternatively look up \href{{http://nn-online.org/}}{their website}
 
 
 \paragraph{Project 1d): Adding realistic models for the nuclear forces.}
