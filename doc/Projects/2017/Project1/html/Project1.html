@@ -72,8 +72,8 @@ MathJax.Hub.Config({
   }
 });
 </script>
-<script type="text/javascript"
- src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
 
@@ -107,7 +107,7 @@ MathJax.Hub.Config({
 The aim of this project is to solve the Lippman-Schwinger equation for two interacting nucleons and relate the obtained phase shifts with those extracted from the experimental cross sections.
 
 <p>
-We are going to solve the Schr\{"o}dinger equation (SE) 
+We are going to solve the Schroedinger equation (SE) 
 for the neutron-proton system 
 in momentum space for positive energies \( E \) in order to obtain
 the phase shifts. 
@@ -121,10 +121,15 @@ $$
 \end{equation}
 $$
 
+The derivation is covered by the <a href="https://manybodyphysics.github.io/NuclearForces/doc/pub/scatteringtheory/html/scatteringtheory-reveal.html" target="_blank">lecture notes on scattering theory</a>. This derivation is discussed during the regular lectures.
+
+<p>
 Here we have used units \( \hbar=c=1 \). This means that \( k \) has dimension energy. 
 \( k \) is the relative momentum between the two particles. A partial
 wave expansion has been used in order to reduce the problem to an integral
-over the magnitude of momentum only. The subscript \( l \) refers therefore to a partial wave with a given orbital momentum \( l \).
+over the magnitude of momentum only. The subscript \( l \) refers therefore to a partial wave with a given orbital momentum \( l \). Below we will let the interaction to couple different values of \( l \). This leads to what is called a coupled-channel problem. For details, see again the <a href="https://manybodyphysics.github.io/NuclearForces/doc/pub/scatteringtheory/html/scatteringtheory-reveal.html" target="_blank">lecture notes on scattering theory</a>.
+
+<p>
 To obtain the potential in momentum space we used 
 the Fourier-Bessel transform (Hankel transform)
 
@@ -204,14 +209,13 @@ where we have fixed \( N \) lattice points through the corresponding weights
 Start writing your main program by setting up the mesh points
 and the corresponding weights.
 Fix first the number of mesh points \( N \).
-Use the included function <em>gauleg</em> in the file lib.cpp (see also lib.h) to set up the 
+Use either the <a href="https://github.com/ManyBodyPhysics/NuclearForces/tree/master/doc/Programs/ScatteringTheory" target="_blank">Fortran or C++ programs</a>  which allow you to set up integration weights and points using <a href="http://compphysics.github.io/ComputationalPhysics/doc/pub/integrate/html/integrate-reveal.html" target="_blank">Gaussian quadrature</a>, that is get the
 weights \( \omega_i \) and the points \( k_i \). Before you go on 
-you need to keep in mind that <em>gauleg</em> uses 
-the Legendre polynomials to fix
-the mesh points and weights. This means that the integral is for the 
-interval [-1,1]. Your integral is for the interval [0,$\infty$]. 
-You will need to map the weights  from <em>gauleg</em> to your interval.
-To do this, call first <em>gauleg(a,b,x[],w[],N)</em>, 
+you need to keep in mind that if you use Legendre polynomials (the function GaussLegendreQuadrature),
+the Legendre polynomials are defined in the  
+interval \( x\in [-1,1] \). Your integral is for the interval \( r\in [0,\infty) \). 
+You will need to map the weights  from GaussLegendreQuadrature to your interval.
+To do this, call first <a href="https://github.com/ManyBodyPhysics/NuclearForces/blob/master/doc/Programs/ScatteringTheory/Cpp/IntegrationExample/integrationexample.cpp" target="_blank">GaussLegendreQuadrature(a,b,x[],w[],N)</a> (similar links for the Fortran version), 
 with \( a=-1 \), \( b=1 \).
 It returns the mesh points \( x_i \) and weights \( w_i \). 
 You map these points over to the limits in your integral. You can then
@@ -418,8 +422,7 @@ $$
 
 Thus, to obtain \( R \), you will need to set up the matrices
 \( A \) and \( V \) and invert the matrix \( A \). To do that
-you must call the function
-<em>matinv</em> in the program library lib.cpp (see also lib.h).
+you can use the examples on matrix inversion <a href="https://github.com/ManyBodyPhysics/NuclearForces/tree/master/doc/Programs/ScatteringTheory/Cpp/MatrixInverse" target="_blank">(this link brings you to the c++ version)</a>.
 With the inverse \( A^{-1} \), performing
 a matrix multiplication with \( V \) results in \( R \).
 
@@ -454,7 +457,7 @@ Compare the phase shifts for the potential of Eq. \eqref{eq:realp} with the  exp
 
 <h3 id="___sec4">Project 1d): Adding realistic models for the nuclear forces </h3>
 
-The code can easily be extended to include realistic nucleon-nucleon interactions. More text to come here.
+The code can easily be extended to include realistic nucleon-nucleon interactions. More text and further exercises to come here later.
 
 <h2 id="___sec5">Introduction to numerical projects </h2>
 

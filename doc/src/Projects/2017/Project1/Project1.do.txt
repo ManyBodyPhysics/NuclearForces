@@ -8,7 +8,7 @@ DATE: Fall semester 2017
 
 The aim of this project is to solve the Lippman-Schwinger equation for two interacting nucleons and relate the obtained phase shifts with those extracted from the experimental cross sections.
 
-We are going to solve the Schr\{"o}dinger equation (SE) 
+We are going to solve the Schroedinger equation (SE) 
 for the neutron-proton system 
 in momentum space for positive energies $E$ in order to obtain
 the phase shifts. 
@@ -21,10 +21,13 @@ in momentum space as
      label{eq:sem}
 \end{equation}
 !et
+The derivation is covered by the "lecture notes on scattering theory":"https://manybodyphysics.github.io/NuclearForces/doc/pub/scatteringtheory/html/scatteringtheory-reveal.html". This derivation is discussed during the regular lectures.
+
 Here we have used units $\hbar=c=1$. This means that $k$ has dimension energy. 
 $k$ is the relative momentum between the two particles. A partial
 wave expansion has been used in order to reduce the problem to an integral
-over the magnitude of momentum only. The subscript $l$ refers therefore to a partial wave with a given orbital momentum $l$.
+over the magnitude of momentum only. The subscript $l$ refers therefore to a partial wave with a given orbital momentum $l$. Below we will let the interaction to couple different values of $l$. This leads to what is called a coupled-channel problem. For details, see again the "lecture notes on scattering theory":"https://manybodyphysics.github.io/NuclearForces/doc/pub/scatteringtheory/html/scatteringtheory-reveal.html".
+
 To obtain the potential in momentum space we used 
 the Fourier-Bessel transform (Hankel transform)
 
@@ -94,14 +97,13 @@ $w_i$ and points $x_i$.
 Start writing your main program by setting up the mesh points
 and the corresponding weights.
 Fix first the number of mesh points $N$.
-Use the included function *gauleg* in the file lib.cpp (see also lib.h) to set up the 
+Use either the "Fortran or C++ programs":"https://github.com/ManyBodyPhysics/NuclearForces/tree/master/doc/Programs/ScatteringTheory"  which allow you to set up integration weights and points using "Gaussian quadrature":"http://compphysics.github.io/ComputationalPhysics/doc/pub/integrate/html/integrate-reveal.html", that is get the
 weights $\omega_i$ and the points $k_i$. Before you go on 
-you need to keep in mind that *gauleg* uses 
-the Legendre polynomials to fix
-the mesh points and weights. This means that the integral is for the 
-interval [-1,1]. Your integral is for the interval [0,$\infty$]. 
-You will need to map the weights  from *gauleg* to your interval.
-To do this, call first *gauleg(a,b,x[],w[],N)*, 
+you need to keep in mind that if you use Legendre polynomials (the function GaussLegendreQuadrature),
+the Legendre polynomials are defined in the  
+interval $x\in [-1,1]$. Your integral is for the interval $r\in [0,\infty)$. 
+You will need to map the weights  from GaussLegendreQuadrature to your interval.
+To do this, call first "GaussLegendreQuadrature(a,b,x[],w[],N)":"https://github.com/ManyBodyPhysics/NuclearForces/blob/master/doc/Programs/ScatteringTheory/Cpp/IntegrationExample/integrationexample.cpp" (similar links for the Fortran version), 
 with $a=-1$, $b=1$.
 It returns the mesh points $x_i$ and weights $w_i$. 
 You map these points over to the limits in your integral. You can then
@@ -280,8 +282,7 @@ R=A^{-1}V.
 !et 
 Thus, to obtain $R$, you will need to set up the matrices
 $A$ and $V$ and invert the matrix $A$. To do that
-you must call the function
-*matinv* in the program library lib.cpp (see also lib.h).
+you can use the examples on matrix inversion "(this link brings you to the c++ version)":"https://github.com/ManyBodyPhysics/NuclearForces/tree/master/doc/Programs/ScatteringTheory/Cpp/MatrixInverse".
 With the inverse $A^{-1}$, performing
 a matrix multiplication with $V$ results in $R$.
 
@@ -314,7 +315,7 @@ Compare the phase shifts for the potential of Eq. (ref{eq:realp}) with the  expe
 
 
 === Project 1d): Adding realistic models for the nuclear forces ===
-The code can easily be extended to include realistic nucleon-nucleon interactions. More text to come here.
+The code can easily be extended to include realistic nucleon-nucleon interactions. More text and further exercises to come here later.
 
 
 
