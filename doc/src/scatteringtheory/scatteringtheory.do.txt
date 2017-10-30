@@ -527,18 +527,18 @@ into the brackets of equation~(ref{eq:pot2}) yields,
 The connection between the momentum- and position space angular momentum 
 projected potentials are then given, 
 !bt
-\[
+\begin{equation}
   V_{lm, l'm'}(k,k')=\frac{2}{\pi}i^{l'-l}\int_0^\infty drr^2 \int_0^\infty dr'{r'}^2j_l(kr) V_{lm,l'm'}(r,r') j_{l'}(k'r')
   label{eq:pot3}
-\]
+\end{equation}
 !et
 which is known as a double Fourier-Bessel transform. The position space angular 
 momentum projected potential is given by
 !bt
-\[
+\begin{equation}
   V_{lm, l'm'}(r,r') = \int d{\hat{r}} \int d{\hat{r}'}Y_{lm}^*(\hat{r})V(\mathbf{r}, \mathbf{r'})Y_{l'm'}(\hat{r}').
   label{eq:pot4}
-\]
+\end{equation}
 !et
 !eblock
 
@@ -559,7 +559,7 @@ interaction is of local character, i.e.
   V(\mathbf{r}) {\delta( { r}-{r}' ) \over r^2} \delta ( \cos \theta - \cos \theta' ) \delta (\varphi-\varphi'), 
 \]
 !et
-then equation~(ref{eq:pot4}) reduces to 
+then equation~(ref{eq:pot3}) reduces to 
 !bt
 \begin{equation}
   V_{lm, l'm'}(r,r') = \frac{\delta({r}-{r}')}{r^2}\int d{\hat{r}}\:
@@ -1205,7 +1205,7 @@ Thus, the _total_ cross section is the sum of the partial-wave cross sections. N
 ===== The Lippman-Schwinger equation for two-nucleon scattering =====
 !bblock
 
-At low energy, $k \rightarrow 0$, S-waves are most important. In this region we can define the scattering length $a$ and the effective range $r$. The $S-$wave scattering amplitude is given by
+At low energy, $k \rightarrow 0$, S-waves are most important. In this region we can define the scattering length $a$ and the effective range $r$. The $S$-wave scattering amplitude is given by
 \[
 f_l(\theta) = \frac{1}{k}\frac{1}{\cot \delta_l(k) - i}.
 \]
