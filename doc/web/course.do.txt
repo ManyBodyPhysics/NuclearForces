@@ -100,7 +100,7 @@ ${text_types(ch)}
 Lectures are Mondays 12.30pm to 2.30pm and Wednesdays from 1230pm to 230pm. We plan  normally to reserve Mondays for project work, exercises and self-study.
 However, during the first two weeks we may also have regular lectures the first hour. Teachers are "Scott Bogner (SB)":"https://www.pa.msu.edu/profile/bogner/" and "Morten Hjorth-Jensen (MHJ)":"http://mhjgit.github.io/info/doc/web/"
 
-The course consists of two projects which are graded and count 30% each of the final grade and a final oral presentation which counts 40% of the final grade. The projects are of a computational character and knowledge of programming languages like Python, C++/C, Fortran etc are recommended. If you are not familiar with these programming languages, we provide below links to online material on how to get started with C++, Python and Fortran. 
+The course consists of two projects which are graded and count 50% each of the final grade. The projects are of a computational character and knowledge of programming languages like Python, C++/C, Fortran etc are recommended. If you are not familiar with these programming languages, we provide below links to online material on how to get started with C++, Python and Fortran. 
 
 
 |----------------------------------------------------------------------------------------------------------------------------|
