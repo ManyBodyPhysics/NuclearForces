@@ -4,11 +4,11 @@ AUTHOR: Scott Bogner {copyright, 2013-present|CC BY-NC} at "National Superconduc
 AUTHOR: Morten Hjorth-Jensen {copyright, 2013-present|CC BY-NC} at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
 DATE:  2017
 
-
+!split
 ===== Effective Field Theory Basics =====
 !bblock
 
-QCD in the $u/d$ sector has approximate chiral symmetry
+Quantum Chromodynamics (QCD) in the $u/d$ sector has approximate chiral symmetry
 but this symmetry is broken in two ways:
 
   * Explicitly broken,  because the $u$ and $d$ quark masses are not exactly zero;
@@ -19,10 +19,13 @@ but this symmetry is broken in two ways:
 SU(2)_L \times SU(2)_R \approx SU(2)_V \times SU(2)_A \rightarrow SU(2)_V,
 \end{equation*}
 !et
-that is in the QCD ground state, axial symmetry is broken,
-while isospin symmetry is intact. 
+that is, in the QCD ground state axial symmetry is broken while isospin symmetry is intact. 
+We obtain 3 Goldstone bosons: the pion family!
+!eblock
 
-We obtain 3 Goldstone bosons: the pions!
+!split
+===== Chiral Lagrangian  =====
+!bblock
 
 The chiral effective Lagrangian is given by an infinite series
 of terms with increasing number of derivatives and/or nucleon
@@ -41,11 +44,17 @@ finite and calculable; these terms are uniquely defined and
 the prediction at each order is model-independent.
 By going to higher orders, the amplitude can be calculated
 to any desired accuracy.
+!eblock
+
+
+!split
+===== Chiral Lagrangian Scheme  =====
+!bblock
+
+
 The scheme just outlined has become known as chiral perturbation
 theory ($\chi$PT).
-
- Therefore, we want to describe the low-energy scenario
-          of QCD by an Effective Field Theory (EFT).                 
+Therefore, we want to describe the low-energy scenario of QCD by an Effective Field Theory (EFT).                 
 The steps to take:
 
   * Write down the most general Lagrangian   including all terms consistent with the assumed     symmetries, particularly, spontaneously broken chiral   symmetry.
@@ -53,127 +62,109 @@ The steps to take:
   * Calculate Feynman diagrams.  Note: There will be infinitely many diagrams.
 
   * Find a scheme for assessing the   importance of the various diagrams,  because we cannot calculate infinitely many diagrams.
+!eblock
 
-
+!split
+===== Effective Chiral Lagrangian  =====
+!bblock
 
 The starting point for the derivation of the $NN$ interaction is an
 effective chiral Lagrangian
-
 !bt
-\begin{equation*}
+\[
 {\cal L}={\cal L}_{\pi N}+{\cal L}_{\pi\pi}+{\cal L}_{NN},
-\end{equation*}
+\]
 !et
 which is given by
 a series of terms of increasing chiral dimension,
-
 !bt
-\begin{equation*}
-{\cal L}_{\pi N} 
-=
-{\cal L}_{\pi N}^{(1)} 
-+
-{\cal L}_{\pi N}^{(2)} 
-+
-{\cal L}_{\pi N}^{(3)} 
-+ \ldots ,
-\end{equation*}
+\[
+{\cal L}_{\pi N}  = {\cal L}_{\pi N}^{(1)}+
+{\cal L}_{\pi N}^{(2)}+{\cal L}_{\pi N}^{(3)} + \ldots ,
+\]
 !et
-
 !bt
-\begin{equation*}
-{\cal L}_{\pi\pi} 
-=
-{\cal L}_{\pi\pi}^{(2)} 
-+ \ldots ,
-\end{equation*}
+\[
+{\cal L}_{\pi\pi}={\cal L}_{\pi\pi}^{(2)}+ \ldots ,
+\]
 !et
-
 !bt
-\begin{equation*}
-{\cal L}_{NN} 
-=
-{\cal L}_{NN}^{(0)} 
-+
-{\cal L}_{NN}^{(2)} 
-+
-{\cal L}_{NN}^{(4)} 
-+ \ldots ,
-\end{equation*}
+\[
+{\cal L}_{NN} ={\cal L}_{NN}^{(0)}+{\cal L}_{NN}^{(2)}+{\cal L}_{NN}^{(4)} + \ldots,
+\]
 !et
 where the superscript refers to the number of derivatives or pion mass insertions
-(chiral dimension).
-Good review: Epelbaum, Prog. Part. Nucl. Phys. _57_, 654 (2006).
+(chiral dimension). Good review: Epelbaum, Prog. Part. Nucl. Phys. _57_, 654 (2006).
+!eblock 
 
+
+!split
+===== Heavy Baryons =====
+!bblock
 Common to  apply
 the heavy baryon (HB) formulation of chiral perturbation theory 
 in which the relativistic Lagrangian is subjected
 to an expansion in terms of powers of $1/M_N$ (kind of a
 nonrelativistic expansion), the lowest order of which is
+!bt
 \begin{align*}
-\widehat{\cal L}^{(1)}_{\pi N} & 
-=  
-\bar{N} \left(
- i {D}_0 
- - \frac{g_A}{2} \; 
-\vec \sigma \cdot \vec u
-\right) N  
-\\
+\widehat{\cal L}^{(1)}_{\pi N} & =  \bar{N} \left(i {D}_0 - \frac{g_A}{2}\vec \sigma \cdot \vec u\right) N  \\
  & 
-\approx  
-\bar{N} \left[ i \partial_0 
-- \frac{1}{4f_\pi^2} \;
-\mbox{\boldmath $\tau$} \cdot 
- ( \mbox{\boldmath $\pi$}
-\times
- \partial_0 \mbox{\boldmath $\pi$})
-- \frac{g_A}{2f_\pi} \;
-\mbox{\boldmath $\tau$} \cdot 
- ( \vec \sigma \cdot \vec \nabla )
-\mbox{\boldmath $\pi$} \right] N + \ldots 
+\approx  \bar{N} \left[ i \partial_0 - \frac{1}{4f_\pi^2} \mbox{\boldmath $\tau$} \cdot ( \mbox{\boldmath $\pi$}\times\partial_0 \mbox{\boldmath $\pi$})- \frac{g_A}{2f_\pi} \mbox{\boldmath $\tau$} \cdot ( \vec \sigma \cdot \vec \nabla )\mbox{\boldmath $\pi$} \right] N + \ldots 
 \end{align*}
+!et
 For the parameters that occur in the leading order Lagrangian,
 we apply $M_N=938.919$ MeV, $m_\pi = 138.04$ MeV,
 $f_\pi  =  92.4$ MeV, and
 $g_A  =  g_{\pi NN} \; f_\pi/M_N = 1.29$,
 which is equivalent to
 $g_{\pi NN}^2/4\pi  =  13.67$.
+!eblock
 
+!split
+===== Heavy Baryons Lagrangian =====
+!bblock
 The chiral NN force has the general form
-
 !bt
 \begin{equation*}
-V_{\rm 2N} = V_{\pi} + V_{\rm cont}\,,
+V_{\rm 2N} = V_{\pi} + V_{\rm cont},
 \end{equation*}
 !et
-where $V_{\rm cont}$ denotes the short--range terms represented by $NN$ contact interactions
-and $V_{\pi}$ corresponds to the long--range part associated with the pion--exchange contributions
-Both $V_{\pi}$ and $V_{\rm cont}$ are determined within the low--momentum expansion. 
+where $V_{\rm cont}$ denotes the short-range terms represented by $NN$ contact interactions
+and $V_{\pi}$ corresponds to the long-range part associated with the pion-exchange contributions
+Both $V_{\pi}$ and $V_{\rm cont}$ are determined within the low-momentum expansion. 
 
 Notice that the nucleon kinetic energy contributes to  $\mathcal{L}^{(2)}$.
 The above terms determine the nuclear potential up to N$^2$LO (with the exception of the 
 NN contact terms at NLO) in the limit of exact isospin symmetry. 
+!eblock
 
-Consider now pion--exchange contributions to the potential
+
+!split
+===== Heavy Baryons Lagrangian =====
+!bblock
+Consider now pion-exchange contributions to the potential
 
 !bt
 \begin{equation*}
 V_{\pi} = V_{1\pi} + V_{2\pi} + V_{3\pi} + \ldots \,,
 \end{equation*}
 !et
-where one--, two--  and three--pion exchange (3PE) contributions
-$V_{1\pi}$,  $V_{2\pi}$ and  $V_{3\pi}$ can be written in the low--momentum expansion as  
+where one-, two-  and three-pion exchange (3PE) contributions
+$V_{1\pi}$,  $V_{2\pi}$ and  $V_{3\pi}$ can be written in the low-momentum expansion as  
+!bt
 \begin{align*}
 label{Vschem}
-V_{1\pi} &=   V_{1\pi}^{(0)} +  V_{1\pi}^{(2)} +  V_{1\pi}^{(3)} + V_{1\pi}^{(4)} + \ldots \,, \nn
-V_{2\pi} &=   V_{2\pi}^{(2)} +  V_{2\pi}^{(3)} + V_{2\pi}^{(4)} + \ldots \,, \nn
+V_{1\pi} &=   V_{1\pi}^{(0)} +  V_{1\pi}^{(2)} +  V_{1\pi}^{(3)} + V_{1\pi}^{(4)} +\ldots \\
+V_{2\pi} &=   V_{2\pi}^{(2)} +  V_{2\pi}^{(3)} + V_{2\pi}^{(4)} + \ldots \\
 V_{3\pi} &=   V_{3\pi}^{(4)}  + \ldots \,. 
 \end{align*}
+!et
 Here, the superscripts denote the corresponding chiral order and the ellipses refer to 
-$(Q/\Lambda)^5$-- and higher order terms. 
-Contributions due to the exchange of four-- and more pions are further suppressed:
+$(Q/\Lambda)^5$- and higher order terms. 
+Contributions due to the exchange of four- and more pions are further suppressed:
 $n$--pion  exchange diagrams start to contribute at the order $(Q/\Lambda)^{2n-2}$. 
-Notice further that in addition  to isopin--invariant contributions there are
+Notice further that in addition  to isopin-invariant contributions there are
 isospin--breaking corrections.
 
 The static 1PE potential at N$^3$LO has the form
@@ -182,7 +173,7 @@ The static 1PE potential at N$^3$LO has the form
 \begin{equation*}
  V_{1\pi}^{(0)} +  V_{1\pi}^{(2)} +  V_{1\pi}^{(3)} + V_{1\pi}^{(4)}  
 = -\biggl(\frac{g_A}{2F_\pi}\biggr)^2 \, ( 1 + \delta )^2 \,
-\fet \tau_1 \cdot \fet \tau_2 \,
+\tau_1 \cdot  \tau_2 \,
 \frac{\vec{\sigma}_1 \cdot\vec{q}\,\vec{\sigma}_2\cdot\vec{q}}
 {\vec q \, ^2 + M_\pi^2}\,.
 \end{equation*}
@@ -190,23 +181,29 @@ The static 1PE potential at N$^3$LO has the form
 
 The 2PE contributions are  convenient to 
 express as $V_{2 \pi}$ in the form:
+!bt
 \begin{align*}
-V_{2 \pi} &= V_C + \fet \tau_1 \cdot \fet \tau_2 \, W_C + \left[   
-V_S + \fet \tau_1 \cdot \fet \tau_2 \, W_S \right] \, \vec \sigma_1 \cdot \vec \sigma_2 
-+ \left[ V_T + \fet \tau_1 \cdot \fet \tau_2 \, W_T \right] 
+V_{2 \pi} &= V_C + \tau_1 \cdot  \tau_2 \, W_C + \left[   
+V_S +  \tau_1 \cdot  \tau_2 \, W_S \right] \, \vec \sigma_1 \cdot \vec \sigma_2 
++ \left[ V_T + \tau_1 \cdot \tau_2 \, W_T \right] 
 \, \vec \sigma_1 \cdot \vec q \, \vec \sigma_2 \cdot \vec q \\
 &+&    \left[   
-V_{LS} + \fet \tau_1 \cdot \fet \tau_2 \, W_{LS} \right] \, i ( \vec \sigma_1 + \vec \sigma_2 )
+V_{LS} +  \tau_1 \cdot  \tau_2 \, W_{LS} \right] \, i ( \vec \sigma_1 + \vec \sigma_2 )
 \cdot ( \vec q \times \vec k  ) 
  \\  &+&  \left[   
-V_{\sigma L} + \fet \tau_1 \cdot \fet \tau_2 \, W_{\sigma L} \right] \,   \vec \sigma_1 
+V_{\sigma L} +  \tau_1 \cdot \tau_2 \, W_{\sigma L} \right] \,   \vec \sigma_1 
 \cdot (\vec  q \times \vec k  ) \vec \sigma_2 \cdot (\vec  q \times \vec k  ) \,,
 \nonumber
 \end{align*}
+!et
 where the superscripts $C$, $S$, $T$, $LS$ and $\sigma L$ of the scalar functions 
 $V_C$, $\ldots$, $W_{\sigma L}$ refer to central, spin--spin, tensor, spin--orbit and 
-quadratic spin--orbit components, respectively. 
+quadratic spin-orbit components, respectively. 
+!eblock
 
+!split
+===== Three-body forces =====
+!bblock
 
 The first non--vanishing 3NF contribution appears at order $\nu = 3$, i.e. at N$^2$LO. 
 The contribution from graph (a)
@@ -234,19 +231,23 @@ F^{\alpha \beta}_{ijk} = \delta^{\alpha \beta} \left[ - \frac{4 c_1
 \vec \sigma_k \cdot [ \vec q_i \times \vec q_j  ]\,.
 \end{equation*}
 !et
+!eblock
+
+!split
+===== Further three-body contributions =====
+!bblock
 
 The contributions from the 
 remaining graphs (b) and (c) take the form
+!bt
 \begin{align*}
 label{3nfrest}
 V^{\rm (3)}_{1 \pi, \; \rm cont} = - \sum_{i \not= j \not= k} \frac{g_A}{8
-  F_\pi^2} \, D \, \frac{\vec \sigma_j \cdot \vec q_j }{\vec q_j\, ^2
-  + M_\pi^2}  
-\, \left( \fet \tau_i \cdot \fet \tau_j \right) 
-(\vec \sigma_i \cdot \vec q_j ) \,,
+  F_\pi^2} \, D \, \frac{\vec \sigma_j \cdot \vec q_j }{\vec q_j^2+ M_\pi^2}\left( \tau_i \cdot  \tau_j \right) (\vec \sigma_i \cdot \vec q_j ),
 \quad \quad \quad 
-V^{\rm (3)}_{\rm cont} = \frac{1}{2} \sum_{j \not= k}  E \, ( \fet \tau_j \cdot \fet \tau_k ) \,,
+V^{\rm (3)}_{\rm cont} = \frac{1}{2} \sum_{j \not= k}  E \, ( \tau_j \cdot \tau_k ),
 \end{align*}
+!et
 where $D$ and $E$ are the corresponding low-energy constants  from the Lagrangian of order $\nu=1$. 
 
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
