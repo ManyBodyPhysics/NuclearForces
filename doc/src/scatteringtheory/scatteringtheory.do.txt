@@ -1313,7 +1313,717 @@ FIGURE: [figslides/pnDSG_at_199MeV.pdf, width=800 frac=0.8] Proton-neutron $^1S_
 
 !eblock
 
-
 !split
-===== Relativistc scattering theory, to be added =====
+===== Pictures =====
+
+In order to derive the various rules for computing diagrams, we find it easier, in particular with respect to the computation of energy denominators, to use
+time-dependent perturbation theory. This is normally used as a starting point 
+for Green's function based methods as well. In addition it links the formalism
+to what is done in quantum field theory. Before we start we will find it convenient to define various representations of Schr\"odinger's equation.  
+
+
+
+===== The Schr\"odinger picture =====
+The time-dependent Schr\"odinger equation (or equation of motion) reads
+
+!bt
+\begin{equation*}
+\imath \hbar\frac{\partial }{\partial t}|\Psi_S(t)\rangle = \hat{H}\Psi_S(t)\rangle,
+\end{equation*}
+!et
+where the subscript $S$ stands for Schr\"odinger here.
+A formal solution is given by
+
+!bt
+\begin{equation*}
+|\Psi_S(t)\rangle = \exp{(-\imath\hat{H}(t-t_0)/\hbar)}|\Psi_S(t_0)\rangle.
+\end{equation*}
+!et
+The Hamiltonian $\hat{H}$ is hermitian and the exponent represents a unitary 
+operator with an operation carried ut on the wave function at a time $t_0$.
+
+===== The interaction picture =====
+
+Our Hamiltonian is normally written out as the sum of an unperturbed part $\hat{H}_0$ and an interaction part $\hat{H}_I$, that is
+
+!bt
+\begin{equation*}
+\hat{H}=\hat{H}_0+\hat{H}_I.
+\end{equation*}
+!et
+In general we have $[\hat{H}_0,\hat{H}_I]\ne 0$ since $[\hat{T},\hat{V}]\ne 0$.
+We wish now to define a unitary transformation in terms of $\hat{H}_0$ by defining
+
+!bt
+\begin{equation*}
+|\Psi_I(t)\rangle = \exp{(\imath\hat{H}_0t/\hbar)}|\Psi_S(t)\rangle,
+\end{equation*}
+!et
+which is again a unitary transformation carried out now at the time $t$ on the 
+wave function in the Schr\"odinger picture. We can easily find the equation of motion by taking the time derivative
+
+!bt
+\begin{equation*}
+\imath \hbar\frac{\partial }{\partial t}|\Psi_I(t)\rangle = -\hat{H}_0\exp{(\imath\hat{H}_0t/\hbar)}\Psi_S(t)\rangle+\exp{(\imath\hat{H}_0t/\hbar)}
+\imath \hbar\frac{\partial }{\partial t}\Psi_S(t)\rangle.
+\end{equation*}
+!et
+Using the definition of the Schr\"odinger equation, we can rewrite the last equation as
+
+!bt
+\begin{equation*}
+\imath \hbar\frac{\partial }{\partial t}|\Psi_I(t)\rangle = \exp{(\imath\hat{H}_0t/\hbar)}\left[-\hat{H}_0+\hat{H}_0+\hat{H}_I\right]\exp{(-\imath\hat{H}_0t/\hbar)}\Psi_I(t)\rangle,
+\end{equation*}
+!et
+which gives us
+
+!bt
+\begin{equation*}
+\imath \hbar\frac{\partial }{\partial t}|\Psi_I(t)\rangle = \hat{H}_I(t)\Psi_I(t)\rangle,
+\end{equation*}
+!et
+ with
+
+!bt
+\begin{equation*}
+\hat{H}_I(t)=
+\exp{(\imath\hat{H}_0t/\hbar)}\hat{H}_I\exp{(-\imath\hat{H}_0t/\hbar)}.
+\end{equation*}
+!et
+The order of the operators is important since $\hat{H}_0$ and $\hat{H}_I$ do generally not commute.
+The expectation value of
+an arbitrary operator in the interaction picture can now be written as
+
+!bt
+\begin{equation*}
+\langle \Psi'_S(t)|\hat{O}_S|\Psi_S(t)\rangle = 
+\langle \Psi'_I(t) |\exp{(\imath\hat{H}_0t/\hbar)}\hat{O}_I
+\exp{(-\imath\hat{H}_0t/\hbar)}|\Psi_I(t)\rangle,
+\end{equation*}
+!et
+and using the definition
+
+!bt
+\begin{equation*}
+\hat{O}_I(t)=
+\exp{(\imath\hat{H}_0t/\hbar)}\hat{O}_I\exp{(-\imath\hat{H}_0t/\hbar)},
+\end{equation*}
+!et
+we obtain
+
+!bt
+\begin{equation*}
+\langle \Psi'_S(t)|\hat{O}_S|\Psi_S(t)\rangle = 
+\langle \Psi'_I(t) |\hat{O}_I(t)|\Psi_I(t)\rangle,
+\end{equation*}
+!et
+stating that a unitary transformation does not change expectation values!
+If the take the time derivative of the operator in the interaction picture we arrive at the following equation of motion
+
+!bt
+\begin{equation*}
+\imath \hbar\frac{\partial }{\partial t}\hat{O}_I(t) = \exp{(\imath\hat{H}_0t/\hbar)}\left[\hat{O}_S\hat{H}_0-\hat{H}_0\hat{O}_S\right]\exp{(-\imath\hat{H}_0t/\hbar)}=\left[\hat{O}_I(t),\hat{H}_0\right].
+\end{equation*}
+!et
+Here we have used the time-independence of the Schr\"odinger equation
+together with the observation that any function of an operator commutes with the operator itself. 
+
+In order to solve the equation of motion equation in the interaction picture, we define a unitary operator
+time-development operator $\hat{U}(t,t')$. Later we will derive its
+connection with the linked-diagram theorem, which yields a
+linked expression for the actual operator. 
+The action of the operator on the wave function is
+
+!bt
+\begin{equation*}
+|\Psi_I(t) \rangle = \hat{U}(t,t_0)|\Psi_I(t_0)\rangle,
+\end{equation*}
+!et
+with the obvious value $\hat{U}(t_0,t_0)=1$.
+The time-development operator $U$ has the
+properties that
+
+!bt
+\begin{equation}
+     \hat{U}^{\dagger}(t,t')\hat{U}(t,t')=\hat{U}(t,t')\hat{U}^{\dagger}(t,t')=1,
+\end{equation}
+!et
+which implies that $U$ is unitary
+
+!bt
+\begin{equation}
+     \hat{U}^{\dagger}(t,t')=\hat{U}^{-1}(t,t').
+\end{equation}
+!et
+Further,
+
+!bt
+\begin{equation}
+    \hat{U}(t,t')\hat{U}(t't'')=\hat{U}(t,t'')
+\end{equation}
+!et
+and
+
+!bt
+\begin{equation}
+    \hat{U}(t,t')\hat{U}(t',t)=1,
+\end{equation}
+!et
+which leads to
+
+!bt
+\begin{equation}
+    \hat{U}(t,t')=\hat{U}^{\dagger}(t',t).
+\end{equation}
+!et
+Finally, we have 
+We can then construct the true eigenvectors $\Psi_{\alpha ,\beta}$, 
+where $\alpha$ and
+$\beta$ indicate the initial and final states, respectively, in
+terms of the unperturbed wave functions $\Phi_{\alpha,\beta}$  
+through the
+action of the time-development operator $\hat{U}$.
+
+Using our definition of Schr\"odinger's equation in the interaction picture, we can thn construct the operator $\hat{U}$. We have defined
+
+!bt
+\begin{equation*}
+|\Psi_I(t)\rangle = \exp{(\imath\hat{H}_0t/\hbar)}|\Psi_S(t)\rangle,
+\end{equation*}
+!et
+which can be rewritten as
+
+!bt
+\begin{equation*}
+|\Psi_I(t)\rangle = \exp{(\imath\hat{H}_0t/\hbar)}\exp{(-\imath\hat{H}(t-t_0)/\hbar)}|\Psi_S(t_0)\rangle,
+\end{equation*}
+!et
+or
+
+!bt
+\begin{equation*}
+|\Psi_I(t)\rangle = \exp{(\imath\hat{H}_0t/\hbar)}\exp{(-\imath\hat{H}(t-t_0)/\hbar)}\exp{(-\imath\hat{H}_0t_0/\hbar)}|\Psi_I(t_0)\rangle.
+\end{equation*}
+!et
+From the last expression we can define
+
+!bt
+\begin{equation*}
+\hat{U}(t,t_0)=\exp{(\imath\hat{H}_0t/\hbar)}\exp{(-\imath\hat{H}(t-t_0)/\hbar)}\exp{(-\imath\hat{H}_0t_0/\hbar)}.
+\end{equation*}
+!et
+It is then easy to convince oneself that the properties defined above are satisfied by the definition of $\hat{U}$. 
+
+We derive the equation of motion for $\hat{U}$ using the above definition.
+This results in
+
+!bt
+\begin{equation*}
+\imath \hbar\frac{\partial }{\partial t}\hat{U}(t,t_0) = \hat{H}_I(t)\hat{U}(t,t_0),
+\end{equation*}
+!et
+which we integrate from $t_0$ to a time $t$ resulting in
+
+!bt
+\begin{equation*}
+\hat{U}(t,t_0)-\hat{U}(t_0,t_0)=\hat{U}(t,t_0)-1=-\frac{\imath}{\hbar}\int_{t_0}^t dt' \hat{H}_I(t')\hat{U}(t',t_0),
+\end{equation*}
+!et
+which can be rewritten as
+
+!bt
+\begin{equation*}
+\hat{U}(t,t_0)=1-\frac{\imath}{\hbar}\int_{t_0}^t dt' \hat{H}_I(t')\hat{U}(t',t_0).
+\end{equation*}
+!et
+We can solve this equation iteratively keeping in mind the time-ordering of the of the operators
+
+!bt
+\begin{equation*}
+\hat{U}(t,t_0)=1-\frac{\imath}{\hbar}\int_{t_0}^t dt' \hat{H}_I(t')+\left(\frac{-\imath}{\hbar}\right)^2\int_{t_0}^t dt'\int_{t_0}^{t'} dt'' \hat{H}_I(t')\hat{H}_I(t'')+\dots
+\end{equation*}
+!et
+The third term can be written as
+
+!bt
+\begin{equation*}
+\int_{t_0}^t dt'\int_{t_0}^{t'} dt'' \hat{H}_I(t')\hat{H}_I(t'')=
+\frac{1}{2}\int_{t_0}^t dt'\int_{t_0}^{t'} dt'' \hat{H}_I(t')\hat{H}_I(t'')
++\frac{1}{2}\int_{t_0}^t dt''\int_{t''}^{t} dt' \hat{H}_I(t')\hat{H}_I(t'').
+\end{equation*}
+!et
+We obtain this expression by changing the integration order in the second term
+via a change of the integration variables $t'$ and $t''$  in
+
+!bt
+\begin{equation*}
+\frac{1}{2}\int_{t_0}^t dt'\int_{t_0}^{t'} dt'' \hat{H}_I(t')\hat{H}_I(t'').
+\end{equation*}
+!et
+We can rewrite the terms which contain the double integral as
+
+!bt
+\begin{equation*}
+\int_{t_0}^t dt'\int_{t_0}^{t'} dt'' \hat{H}_I(t')\hat{H}_I(t'')=
+\frac{1}{2}\int_{t_0}^t dt'\int_{t_0}^{t'} dt''\left[\hat{H}_I(t')\hat{H}_I(t'')\Theta(t'-t'')
++\hat{H}_I(t')\hat{H}_I(t'')\Theta(t''-t')\right],
+\end{equation*}
+!et
+with $\Theta(t''-t')$ being the standard Heavyside or step function. The step function allows us to give a specific time-ordering to the above expression.
+With the $\Theta$-function we can rewrite the last expression as
+
+!bt
+\begin{equation*}
+\int_{t_0}^t dt'\int_{t_0}^{t'} dt'' \hat{H}_I(t')\hat{H}_I(t'')=
+\frac{1}{2}\int_{t_0}^t dt'\int_{t_0}^{t'} dt''\hat{T}\left[\hat{H}_I(t')\hat{H}_I(t'')\right],
+\end{equation*}
+!et
+where $\Hat{T}$ is the so-called time-ordering operator. With this definition, we can rewrite the expression for $\hat{U}$ as
+
+!bt
+\begin{equation*}
+\hat{U}(t,t_0)=\sum_{n=0}^{\infty}\left(\frac{-\imath}{\hbar}\right)^n\frac{1}{n1}
+\int_{t_0}^t dt_1\dots \int_{t_0}^t dt_N \hat{T}\left[\hat{H}_I(t_1)\dots\hat{H}_I(t_n)\right]=\hat{T}\exp{\left[\frac{-\imath}{\hbar}
+\int_{t_0}^t dt' \hat{H}_I(t')\right]}.
+\end{equation*}
+!et
+ 
+The above time-evolution operator in the interaction picture will be used
+to derive various contributions to many-body perturbation theory.
+
+Show that
+
+!bt
+\begin{equation*}
+{\displaystyle\int_{t'}^{t}}dt_{1}{\displaystyle\int_{t'}
+^{t_{1}}}dt_{2}H_{1}(t_{1})H_{1}(t_{2})=
+\frac{1}{2}{\displaystyle\int_{t'}^{t}dt_{1}}{\displaystyle
+\int_{t'}^{t}}dt_{2}T\left[H_{1}(t_{1})H_{1}(t_{2})\right]
+\end{equation*}
+!et
+{\underline Hint:} Use the definition of $T$ in order to distinguish between
+$t_{1}>t_{2}$ and $t_{1}<t_{2}$;
+
+!bt
+\begin{equation*}
+{\displaystyle\int_{t'}^{t}}dt_{1}{\displaystyle\int_{t'}^{t}}
+dt_{2}T\left[H_{1}(t_{1})H_{1}(t_{2})\right]
+={\displaystyle\int_{t'}^{t}}dt_{1}\left\{{\displaystyle
+\int_{t'}^{t_{1}}}dt_{2}H_{1}(t_{1})H_{1}(t_{2})+{\displaystyle
+\int^{t}_{t_{1}}}dt_{2}H_{1}(t_{2})H_{1}(t_{1})
+\right\}
+\end{equation*}
+!et
+
+Show that the last term on the right-hand side equals the first term
+(change the order of the integrations and thereafter integration variables).
+The area of integration for the first term is shown in the figure below.
+
+===== The Heisenberg picture =====
+
+We conclude this section with the corresponding equations in the so-called Heisenberg picture. This picture is particularly useful if we wish to compute so-called Green's functions.
+
+We wish now to define a unitary transformation in terms of $\hat{H}$ by defining
+
+!bt
+\begin{equation*}
+|\Psi_H(t)\rangle = \exp{(\imath\hat{H}t/\hbar)}|\Psi_S(t)\rangle,
+\end{equation*}
+!et
+which is again a unitary transformation carried out now at the time $t$ on the 
+wave function in the Schr\"odinger picture. If we combine this equation with 
+Schr\"odinger's equation we obtain the following equation of motion
+
+!bt
+\begin{equation*}
+\imath \hbar\frac{\partial }{\partial t}|\Psi_H(t)\rangle = 0,
+\end{equation*}
+!et
+meaning that $|\Psi_H(t)\rangle$ is time independent. An operator in this picture is defined as
+
+!bt
+\begin{equation*}
+\hat{O}_H(t)=
+\exp{(\imath\hat{H}t/\hbar)}\hat{O}_S\exp{(-\imath\hat{H}t/\hbar)}.
+\end{equation*}
+!et
+The time dependence is then in the operator itself, and this yields in turn the
+following equation of motion
+
+!bt
+\begin{equation*}
+\imath \hbar\frac{\partial }{\partial t}\hat{O}_H(t) = \exp{(\imath\hat{H}t/\hbar)}\left[\hat{O}_H\hat{H}-\hat{H}\hat{O}_H\right]\exp{(-\imath\hat{H}t/\hbar)}=\left[\hat{O}_H(t),\hat{H}\right].
+\end{equation*}
+!et
+We note that an operator in the Heisenberg picture can be related to the corresponding
+operator in the interaction picture as 
+\end{equation*}
+!et
+\hat{O}_H(t)=
+\exp{(\imath\hat{H}t/\hbar)}\hat{O}_S\exp{(-\imath\hat{H}t/\hbar)}=
+\exp{(\imath\hat{H}_It/\hbar)}\exp{(-\imath\hat{H}_0t/\hbar)}\hat{O}_I\exp{(\imath\hat{H}_0t/\hbar)}\exp{(-\imath\hat{H}_It/\hbar)}.
+\end{equation*}
+!et
+With our definition of the time evolution operator we see that
+\hat{O}_H(t)=\hat{U}(0,t)\hat{O}_I\hat{U}(t,0),
+\end{equation*}
+!et
+which in turn implies that $\hat{O}_S=\hat{O}_I(0)=\hat{O}_H(0)$, all operators are equal at $t=0$. The wave function in the Heisenberg formalism is 
+related to the other pictures as
+
+!bt
+\begin{equation*}
+|\Psi_H\rangle=|\Psi_S(0)\rangle=|\Psi_I(0)\rangle,
+\end{equation*}
+!et
+since the wave function in the Heisenberg picture is time independent. 
+We can relate this wave function to that a given time $t$ via the time evolution operator as
+
+!bt
+\begin{equation*}
+|\Psi_H\rangle=\hat{U}(0,t)|\Psi_I(t)\rangle.
+\end{equation*}
+!et
+===== Adiabatic hypothesis =====
+
+We assume that the interaction term is switched on gradually. Our wave function at time $t=-\infty$ and $t=\infty$ is supposed to represent a non-interacting system
+given by the solution to the unperturbed part of our Hamiltonian $\hat{H}_0$.
+We assume the ground state is given by $|\Phi_0\rangle$, which could be a Slater determinant.
+
+We define our Hamiltonian as
+
+!bt
+\begin{equation*}
+\hat{H}=\hat{H}_0+\exp{(-\varepsilon |t|/\hbar)}\hat{H}_I,
+\end{equation*}
+!et
+where $\varepsilon$ is a small number. The way we write the Hamiltonian 
+and its interaction term is meant to simulate the switching of the interaction.
+The particles in the system interact with each other during a short time interval.
+
+The time evolution of the wave function in the interaction picture is then
+
+!bt
+\begin{equation*}
+|\Psi_I(t) \rangle = \hat{U}_{\varepsilon}(t,t_0)|\Psi_I(t_0)\rangle,
+\end{equation*}
+!et
+with
+
+!bt
+\begin{equation*}
+\hat{U}_{\varepsilon}(t,t_0)=\sum_{n=0}^{\infty}\left(\frac{-\imath}{\hbar}\right)^n\frac{1}{n1}
+\int_{t_0}^t dt_1\dots \int_{t_0}^t dt_N \exp{(-\varepsilon(t_1+\dots+t_n)/\hbar)}\hat{T}\left[\hat{H}_I(t_1)\dots\hat{H}_I(t_n)\right]
+\end{equation*}
+!et
+
+In the limit $t_0\rightarrow -\infty$, the solution ot Schr\"odinger's equation is
+$|\Phi_0\rangle$, and the eigenenergies are given by
+
+!bt
+\begin{equation*}
+\hat{H}_0|\Phi_0\rangle=W_0|\Phi_0\rangle,
+\end{equation*}
+!et
+meaning that
+
+!bt
+\begin{equation*}
+|\Psi_S(t_0)\rangle = \exp{(-\imath W_0t_0/\hbar)}|\Phi_0\rangle,
+\end{equation*}
+!et
+with the corresponding interaction picture wave function given by
+
+!bt
+\begin{equation*}
+|\Psi_I(t_0)\rangle = \exp{(\imath \hat{H}_0t_0/\hbar)}|\Psi_S(t_0)\rangle=|\Phi_0\rangle.
+\end{equation*}
+!et
+The solution becomes time independent in the limit $t_0\rightarrow -\infty$.
+The same conclusion can be reached by looking at
+
+!bt
+\begin{equation*}
+\imath \hbar\frac{\partial }{\partial t}|\Psi_I(t)\rangle =
+\exp{(-\varepsilon |t|/\hbar)}\hat{H}_I|\Psi_I(t)\rangle 
+\end{equation*}
+!et
+and taking the limit $t\rightarrow \pm\infty$.
+We can rewrite the equation for the wave function at a time $t=0$ as
+
+!bt
+\begin{equation*}
+|\Psi_I(0) \rangle = \hat{U}_{\varepsilon}(0,-\infty)|\Phi_0\rangle.
+\end{equation*}
+!et
+
+
+
+======= Linked diagram theorem =======
+
+In the present discussion of the time-dependent theory we will make
+use of the so-called complex-time approach to describe the time
+evolution operator $U$.
+This means that we
+allow the time $t$ to be rotated by a small angle $\epsilon$
+relative to the real time axis. The complex time $t$ is then
+related to the real time $\tilde{t}$ by
+
+!bt
+\begin{equation}
+t=\tilde{t}(1-i\epsilon ).
+\end{equation}
+!et
+Let us first study the true eigenvector $\Psi_{\alpha}$ which evolves
+from the unperturbed eigenvectors $\Phi_{\alpha}$ through the action of the
+time development operator
+
+
+!bt
+\begin{align}
+   U_{\varepsilon}(t,t')&=\lim_{\epsilon \rightarrow 0}
+   \lim_{t'\rightarrow -\infty (1-i\epsilon )}
+   {\displaystyle\sum_{n=0}^{\infty}\frac{(-i)^n}{n!}
+   \int_{t'}^{t}dt_1  \int_{t'}^{t}dt_2\dots  \int_{t'}^{t}dt_n}
+		\\ \nonumber
+	     &  \times T\left[H_1(t_1)H_1(t_2)\dots H_1(t_n)\right],
+	     label{eq:timeu}
+\end{align}
+!et
+!
+where $T$ stands for the correct time-ordering.
+
+In time-dependent
+perturbation theory we let $\Psi_{\alpha}$ develop from $\Phi_{\alpha}$ in the
+remote past to a given time $t$
+
+!bt
+\begin{equation}
+    \frac{\ket{\Psi_{\alpha}}}
+    {\left\langle\psi_{\alpha} | \Psi_{\alpha} \right\rangle}=
+    \lim_{\epsilon \rightarrow 0}
+   \lim_{t'\rightarrow -\infty (1-i\epsilon )}
+   \frac{U_{\varepsilon}(t,t' )\ket{\psi_{\alpha}} }
+   { \bra{\psi_{\alpha}} U(t,t' )\ket{\Phi_{\alpha}} },
+   label{eq:psii}
+\end{equation}
+!et
+and similarly, we let
+$\Psi_{\beta}$ develop from $\Phi_{\beta}$ in the remote future
+
+!bt
+\begin{equation}
+    \frac{\bra{\Psi_{\beta}}}{\left\langle
+    \psi_{\beta} | \Psi_{\beta} \right\rangle}=
+    \lim_{\epsilon \rightarrow 0}
+    \lim_{t'\rightarrow \infty (1-i\epsilon )}
+    \frac{\bra{\psi_{\beta}}U_{\varepsilon}(t' ,t) }
+    { \bra{\psi_{\beta}} U_{\varepsilon}(t' ,t)\ket{\Phi_{\beta}} }.
+    label{eq:psif}
+\end{equation}
+!et
+
+Here we are interested in the expectation value of a given
+operator ${\cal O}$ acting at a time $t=0$. This can be achieved
+from eqs.\ (ref{eq:psii}) and (ref{eq:psif}) defining
+
+!bt
+\begin{equation}
+     \ket{\Psi_{\alpha ,\beta}'}=
+     \frac{\ket{\Psi_{\alpha ,\beta}}}
+     {\left\langle\Phi_{\alpha ,\beta} | \Psi_{\alpha ,\beta} \right\rangle}
+\end{equation}
+!et
+we have
+
+!bt
+\begin{equation}
+   {\cal O}_{\alpha\beta}
+  =\frac{N_{\beta\alpha}}{D_{\beta}D_{\alpha}},
+   label{eq:expect}
+\end{equation}
+!et
+where we have introduced
+
+!bt
+\begin{equation}
+   N_{\beta\alpha}=
+   \bra{\Phi_{\beta}}U_{\varepsilon}(\infty ,0){\cal O}U_{\varepsilon}(0,-\infty )\ket{\Phi_{\alpha}} ,
+\end{equation}
+!et
+and
+
+!bt
+\begin{equation}
+   D_{\alpha ,\beta}=
+   \sqrt{\bra{\psi_{\alpha ,\beta}}
+   U_{\varepsilon}(\infty ,0)U_{\varepsilon}(0,-\infty )\ket{\Phi_{\alpha ,\beta}}}. 
+\end{equation}
+!et
+If the operator ${\cal O}$ stands for the hamiltonian $H$ we obtain
+
+!bt
+\begin{equation}
+    {\displaystyle  \frac{\bra{\Psi_{\lambda}'}H\ket{\Psi_{\lambda}'} }
+   { \left\langle\Psi_{\lambda}' | \Psi_{\lambda}' \right\rangle} }
+   label{eq:hexpect}.
+\end{equation}
+!et
+
+At this stage, *it is important to observe* that our 
+expression for the expectation value of a given operator ${\cal O}$
+*is hermitian* insofar ${\cal O}^{\dagger}={\cal O}$. This is readily 
+demonstrated. Eq.\ (ref{eq:expect}) is of the general form
+
+!bt
+\begin{equation}
+U(t,t_0){\cal O}U(t_0,-t),
+\end{equation}
+!et
+and noting that
+
+!bt
+\begin{equation}
+   U^{\dagger}(t,t_0)=
+   \left({\displaystyle e^{iH_0t}e^{-iH(t-t_0)}e^{-iH_0t}}\right)^{\dagger}
+   =U(t_0,-t),
+\end{equation}
+!et
+since $H^{\dagger}=H$ and $H_0^{\dagger}=H_0$, we have that
+
+!bt
+\begin{equation}
+    \left(U(t,t_0){\cal O}U(t_0,-t)\right)^{\dagger}
+    =U(t,t_0){\cal O}U(t_0,-t).
+\end{equation}
+!et
+The question we pose now is what happens in the limit $\varepsilon\rightarrow 0$?
+Do we get results which are meaningful?
+
+Our wave function for ground state is then
+
+!bt
+\begin{equation}
+        \frac{\ket{\Psi_0}}{\left\langle\Phi_0 | \Psi_0 \right\rangle}=
+    \lim_{\epsilon \rightarrow 0}
+   \lim_{t'\rightarrow -\infty (1-i\epsilon )}
+   \frac{U(0,-\infty )\ket{\Phi_0} }
+   { \bra{\Phi_0} U(0,-\infty )\ket{\Phi_0} },
+   label{eq:psii}
+\end{equation}
+!et
+meaning that the energy difference is given by
+
+!bt
+\begin{equation*}
+E_0-W_0=\Delta E_0= \lim_{\epsilon \rightarrow 0}
+   \lim_{t'\rightarrow -\infty (1-i\epsilon )}
+   \frac{\bra{\Phi_0}\hat{H}_IU_{\varepsilon}(0,-\infty )\ket{\Phi_0} }
+   { \bra{\Phi_0} U_{\varepsilon}(0,-\infty )\ket{\Phi_0} },
+\end{equation*}
+!et
+
+and we ask whether this quantity exists to all orders in perturbation theory.
+If it does, Gell-Mann and Low showed that it is an eigenstate of $\hat{H}$ with eigenvalue
+
+!bt
+\begin{equation*}
+ \hat{H}\frac{\ket{\Psi_0}}{\left\langle\Phi_0 | \Psi_0 \right\rangle}= E_0\frac{\ket{\Psi_0}}{\left\langle\Phi_0 | \Psi_0 \right\rangle}
+\end{equation*}
+!et
+and multiplying from the left with $\langle \Phi_0|$ we can rewrite the last equation
+as
+
+!bt
+\begin{equation*}
+E_0-W_0=\frac{\langle \Phi_0|\hat{H}_I\ket{\Psi_0}}{\left\langle\Phi_0 | \Psi_0 \right\rangle},
+\end{equation*}
+!et
+since $\hat{H}_0|\Phi_0\rangle = W_0|\Phi_0\rangle$. The numerator and the denominators of the last equation do not exist separately. The theorem of Gell-Mann and Low asserts that this ratio exists. 
+
+===== Proof of Gell-Mann's and Low's theorem =====
+
+===== Goldstone's linked diagram expansion =====
+Goldstone's theorem states that only linked diagrams enter the expression for the final binding energy. It means that energy difference reads now
+
+!bt
+\begin{equation*}
+\Delta E_0=\sum_{i=0}^{\infty}\langle \Phi_0|\hat{H}_I\left\{\frac{\hat{Q}}{W_0-\hat{H}_0}\hat{H}_I\right\}^i|\Phi_0\rangle_L,
+\end{equation*}
+!et
+where the subscript $L$ indicates that only linked diagrams are included. In our Rayleigh-Schr\"odinger expansion, the energy difference included also unlinked diagrams. 
+We wish to link the above expression with the corresponding expression from time-dependent perturbation theory. We write our expression as
+
+!bt
+\begin{equation*}
+E_0-W_0=\Delta E_0= \lim_{\epsilon \rightarrow 0^+}
+   \frac{\bra{\Phi_0(0)}\hat{H}_IU_{\epsilon }(0,-\infty )\ket{\Phi_0(-\infty)} }
+   { \bra{\Phi_0(0)} U_{\epsilon}(0,-\infty )\ket{\Phi_0(-\infty)} },
+\end{equation*}
+!et
+with a numerator
+
+!bt
+\begin{equation*}
+N=\lim_{\epsilon \rightarrow 0^+}\bra{\Phi_0(0)}\hat{H}_IU_{\epsilon}(0,-\infty )\ket{\Phi_0(-\infty)}, 
+\end{equation*}
+!et
+which we rewrite as
+
+!bt
+\begin{equation*}
+ N=\lim_{\epsilon \rightarrow 0^+}\bra{\Phi_0(0)}\hat{H}_I(t=0)\displaystyle\sum_{n=0}^{\infty}\frac{(-i)^n}{n!}
+   \int_{-\infty}^{0}dt_1  \int_{-\infty}^{0}dt_2\dots  \int_{-\infty}^{0}dt_n}\exp{(\epsilon/\hbar(t_1+\dots+t_n))} \hat{T}\left[H_1(t_1)H_1(t_2)\dots H_1(t_n)\right] \ket{\Phi_0(-\infty)}. 
+\end{equation*}
+!et
+From this term we can obtain both linked and unlinked contributions. Typical examples are the diagrams shown in
+
+
+In general, the way we can distribute $\mu$ unlinked diagrams among the total of $n$ diagrams is given by the combinatorial factor
+
+!bt
+\begin{equation*}
+\left(\begin{array}{c} n \\ \mu \end{array}\right) = \frac{n!}{\mu!\nu!},
+\end{equation*}
+!et
+and using the following relation
+
+!bt
+\begin{equation*}
+\sum_{n=0}^{\infty}\frac{1}{n!}\sum_{\mu+\nu=n}^{\infty}\frac{n!}{\mu!\nu!}=\sum_{\mu=0}^{\infty}\frac{1}{\mu!}\sum_{\nu}^{\infty}\frac{1}{\nu!},
+\end{equation*}
+!et
+we can rewrite the numerator $N$ as
+
+!bt
+\begin{equation*}
+N=\bra{\Phi_0(0)}\hat{H}_IU_{\epsilon}(0,-\infty )\ket{\Phi_0(-\infty)}_L\bra{\Phi_0(0)}U_{\epsilon}(0,-\infty )\ket{\Phi_0(-\infty)},  
+=N_LD,
+\end{equation*}
+!et
+with $N_L$ now containing only linked terms
+
+!bt
+\begin{equation*}
+ N_L=\lim_{\epsilon \rightarrow 0^+}\bra{\Phi_0(0)}\hat{H}_I(t=0)\displaystyle\sum_{\nu=0}^{\infty}\frac{(-i)^{\nu}}{\nu!}
+   \int_{-\infty}^{0}dt_1  \int_{-\infty}^{0}dt_2\dots  \int_{-\infty}^{0}dt_n}\exp{(\epsilon/\hbar(t_1+\dots+t_n))} \hat{T}\left[H_1(t_1)H_1(t_2)\dots H_1(t_n)\right] \ket{\Phi_0(-\infty)}_L, 
+\end{equation*}
+!et
+with the subscript $L$ indicating that only linked diagrams appear, that is those diagrams which are linked to the last interaction vertex.
+We note that also that the term $D$ is nothing but the denominator of the equation for the energy. We obtain then the following expression for the energy
+
+!bt
+\begin{equation*}
+E_0-W_0=\Delta E_0=N_L= \bra{\Phi_0(0)}\hat{H}_IU_{\epsilon}(0,-\infty )\ket{\Phi_0(-\infty)}_L,
+\end{equation*}
+!et
+and Goldstone's theorem is then proved. 
+The corresponding expression from Rayleigh-Schr\"odinger perturbation theory is given by
+
+!bt
+\begin{equation*}
+\Delta E_0=\langle \Phi_0|\left(\hat{H}_I+\hat{H}_I\frac{\hat{Q}}{W_0-\hat{H}_0}\hat{H}_I+
+\hat{H}_I\frac{\hat{Q}}{W_0-\hat{H}_0}\hat{H}_I\frac{\hat{Q}}{W_0-\hat{H}_0}\hat{H}_I+\dots\right)|\Phi_0\rangle_C.
+\end{equation*}
+!et
 
