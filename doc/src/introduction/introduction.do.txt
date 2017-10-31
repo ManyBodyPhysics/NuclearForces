@@ -1,0 +1,27 @@
+# Slides for PHY989
+TITLE: Introduction to Nuclear Forces, a birdeye on Quantum Chromodynamics 
+AUTHOR: Scott Bogner {copyright, 2013-present|CC BY-NC} at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+AUTHOR: Morten Hjorth-Jensen {copyright, 2013-present|CC BY-NC} at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+DATE:  2017
+
+
+!split
+===== Brief overview of Quantum Chromydynamics (QCD) =====
+!bblock
+* Quark-gluon degrees of freedom (DOF) are optimal to describe the strong force dynamics of nuclei.
+* Nevertheless, the low-energy Effective Field Theory (EFT) that underpin our modern understanding if internucleon forces are clearly related to the underlying symmetries of QCD
+
+* Moreover, as we will see later in the course, remarkable progress is being made in lattice QCD so that *dired* calculations of few-nucleon systems with nucleat forces are becoming closer to reality.
+
+* Therefore, even though 95% of this corse will be devoted to a description in terms of nucleons and pions, it is useful to give a birdeye view of QCD.
+
+* If you are not too familiar with quantum field theory or QCD. Our presentation here is necessarily impressionistic and meant only to remind you of what is governing things at a fundamental level. 
+
+!eblock
+
+
+!split
+===== QCD Lagrangian =====
+!bblock
+
+!eblock
