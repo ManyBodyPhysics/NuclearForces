@@ -109,7 +109,7 @@ The course consists of two projects which are graded and count 50% each of the f
 | Week 43 | Mon: Introduction and review of basic QFT    (SB and MHJ)            | Wedn: "Presentation of project 1 (MHJ) and selected exercises with video":"https://folk.uio.no/mhjensen/NuclearForces/FirstLecture.mp4"                                 |   | Wedn:  Discussion of nucleon-nucleon scattering
 | Oct/23 and Oct/25        |          |                                   |   |  
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 44|  Mon: "Scattering theory and phenomenology of nuclear forceswith video":"https://folk.uio.no/mhjensen/NuclearForces/SecondLecture.mp4"   (MHJ)      | Wedn: Work and discussion of project 1 (MHJ) | Lecture notes on scattering theory |
+| Week 44|  Mon: "Scattering theory and phenomenology of nuclear forceswith video":"https://folk.uio.no/mhjensen/NuclearForces/SecondLecture.mp4"   (MHJ)      | Wedn: Work and discussion of project 1 (MHJ) | "Lecture notes on scattering theory with video":"https://folk.uio.no/mhjensen/NuclearForces/ThirdLecture.mp4"|
 | Oct/30 and Nov/1       |           |                                  |   | 
 |----------------------------------------------------------------------------------------------------------------------------|
 | Week 45| Wedn: Review of QFT and one-boson exchange models (MHJ) | Mon: Work on project 1 (MHJ)  |  Lecture notes on scattering theory and OBEs |
