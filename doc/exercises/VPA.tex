@@ -1,0 +1,156 @@
+\documentclass[12pt]{article}
+
+% set up paper size
+
+\setlength{\textwidth}{6.9in}
+\setlength{\textheight}{9.5in}
+\setlength{\evensidemargin}{-0.2in}
+\setlength{\oddsidemargin}{-0.2in}
+\setlength{\topmargin}{-0.8in}
+\setlength{\parindent}{0pt}
+\setlength{\itemsep}{0pt}
+\def\pls{$^+$}
+\def\ts{\textstyle\mathstrut}
+\def\askip{\hspace*{1in}}
+\renewcommand{\baselinestretch}{1.2}
+
+\setlength{\tabcolsep}{10pt}
+\newcommand{\ol}[1]{\overrightarrow{\bf #1}}
+\newcommand{\I}{\item}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+
+\newcommand{\beq}[0]{\begin{small}\[}
+\newcommand{\eeq}[0]{\]\end{small}}
+\newcommand{\beqa}[0]{\begin{small}\begin{eqnarray*}}
+\newcommand{\eeqa}[0]{\end{eqnarray*}\end{small}}
+\newcommand{\bsm}[0]{\begin{small}}
+\newcommand{\esm}[0]{\end{small}}
+\newcommand{\bst}[0]{\begin{small}}
+\newcommand{\est}[0]{\end{small}}
+\newcommand{\bfn}[0]{\begin{footnotesize}}
+\newcommand{\efn}[0]{\end{footnotesize}}
+
+\def\nab{\overrightarrow{\nabla}}
+\def\galnab{\stackrel{\leftrightarrow}{\nabla}}
+
+
+
+\newcommand{\rvec}{{\bf r}}
+\newcommand{\xvec}{{\bf r}}
+\newcommand{\pvec}{{\bf p}}
+\newcommand{\qvec}{{\bf q}}
+\newcommand{\kvec}{{\bf k}}
+
+\newcommand{\adag}{a^\dagger}
+\newcommand{\ad}{a^{\dagger}}
+
+\newcommand{\Nmax}{N_{\rm max}}
+
+
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+
+\newcommand{\Vext}{v_{\rm ext}}
+\newcommand{\Egs}{E_{\rm gs}}
+\newcommand{\fmi}{\mbox{\,fm}^{-1}}
+
+\newcommand{\Hhat}{{\widehat H}}
+\newcommand{\Nhat}{{\widehat N}}
+\newcommand{\Vhat}{{\widehat V}}
+\newcommand{\That}{{\widehat T}}
+\newcommand{\Uhat}{{\widehat U}}
+\newcommand{\Ohat}{{\widehat O}}
+\newcommand{\Shat}{{\widehat S}}
+\newcommand{\rhat}{\widehat{\bf r}}
+\newcommand{\jhat}{\widehat\jmath}
+\newcommand{\khat}{\widehat k}
+\newcommand{\hhat}{\widehat h}
+\newcommand{\nhat}{\widehat n}
+
+\newcommand{\kf}{k_{\scriptscriptstyle\rm F}}
+
+
+
+\newcommand{\flow}{s}
+
+
+%\pagestyle{empty}    % no page numbers
+
+\usepackage{graphicx}  % has \includegraphics, etc.
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage[long,us,hhmmss]{datetime}
+
+%###########################################################################%
+%###########################################################################%
+
+% Now for the manuscript.  The text always starts with a \begin{document}
+%  line and ends with a \end{document} line.  Everything after \end{document}
+%  is ignored.
+
+
+\begin{document}
+
+\raggedright
+
+\be
+  \I Here we explore a simple alternative to the momentum-space matrix inversion for the
+calculation of scattering phase shifts called the Variable Phase Approach (VPA). The VPA (in 
+its simplest formulation) is not as flexible as the matrix inversion method in that it is limited
+to local potentials (i.e., $\langle{\bf r'}|V|{\bf r}\rangle = \delta^3({\bf r}-{\bf r'})V(r)$) 
+without tensor forces. What the VPA lacks in
+generality, it makes up for in simplicity and the ability to better control the numerical accuracy. The VPA also gives a clean way to infer certain properties of the interaction from the phase shifts (e.g., the existence of a repulsive short-range component, or the presence of bound states) as illustrated below.
+For simplicity, here we only consider s-waves.
+  [References: Taylor, \textit{Scattering Theory}, pp.~197-201,
+  Calogero, \textit{The Variable Phase Approach to Potential Scattering},
+  (Academic Press, New York, 1967).]  
+   \be
+     \I Define the truncated potential $V_\rho(r)$ by
+     \beq
+        V_\rho(r) = V(r) \theta(\rho-r) \;.
+     \eeq
+     That is, it is the usual potential for $r \leq \rho$, but identically
+     zero beyond that.  Then we define $\delta(k,\rho)$ as the phase shift
+     for $V_\rho$ at momentum $k$.  The phase shift we want is
+     $\delta(k) = \lim_{\rho\rightarrow\infty} \delta(k,\rho)$.  The basis
+     of the variable phase method is a differential equation for $\delta(k,r)$
+     at fixed $k$ (again, this is the s-wave equation):
+     \beq
+       \frac{d\delta(k,r)}{dr} = -\frac{1}{k} 2M V(r) \sin^2[kr + \delta(k,r)]
+       \;,
+     \eeq
+     which is a nonlinear first-order differential equation with initial
+     condition $\delta(k,0) = 0$.  Note that $M$ here is actually the reduced mass of the NN system, and also ask yourself if there are factors of $\hbar$ and/or $c$ that have been set to 1. Think about how you would implement
+     this in your favorite programming language.  
+    \I The Mathematica notebook \texttt{square\_well\_scattering.nb} implements
+     the VPA for a square well.   Show that it reproduces the analytically known phase shifts for the square well
+     result. 
+     \I Changing to a different potential is
+     trivial (see the illustration at the end of the notebook with a combined short-range repulsive
+     square well and a mid-range attractive square well).  Implement the toy NN potential that you are using in your momentum space matrix inversion code as a check on the former. 
+      \I Show from the VPA differential equation that a fully attractive potential gives
+     a positive phase shift and a fully negative potential gives a
+     negative phase shift. This is the cleanest way to see why the s-wave phaseshifts (which change from positive to negative values at $E_{lab}\approx 270$ MeV in the $^1$S$_0$ partial wave) imply a strong short-range repulsion for local NN potentials.
+      \I The VPA automatically builds in Levinson's theorem ($\delta(0) = n\pi$) about the number
+     of bound states $n$ and the phase shift at zero energy.  How?  [Hint: what is the
+     condition imposed on the phase shift at large energy for Levinson's theorem?  Consider
+     integrating $d\delta(k,r)/dr$ in $r$ from zero to infinity.  Use $\sin^2 x \leq 1$
+     to put a bound on $\delta(k)$.]
+     \I Things to try numerically with the supplied Mathematica or Python notebooks:
+       \bi
+         \I Try out Levinson's theorem in practice (e.g., for a square well where
+         the number of bound states versus depth is easily found in parallel). Also, the toy NN potential as given does not support a bound state since it describes scattering in the $^1S_0$ channel, though the large negative scattering length indicates that there is "almost" a bound state. By gently adjusting the strength of the longest ranged component of the force, estimate the critical strength for when a bound state first appears. 
+         \I Explore the effective range expansion by extracting the $a$ and $r_0$ parameters for 2 different functional forms of $V(r)$ (e.g., the toy NN potential and the square well potential). Then, try to tune the square well potential so it gives the same ERE parameters as the other one. This illustrates that there is no "unique" potential insofar as low-energy data is concernced.
+       \ei
+
+   \ee
+
+
+ 
+
+
+\end{document}
