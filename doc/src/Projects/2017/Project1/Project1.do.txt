@@ -361,7 +361,7 @@ negative phase shift. This is the cleanest way to see why the s-wave phaseshifts
 The VPA automatically builds in Levinson's theorem ($\delta(0) = n\pi$) about the number
 of bound states $n$ and the phase shift at zero energy.  How?
 !bhint
-Hint: what is the
+What is the
 condition imposed on the phase shift at large energy for Levinson's theorem?  Consider
 integrating $d\delta(k,r)/dr$ in $r$ from zero to infinity.  Use $\sin^2 x \leq 1$
 to put a bound on $\delta(k)$.
@@ -369,6 +369,7 @@ to put a bound on $\delta(k)$.
 
 Things to try numerically with the "supplied Mathematica or Python notebooks":"https://github.com/ManyBodyPhysics/NuclearForces/tree/master/doc/Projects/2017/Project1":
   o Try out Levinson's theorem in practice (e.g., for a square well where the number of bound states versus depth is easily found in parallel). Also, the toy NN potential as given does not support a bound state since it describes scattering in the $^1S_0$ channel, though the large negative scattering length indicates that there is "almost" a bound state. By gently adjusting the strength of the longest ranged component of the force, estimate the critical strength for when a bound state first appears. 
+
   o  Explore the effective range expansion by extracting the $a$ and $r_0$ parameters for 2 different functional forms of $V(r)$ (e.g., the toy NN potential and the square well potential). Then, try to tune the square well potential so it gives the same ERE parameters as the other one. This illustrates that there is no "unique" potential insofar as low-energy data is concernced.
 
 
