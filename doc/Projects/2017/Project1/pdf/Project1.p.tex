@@ -461,7 +461,7 @@ square well and a mid-range attractive square well).  Implement the toy NN poten
 
 Show from the VPA differential equation that a fully attractive potential gives
 a positive phase shift and a fully negative potential gives a
-negative phase shift. This is the cleanest way to see why the s-wave phaseshifts (which change from positive to negative values at $E_{lab}\approx 270$ MeV in the $^1$S$_0$ partial wave) imply a strong short-range repulsion for local NN potentials.
+negative phase shift. This is the cleanest way to see why the s-wave phaseshifts (which change from positive to negative values at $E_{lab}\approx 270$ MeV in the $^1S_0$ partial wave) imply a strong short-range repulsion for local NN potentials.
 
 The VPA automatically builds in Levinson's theorem ($\delta(0) = n\pi$) about the number
 of bound states $n$ and the phase shift at zero energy.  How?
@@ -477,12 +477,8 @@ to put a bound on $\delta(k)$.
 Things to try numerically with the \href{{https://github.com/ManyBodyPhysics/NuclearForces/tree/master/doc/Projects/2017/Project1}}{supplied Mathematica or Python notebooks}:
 \begin{enumerate}
  \item Try out Levinson's theorem in practice (e.g., for a square well where the number of bound states versus depth is easily found in parallel). Also, the toy NN potential as given does not support a bound state since it describes scattering in the $^1S_0$ channel, though the large negative scattering length indicates that there is "almost" a bound state. By gently adjusting the strength of the longest ranged component of the force, estimate the critical strength for when a bound state first appears. 
-\begin{enumerate}
 
-  \item Explore the effective range expansion by extracting the $a$ and $r_0$ parameters for 2 different functional forms of $V(r)$ (e.g., the toy NN potential and the square well potential). Then, try to tune the square well potential so it gives the same ERE parameters as the other one. This illustrates that there is no "unique" potential insofar as low-energy data is concernced.
-\end{enumerate}
-
-\noindent
+ \item Explore the effective range expansion by extracting the $a$ and $r_0$ parameters for 2 different functional forms of $V(r)$ (e.g., the toy NN potential and the square well potential). Then, try to tune the square well potential so it gives the same parameters as the other one. This illustrates that there is no "unique" potential insofar as low-energy data is concernced.
 \end{enumerate}
 
 \noindent
