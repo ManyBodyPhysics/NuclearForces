@@ -314,62 +314,13 @@ R(k_0,k_0)=-\frac{tan\delta}{mk_0}.
 Compare the phase shifts for the potential of Eq. (ref{eq:realp}) with the  experimental phase shifts that can be found  in the article  of the Nijmegen group in Physical Review C _48_, 792 (1993).  Alternatively look up "their website":"http://nn-online.org/"
 
 
-=== Project 1d): Variable Phase Approach ===
+=== Project 1d): Adding realistic models for the nuclear forces ===
+The code can easily be extended to include realistic nucleon-nucleon interactions. More text and further exercises to come here later.
 
-Here we explore a simple alternative to the momentum-space matrix inversion for the
-calculation of scattering phase shifts called the Variable Phase Approach (VPA). The VPA (in 
-its simplest formulation) is not as flexible as the matrix inversion method in that it is limited
-to local potentials (i.e., $\langle{\bf r'}|V|{\bf r}\rangle = \delta^3({\bf r}-{\bf r'})V(r)$) 
-without tensor forces. What the VPA lacks in
-generality, it makes up for in simplicity and the ability to better control the numerical accuracy. The VPA also gives a clean way to infer certain properties of the interaction from the phase shifts (e.g., the existence of a repulsive short-range component, or the presence of bound states) as illustrated below.
-For simplicity, here we only consider s-waves. Good references here are
-o Taylor, *Scattering Theory*, pages 197-201, and
-o Calogero, *The Variable Phase Approach to Potential Scattering*, (Academic Press, New York, 1967).  
 
-The questions which follow can be solved through a mix of standard analytical work and programming.
 
-Define the truncated potential $V_\rho(r)$ by
-!bt
-\[
-   V_\rho(r) = V(r) \theta(\rho-r) \;.
-\]
-!et
-That is, it is the usual potential for $r \leq \rho$, but identically
-zero beyond that.  Then we define $\delta(k,\rho)$ as the phase shift
-for $V_\rho$ at momentum $k$.  The phase shift we want is
-$\delta(k) = \lim_{\rho\rightarrow\infty} \delta(k,\rho)$.  The basis
-of the variable phase method is a differential equation for $\delta(k,r)$
-at fixed $k$ (again, this is the s-wave equation):
-!bt
-\[
-\frac{d\delta(k,r)}{dr} = -\frac{1}{k} 2M V(r) \sin^2[kr + \delta(k,r)],
-\]
-!et
-which is a nonlinear first-order differential equation with initial
-condition $\delta(k,0) = 0$.  Note that $M$ here is actually the reduced mass of the NN system, and also ask yourself if there are factors of $\hbar$ and/or $c$ that have been set to 1. Think about how you would implement
-this in your favorite programming language.  
-As an example, the Mathematica notebook "SquareWellScattering.nb":"https://github.com/ManyBodyPhysics/NuclearForces/tree/master/doc/Projects/2017/Project1" implements
-the VPA for a square well.   Show that it reproduces the analytically known phase shifts for the square well result. 
 
-Changing to a different potential is trivial (see the illustration at the end of the notebook with a combined short-range repulsive
-square well and a mid-range attractive square well).  Implement the toy NN potential that you are using in your momentum space matrix inversion code as a check on the former. 
 
-Show from the VPA differential equation that a fully attractive potential gives
-a positive phase shift and a fully negative potential gives a
-negative phase shift. This is the cleanest way to see why the s-wave phaseshifts (which change from positive to negative values at $E_{lab}\approx 270$ MeV in the $^1$S$_0$ partial wave) imply a strong short-range repulsion for local NN potentials.
-
-The VPA automatically builds in Levinson's theorem ($\delta(0) = n\pi$) about the number
-of bound states $n$ and the phase shift at zero energy.  How?
-!bhint
-Hint: what is the
-condition imposed on the phase shift at large energy for Levinson's theorem?  Consider
-integrating $d\delta(k,r)/dr$ in $r$ from zero to infinity.  Use $\sin^2 x \leq 1$
-to put a bound on $\delta(k)$.
-!ehint
-
-Things to try numerically with the "supplied Mathematica or Python notebooks":"https://github.com/ManyBodyPhysics/NuclearForces/tree/master/doc/Projects/2017/Project1":
-  o Try out Levinson's theorem in practice (e.g., for a square well where the number of bound states versus depth is easily found in parallel). Also, the toy NN potential as given does not support a bound state since it describes scattering in the $^1S_0$ channel, though the large negative scattering length indicates that there is "almost" a bound state. By gently adjusting the strength of the longest ranged component of the force, estimate the critical strength for when a bound state first appears. 
-  o  Explore the effective range expansion by extracting the $a$ and $r_0$ parameters for 2 different functional forms of $V(r)$ (e.g., the toy NN potential and the square well potential). Then, try to tune the square well potential so it gives the same ERE parameters as the other one. This illustrates that there is no "unique" potential insofar as low-energy data is concernced.
 
 
 ===== Introduction to numerical projects =====
@@ -417,7 +368,4 @@ The preferred format for the report is a PDF file. You can also use DOC or posts
 Finally, 
 we encourage you to work two and two together. Optimal working groups consist of 
 2-3 students. You can then hand in a common report. 
-
-
-
 
