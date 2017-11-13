@@ -110,7 +110,7 @@ nonrelativistic expansion), the lowest order of which is
 \begin{align*}
 \widehat{\cal L}^{(1)}_{\pi N} & =  \bar{N} \left(i {D}_0 - \frac{g_A}{2}\bm{\sigma} \cdot \bm{u}\right) N  \\
  & 
-\approx  \bar{N} \left[ i \partial_0 - \frac{1}{4f_\pi^2} \bm{\tau} \cdot ( \bm{\pi}\times\partial_0 \bm{\pi})- \frac{g_A}{2f_\pi} \bm{\tau} \cdot (\bm{sigma} \cdot \bm{\nabla} )\bm{\pi} \right] N + \ldots 
+\approx  \bar{N} \left[ i \partial_0 - \frac{1}{4f_\pi^2} \bm{\tau} \cdot ( \bm{\pi}\times\partial_0 \bm{\pi})- \frac{g_A}{2f_\pi} \bm{\tau} \cdot (\bm{\sigma} \cdot \bm{\nabla} )\bm{\pi} \right] N + \ldots 
 \end{align*}
 !et
 For the parameters that occur in the leading order Lagrangian,
@@ -163,7 +163,7 @@ V_{3\pi} &=   V_{3\pi}^{(4)}  + \ldots \,.
 Here, the superscripts denote the corresponding chiral order and the ellipses refer to 
 $(Q/\Lambda)^5$- and higher order terms. 
 Contributions due to the exchange of four- and more pions are further suppressed:
-$n$--pion  exchange diagrams start to contribute at the order $(Q/\Lambda)^{2n-2}$. 
+$n$-pion  exchange diagrams start to contribute at the order $(Q/\Lambda)^{2n-2}$. 
 Notice further that in addition  to isopin-invariant contributions there are
 isospin--breaking corrections.
 
@@ -255,9 +255,9 @@ where $D$ and $E$ are the corresponding low-energy constants  from the Lagrangia
 |---------------------------------------------------------------------------------------------------|
 | $\nu = 0$                           | $V_{1 \pi}+V_{\rm cont}$  | $-$  | $-$                  |
 | $\nu = 1$     | $-$     | $-$                                                 | $-$           |
-| $\nu = 2$                                           | $V_{1 \pi} + V_{2 \pi} + V_{\rm cont}$              | $-$                                                 | $-$ \                                               |
-| $\nu = 3$                                           | $V_{1 \pi} + V_{2 \pi}$                             | $V_{2 \pi} + V_{1 \pi, \; \rm cont} + V_{\rm cont}$ | $-$ \                                               |
-| $\nu = 4$                                           | $V_{1 \pi} + V_{2 \pi} + V_{3 \pi} + V_{\rm cont}$  | work in progress                                    | work in progress \                                  |
+| $\nu = 2$                                           | $V_{1 \pi} + V_{2 \pi} + V_{\rm cont}$              | $-$                                                 | $-$                                                |
+| $\nu = 3$                                           | $V_{1 \pi} + V_{2 \pi}$                             | $V_{2 \pi} + V_{1 \pi, \; \rm cont} + V_{\rm cont}$ | $-$                                                |
+| $\nu = 4$                                           | $V_{1 \pi} + V_{2 \pi} + V_{3 \pi} + V_{\rm cont}$  | Established                                    | work in progress                                   |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 !eblock
