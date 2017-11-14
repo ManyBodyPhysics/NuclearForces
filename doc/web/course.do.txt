@@ -115,7 +115,7 @@ The course consists of two projects which are graded and count 50% each of the f
 | Week 45| Mon: "Review of QFT and one-boson exchange models":"https://folk.uio.no/mhjensen/NuclearForces/FourthLecture.mp4"(MHJ) | Wedn: "OBE models":"https://folk.uio.no/mhjensen/NuclearForces/FifthLecture.mp4" (MHJ)  |  Lecture notes on scattering theory and OBEs |
 | Nov/6 and Nov/8       |                      | Work on project 1                                 |   |
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 46|  Mon: "One-boson exchange models with video":"https://folk.uio.no/mhjensen/NuclearForces/SixthLecture.mp4" (MHJ) | Wedn: Work on project 1, deadline Nov 17    | Lecture notes on OBEs |
+| Week 46|  Mon: "One-boson exchange models with video":"https://folk.uio.no/mhjensen/NuclearForces/SixthLecture.mp4" (MHJ) | Wedn: Work on project 1, deadline Nov 24    | Lecture notes on OBEs |
 | Nov/13 and Nov/15       |                      |  Wedn: Presentation of project 2                                |                  |  
 |----------------------------------------------------------------------------------------------------------------------------|
 | Week 47 |  Mon: From one-boson exchange models to effective field theory (SB and MHJ)| Wedn: Work on project 2  |  |   
@@ -124,7 +124,7 @@ The course consists of two projects which are graded and count 50% each of the f
 | Week 48 |  Mon: Effective field theory (SB) |  Wedn: Work on project 2                           |  |  
 | Nov/27 and Nov/29        |                   |                                  |                            |
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 49 | Mon: Effective field theory and Lattice QCD (SB) | Wedn: Finalize project 2, deadline Dec 8                                |  |  
+| Week 49 | Mon: Effective field theory and Lattice QCD (SB) | Wedn: Finalize project 2, deadline Dec 15                                |  |  
 | Dec/4 and Dec/6        |                   |                                  |                            |
 |----------------------------------------------------------------------------------------------------------------------------|
 

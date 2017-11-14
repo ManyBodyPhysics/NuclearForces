@@ -1,4 +1,4 @@
-TITLE: Project 1, deadline  November 17
+TITLE: Project 1, deadline  November 24
 AUTHOR: Nuclear Forces PHY989 {copyright, 1999-present|CC BY-NC} at National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, USA
 DATE: Fall semester 2017
 
