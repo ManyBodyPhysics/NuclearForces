@@ -66,6 +66,14 @@ ${text_types(ch)}
 !eblock
 
 
+===== Selected Articles on Effective Field Theory  =====
+!bblock
+* Lectures on Effective field theory
+ * "Lepage, How to Renormalize the Schroedinger Equation":"https://github.com/ManyBodyPhysics/NuclearForces/blob/master/doc/references/Lepage_HowToRenormalize.pdf"
+ * "Epelbaum, Lectures on Effective Field Theory":"https://github.com/ManyBodyPhysics/NuclearForces/blob/master/doc/references/Epelbaum_ChiralEFT_lectures.pdf"
+!eblock
+
+
 
 ===== Exercises and Projects Fall 2017 =====
 
@@ -116,15 +124,15 @@ The course consists of two projects which are graded and count 50% each of the f
 | Nov/6 and Nov/8       |                      | Work on project 1                                 |   |
 |----------------------------------------------------------------------------------------------------------------------------|
 | Week 46|  Mon: "One-boson exchange models with video":"https://folk.uio.no/mhjensen/NuclearForces/SixthLecture.mp4" (MHJ) | Wedn: Work on project 1, deadline Nov 24    | Lecture notes on OBEs |
-| Nov/13 and Nov/15       |                      |  Wedn: Presentation of project 2                                |                  |  
+| Nov/13 and Nov/15       |                      |  Wedn: "Effective Field Theory (SB)":"https://github.com/ManyBodyPhysics/NuclearForces/tree/master/doc/pub/eft/pdf/ScottBognerEFT.pdf"                                |                  |  
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 47 |  Mon: From one-boson exchange models to effective field theory (SB and MHJ)| Wedn: Work on project 2  |  |   
+| Week 47 |  Mon: "Effective Field Theory (SB)":"https://github.com/ManyBodyPhysics/NuclearForces/tree/master/doc/pub/eft/pdf/ScottBognerEFT.pdf"| Wedn: Discussion and work on project 2  |  |   
 | Nov/20 and Nov/22       |                      |                                  |   |  
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 48 |  Mon: Effective field theory (SB) |  Wedn: Work on project 2                           |  |  
+| Week 48 |  Mon: "Effective Field Theory (SB)":"https://github.com/ManyBodyPhysics/NuclearForces/tree/master/doc/pub/eft/pdf/ScottBognerEFT.pdf" |  Wedn: Work on project 2                           |  |  
 | Nov/27 and Nov/29        |                   |                                  |                            |
 |----------------------------------------------------------------------------------------------------------------------------|
-| Week 49 | Mon: Effective field theory and Lattice QCD (SB) | Wedn: Finalize project 2, deadline Dec 15                                |  |  
+| Week 49 | Mon: "Effective Field Theory (SB)":"https://github.com/ManyBodyPhysics/NuclearForces/tree/master/doc/pub/eft/pdf/ScottBognerEFT.pdf" | Wedn: Finalize project 2, deadline Dec 15                                |  |  
 | Dec/4 and Dec/6        |                   |                                  |                            |
 |----------------------------------------------------------------------------------------------------------------------------|
 
