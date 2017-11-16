@@ -299,16 +299,51 @@ with \( x=\mu r \), \( \mu=0.7 \) fm$^{-1}$ (the inverse of the pion mass),
 \( V_a=-10.463 \) MeV and \( a=1 \), \( V_b=-1650.6 \) MeV and \( b=4 \) and
 \( V_c=6484.3 \) MeV and \( c=7 \). 
 Find the potential in momentum space using Eq. <a href="#mjx-eqn-2">(2)</a>
-with \( j_0(kr)=sin(kr)/kr \). 
-The transform of a potential on the form 
-\( V(r)=V_0\exp{(-\mu r)}/r \) is
+with \( j_0(kr)=sin(kr)/kr \).
 
+<p>
+The transform of a potential on the form 
+\( V(r)=V_0\exp{(-\mu r)}/(\mu r) \) which we rewrite more generally as 
 $$
-\begin{equation}
-     V(k',k)= \frac{V_0}{4k'k}ln\left(\frac{(k'+k)^2+\mu^2}{(k'-k)^2+\mu^2}\right).
-\tag{7}
-\end{equation}
+V_{\eta}\frac{e^{-\eta x}}{x},
 $$
+
+with \( x=\mu r \).
+<b>Hint.</b>
+
+The problem for \( l=0 \) is to evaluate the integral 
+$$
+I=V_{\eta}\int_{0}^{\infty}dr r^{2}j_{0}(kr)\frac{e^{-\eta x}}{x}j_{0}(k'r)
+$$
+
+By using the substitution \( x=\mu r \) and converting the product 
+of sines to a difference of cosines through the relation 
+$$
+\sin u\sin v=\frac{1}{2}[\cos(u-v)-\cos(u+v)]
+$$
+
+we obtain
+$$
+I=\frac{V_{\eta}}{2\mu kk'}\int_{0}^{\infty}dx (\cos\alpha x-\cos\beta x)
+\frac{e^{-\eta x}}{x}.
+$$
+
+where \( \alpha=\frac{1}{\mu}(k-k') \) and \( \beta=\frac{1}{\mu}(k+k') \).
+This integral can be converted to a form found in standard integral 
+tables by adding and subtracting 1:
+$$
+I=\frac{V_{\eta}}{2\mu kk'}\left[\int_{0}^{\infty}dx(1-\cos\beta x)
+\frac{e^{-\eta x}}{x}-\int_{0}^{\infty}dx(1-\cos\alpha x)\frac{e^{-\eta x}}
+{x}\right].
+$$
+
+Both integrals are now of the same form and their values are given as
+$$
+I=\frac{V_{\eta}}{4\mu k k'}\ln\left[\frac{(\mu \eta)^{2}+(k+k')^{2}}
+{(\mu\eta)^{2}+(k-k')^{2}}\right].
+$$
+
+
 
 <p>
 Write a function which calculates the expressions for the
@@ -325,7 +360,7 @@ We introduce first the calculus relation
 $$
 \begin{equation}
   \int_{-\infty}^{\infty} \frac{dk}{k-k_0} =0.
-\tag{8}
+\tag{7}
 \end{equation}
 $$
 
@@ -338,7 +373,7 @@ allows us to rewrite the last equation as
 $$
 \begin{equation}
   \int_{0}^{\infty} \frac{dk}{k^2-k_0^2} =0.
-\tag{9}
+\tag{8}
 \end{equation}
 $$
 
@@ -349,7 +384,7 @@ $$
 \begin{equation}
   {\cal P}\int_{0}^{\infty} \frac{f(k)dk}{k^2-k_0^2} =
   \int_{0}^{\infty} \frac{(f(k)-f(k_0))dk}{k^2-k_0^2},
-\tag{10}
+\tag{9}
 \end{equation}
 $$
 
@@ -358,7 +393,7 @@ where the right-hand side is no longer singular at
 and can be evaluated numerically as any other integral.
 
 <p>
-We can then use the trick in Eq. <a href="#mjx-eqn-10">(10)</a> to rewrite
+We can then use the trick in Eq. <a href="#mjx-eqn-9">(9)</a> to rewrite
 Eq. <a href="#mjx-eqn-3">(3)</a> as
 
 $$
@@ -367,7 +402,7 @@ $$
                 \int_0^{\infty}dq
                 \frac{q^2V(k,q)R(q,k')-k_0^2V(k,k_0)R(k_0,k')  }
                      {(k_0^2-q^2)/m}.
-\tag{11}
+\tag{10}
 \end{equation}
 $$
 
@@ -377,24 +412,24 @@ Eq. <a href="#mjx-eqn-5">(5)</a>.We are interested in obtaining
 \( R(k_0,k_0) \).
 
 <p>
-How do we proceed in order to solve Eq. <a href="#mjx-eqn-11">(11)</a>?
+How do we proceed in order to solve Eq. <a href="#mjx-eqn-10">(10)</a>?
 
 <p>
-The first step consists in using the mesh points \( k_j \) and the weights \( \omega_j \). We can rewrite Eq. <a href="#mjx-eqn-11">(11)</a> as
+The first step consists in using the mesh points \( k_j \) and the weights \( \omega_j \). We can rewrite Eq. <a href="#mjx-eqn-10">(10)</a> as
 $$
-\begin{equation} \tag{12}
+\begin{equation} \tag{11}
 R(k,k') = V(k,k') +\frac{2}{\pi}\sum_{j=1}^N\frac{\omega_jk_j^2V(k,k_j)R(k_j,k')}{(k_0^2-k_j^2)/m}-\frac{2}{\pi}k_0^2V(k,k_0)R(k_0,k')\sum_{n=1}^N\frac{\omega_n}{(k_0^2-k_n^2)/m}.                           
 \end{equation}
 $$
 
 This equation contains now the unknowns \( R(k_i,k_j) \)
 (with dimension \( N\times N \)) and \( R(k_0,k_0) \).
-We can turn Eq. <a href="#mjx-eqn-12">(12)</a> into an equation with dimension \( (N+1)\times (N+1) \) with  a mesh which contains the original mesh points \( k_j \) for \( j=1,N \) and the point which corresponds to the energy \( k_0 \). Consider the latter as the 'observable' point. The mesh points become then \( k_j \) for \( j=1,n \) and \( k_{N+1}=k_0 \).
+We can turn Eq. <a href="#mjx-eqn-11">(11)</a> into an equation with dimension \( (N+1)\times (N+1) \) with  a mesh which contains the original mesh points \( k_j \) for \( j=1,N \) and the point which corresponds to the energy \( k_0 \). Consider the latter as the 'observable' point. The mesh points become then \( k_j \) for \( j=1,n \) and \( k_{N+1}=k_0 \).
 
 <p>
 With these new mesh points we define the matrix
 $$
-\begin{equation}        \tag{13}
+\begin{equation}        \tag{12}
 A_{i,j}=\delta_{i,j}-V(k_i,k_j)u_j,
 \end{equation}
 $$
@@ -407,7 +442,7 @@ $$
      u_j=\frac{2}{\pi}
          \frac{\omega_jk_j^2}{(k_0^2-k_j^2)/m}\hspace{1cm}
          j=1,N
-\tag{14}
+\tag{13}
 \end{equation}
 $$
 
@@ -417,7 +452,7 @@ $$
 \begin{equation}
      u_{N+1}=-\frac{2}{\pi}
           \sum_{j=1}^N\frac{k_0^2\omega_j}{(k_0^2-k_j^2)/m}.
-\tag{15}
+\tag{14}
 \end{equation}
 $$
 
@@ -433,11 +468,11 @@ different from \( k_0 \). Note also that
 which sets up \( A \).
 
 <p>
-With the matrix \( A \) we can rewrite Eq. <a href="#mjx-eqn-12">(12)</a>    as a matrix problem of dimension \( (N+1)\times (N+1) \).   All matrices \( R \), \( A \) and \( V \) have this dimension   and we get
+With the matrix \( A \) we can rewrite Eq. <a href="#mjx-eqn-11">(11)</a>    as a matrix problem of dimension \( (N+1)\times (N+1) \).   All matrices \( R \), \( A \) and \( V \) have this dimension   and we get
 $$
 \begin{equation}
 A_{i,l}R_{l,j}=V_{i,j},
-\tag{16}
+\tag{15}
 \end{equation}
 $$
 
@@ -446,13 +481,13 @@ or just
 $$
 \begin{equation}
     AR=V.
-\tag{17}
+\tag{16}
 \end{equation}
 $$
 
-Since you already have defined \( A \) and \( V \) (these are stored as \( (N+1)\times (N+1) \) matrices)  Eq. <a href="#mjx-eqn-17">(17)</a> involves only the unknown \( R \). We obtain it by matrix inversion, i.e.,
+Since you already have defined \( A \) and \( V \) (these are stored as \( (N+1)\times (N+1) \) matrices)  Eq. <a href="#mjx-eqn-16">(16)</a> involves only the unknown \( R \). We obtain it by matrix inversion, i.e.,
 $$
-\begin{equation} \tag{18}
+\begin{equation} \tag{17}
 R=A^{-1}V.     
 \end{equation}
 $$
@@ -470,7 +505,7 @@ by noting that
 $$
 \begin{equation}
       R(k_{N+1},k_{N+1})=R(k_0,k_0),
-\tag{19}
+\tag{18}
 \end{equation}
 $$
 
@@ -479,7 +514,7 @@ and you are done.
 <p>
 You can choose to read \( k_0 \) from file or screen, or set up
 a loop over chosen values of \( k_0 \) and for each
-\( k_0 \) solve Eq. <a href="#mjx-eqn-18">(18)</a>.
+\( k_0 \) solve Eq. <a href="#mjx-eqn-17">(17)</a>.
 
 <p>
 When you have \( R(k,k') \) for the given potential, evaluate now the phase-shifts  using

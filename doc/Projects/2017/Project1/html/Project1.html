@@ -259,16 +259,51 @@ with \( x=\mu r \), \( \mu=0.7 \) fm$^{-1}$ (the inverse of the pion mass),
 \( V_a=-10.463 \) MeV and \( a=1 \), \( V_b=-1650.6 \) MeV and \( b=4 \) and
 \( V_c=6484.3 \) MeV and \( c=7 \). 
 Find the potential in momentum space using Eq. \eqref{eq:vtrans}
-with \( j_0(kr)=sin(kr)/kr \). 
-The transform of a potential on the form 
-\( V(r)=V_0\exp{(-\mu r)}/r \) is
+with \( j_0(kr)=sin(kr)/kr \).
 
+<p>
+The transform of a potential on the form 
+\( V(r)=V_0\exp{(-\mu r)}/(\mu r) \) which we rewrite more generally as 
 $$
-\begin{equation}
-     V(k',k)= \frac{V_0}{4k'k}ln\left(\frac{(k'+k)^2+\mu^2}{(k'-k)^2+\mu^2}\right).
-\label{_auto2}
-\end{equation}
+V_{\eta}\frac{e^{-\eta x}}{x},
 $$
+
+with \( x=\mu r \).
+<b>Hint.</b>
+
+The problem for \( l=0 \) is to evaluate the integral 
+$$
+I=V_{\eta}\int_{0}^{\infty}dr r^{2}j_{0}(kr)\frac{e^{-\eta x}}{x}j_{0}(k'r)
+$$
+
+By using the substitution \( x=\mu r \) and converting the product 
+of sines to a difference of cosines through the relation 
+$$
+\sin u\sin v=\frac{1}{2}[\cos(u-v)-\cos(u+v)]
+$$
+
+we obtain
+$$
+I=\frac{V_{\eta}}{2\mu kk'}\int_{0}^{\infty}dx (\cos\alpha x-\cos\beta x)
+\frac{e^{-\eta x}}{x}.
+$$
+
+where \( \alpha=\frac{1}{\mu}(k-k') \) and \( \beta=\frac{1}{\mu}(k+k') \).
+This integral can be converted to a form found in standard integral 
+tables by adding and subtracting 1:
+$$
+I=\frac{V_{\eta}}{2\mu kk'}\left[\int_{0}^{\infty}dx(1-\cos\beta x)
+\frac{e^{-\eta x}}{x}-\int_{0}^{\infty}dx(1-\cos\alpha x)\frac{e^{-\eta x}}
+{x}\right].
+$$
+
+Both integrals are now of the same form and their values are given as
+$$
+I=\frac{V_{\eta}}{4\mu k k'}\ln\left[\frac{(\mu \eta)^{2}+(k+k')^{2}}
+{(\mu\eta)^{2}+(k-k')^{2}}\right].
+$$
+
+
 
 <p>
 Write a function which calculates the expressions for the
@@ -285,7 +320,7 @@ We introduce first the calculus relation
 $$
 \begin{equation}
   \int_{-\infty}^{\infty} \frac{dk}{k-k_0} =0.
-\label{_auto3}
+\label{_auto2}
 \end{equation}
 $$
 
@@ -298,7 +333,7 @@ allows us to rewrite the last equation as
 $$
 \begin{equation}
   \int_{0}^{\infty} \frac{dk}{k^2-k_0^2} =0.
-\label{_auto4}
+\label{_auto3}
 \end{equation}
 $$
 
@@ -367,7 +402,7 @@ $$
      u_j=\frac{2}{\pi}
          \frac{\omega_jk_j^2}{(k_0^2-k_j^2)/m}\hspace{1cm}
          j=1,N
-\label{_auto5}
+\label{_auto4}
 \end{equation}
 $$
 
@@ -377,7 +412,7 @@ $$
 \begin{equation}
      u_{N+1}=-\frac{2}{\pi}
           \sum_{j=1}^N\frac{k_0^2\omega_j}{(k_0^2-k_j^2)/m}.
-\label{_auto6}
+\label{_auto5}
 \end{equation}
 $$
 
@@ -397,7 +432,7 @@ With the matrix \( A \) we can rewrite Eq. \eqref{eq:ls3}    as a matrix problem
 $$
 \begin{equation}
 A_{i,l}R_{l,j}=V_{i,j},
-\label{_auto7}
+\label{_auto6}
 \end{equation}
 $$
 
@@ -430,7 +465,7 @@ by noting that
 $$
 \begin{equation}
       R(k_{N+1},k_{N+1})=R(k_0,k_0),
-\label{_auto8}
+\label{_auto7}
 \end{equation}
 $$
 
