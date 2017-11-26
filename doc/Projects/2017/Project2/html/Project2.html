@@ -1,0 +1,197 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="Project 2, deadline  December 15">
+
+<title>Project 2, deadline  December 15</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Effective field theory', 2, None, '___sec0'),
+              ('Project 1a): Setting up the integration domain, mesh points '
+               'and weights',
+               3,
+               None,
+               '___sec1'),
+              ('Project 1b): Adding a potential model', 3, None, '___sec2'),
+              ('Project 1c): Handling the principal value problem',
+               3,
+               None,
+               '___sec3'),
+              ('Project 1d): Adding realistic models for the nuclear forces',
+               3,
+               None,
+               '___sec4'),
+              ('Introduction to numerical projects', 2, None, '___sec5'),
+              ('Format for electronic delivery of report and programs',
+               2,
+               None,
+               '___sec6')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>Project 2, deadline  December 15</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Nuclear Forces PHY989 -->
+
+<center>
+<b>Nuclear Forces PHY989</b> 
+</center>
+
+<p>
+<!-- institution -->
+
+<center><b>National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, USA</b></center>
+<br>
+<p>
+<center><h4>Fall semester 2017</h4></center> <!-- date -->
+<br>
+
+<h2 id="___sec0">Effective field theory </h2>
+
+<p>
+The aim of this project is to build your own Effective field theory (EFT) interaction model that approximates the phase shifts you extracted with the simple interaction model from project 1. We will thus use as input the phase shift analysis from the previous project and use these a our theoretical benchmark.
+We will follow closely <a href="https://arxiv.org/abs/nucl-th/9706029" target="_blank">Lepage's article {\it How to renormalize Schroedinger equation}</a>
+
+<p>
+We will start by building  a <em>pionless</em> EFT potential
+$$
+\begin{align}
+\mathbox{LO} &= C_0,
+\label{_auto1}\\
+\mathbox{NLO} &= C_0 + C_2(k'^2+k^2),
+\label{_auto2}
+\end{align}
+$$
+
+<p>
+where you would have to  fit \( C_0 \), \( C_2 \), etc. to the low-energy phaseshifts from project 1.
+
+<p>
+They could then make "Lepage plots" to I) see the power-law improvement as you increase the order, and II) see the breakdown scale (which should be of order m_pi or m_pi/2). They'd also see what happens when you vary the cutoff (which I would advise they use a Gaussian or super-Gaussian to avoid subtleties in the T-matrix calculation when the interaction has a sharp cutoff).
+
+<p>
+You can  then repeat the exercise now for a pionfull EFT potential 
+where they explicitly include the OPE and refit the contacts. It would 
+illustrate the same points as above, but now with the breakdown scale being 
+moved higher to of the order of the middle-range meson mass.
+
+$$
+\begin{align}
+\mathbox{LO} &= C_0+V_{OPE},
+\label{_auto3}\\
+\mathbox{NLO} &= C_0 + C_2(k'^2+k^2)+V_{OPE}.
+\label{_auto4}
+\end{align}
+$$
+
+<h3 id="___sec1">Project 1a): Setting up the integration domain, mesh points and weights </h3>
+
+<h3 id="___sec2">Project 1b): Adding a potential model </h3>
+
+<h3 id="___sec3">Project 1c): Handling the principal value problem </h3>
+
+<h3 id="___sec4">Project 1d): Adding realistic models for the nuclear forces </h3>
+
+<h2 id="___sec5">Introduction to numerical projects </h2>
+
+<p>
+Here follows a brief recipe and recommendation on how to write a report for each
+project.
+
+<ul>
+  <li> Give a short description of the nature of the problem and the eventual  numerical methods you have used.</li>
+  <li> Describe the algorithm you have used and/or developed. Here you may find it convenient to use pseudocoding. In many cases you can describe the algorithm in the program itself.</li>
+  <li> Include the source code of your program. Comment your program properly.</li>
+  <li> If possible, try to find analytic solutions, or known limits in order to test your program when developing the code.</li>
+  <li> Include your results either in figure form or in a table. Remember to        label your results. All tables and figures should have relevant captions        and labels on the axes.</li>
+  <li> Try to evaluate the reliabilty and numerical stability/precision of your results. If possible, include a qualitative and/or quantitative discussion of the numerical stability, eventual loss of precision etc.</li>
+  <li> Try to give an interpretation of you results in your answers to  the problems.</li>
+  <li> Critique: if possible include your comments and reflections about the  exercise, whether you felt you learnt something, ideas for improvements and  other thoughts you've made when solving the exercise. We wish to keep this course at the interactive level and your comments can help us improve it.</li>
+  <li> Try to establish a practice where you log your work at the  computerlab. You may find such a logbook very handy at later stages in your work, especially when you don't properly remember  what a previous test version  of your program did. Here you could also record  the time spent on solving the exercise, various algorithms you may have tested or other topics which you feel worthy of mentioning.</li>
+</ul>
+
+<h2 id="___sec6">Format for electronic delivery of report and programs </h2>
+
+<p>
+The preferred format for the report is a PDF file. You can also use DOC or postscript formats or as an ipython notebook file.  As programming language we prefer that you choose between C/C++, Fortran2008 or Python. The following prescription should be followed when preparing the report:
+
+<ul>
+  <li> Use your github repository to upload your report. Indicate where the report is by creating for example a <b>Report</b> folder. Please send us as soon as possible your github username.</li>
+  <li> Place your programs in a folder called for example <b>Programs</b> or <b>src</b>, in order to indicate where your programs are. You can use a README file to tell us how your github folders are organized.</li> 
+  <li> In your git repository, please include a folder which contains selected results. These can be in the form of output from your code for a selected set of runs and input parameters.</li>
+  <li> In this and all later projects, you should include tests (for example unit tests) of your code(s).</li>
+  <li> Comments  from us on your projects, with score and detailed feedback will be emailed to you.</li> 
+</ul>
+
+Finally, 
+we encourage you to work two and two together. Optimal working groups consist of 
+2-3 students. You can then hand in a common report. 
+
+<!-- ------------------- end of main content --------------- -->
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2017, Nuclear Forces PHY989. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+
+
+</body>
+</html>
+    
+
