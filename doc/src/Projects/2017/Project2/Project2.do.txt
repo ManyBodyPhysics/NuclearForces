@@ -11,25 +11,25 @@ We will follow closely "Lepage's article *How to renormalize Schroedinger equati
  
 We will start by building  a *pionless* EFT potential
 !bt
-\begin{align}
-V^\text{LO}_\text{NN}(\vec{q},\vec{k})=&C^\text{LO}_1+C^\text{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2,\\
-V^\text{NLO}(\vec{q},\vec{k})=&V^\text{LO}_\text{NN}+C^\text{NLO}_1\vec{q}^2+C^\text{NLO}_2\vec{k}^2+
-\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\text{NLO}_3\vec{q}^2+C^\text{NLO}_4\vec{k}^2\right)\label{eq_nlo-pot-mom-space}\\
-&+iC^\text{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\text{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
-+C^\text{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2,
-\end{align}
+\begin{align*}
+V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=&C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2,\\
+V^\mathrm{NLO}(\vec{q},\vec{k})=&V^\mathrm{LO}_\mathrm{NN}+C^\mathrm{NLO}_1\vec{q}^2+C^\mathrm{NLO}_2\vec{k}^2+
+\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\mathrm{NLO}_3\vec{q}^2+C^\mathrm{NLO}_4\vec{k}^2\right)\\
+&+iC^\mathrm{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\mathrm{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
++C^\mathrm{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2,
+\end{align*}
 !et
 Where $\vec{q}=\vec{p}-\vec{p'}$ is the momentum transfer and $\vec{k}=\frac{\vec{p}+\vec{p'}}{2}$ the average momentum.
 Thereafter we will add the one-pion exchange term to these interactions and label this
 as the pionfull potential with expressions
 !bt
-\begin{align}
-V^\text{LO}_\text{NN}(\vec{q},\vec{k})=&C^\text{LO}_1+C^\text{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2+V^{\pi}(q),\\
-V^\text{NLO}(\vec{q},\vec{k})=&V^\text{LO}_\text{NN}+C^\text{NLO}_1\vec{q}^2+C^\text{NLO}_2\vec{k}^2+
-\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\text{NLO}_3\vec{q}^2+C^\text{NLO}_4\vec{k}^2\right)\label{eq_nlo-pot-mom-space}\\
-&+iC^\text{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\text{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
-+C^\text{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2+V^{\pi}(q),
-\end{align}
+\begin{align*}
+V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=&C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2+V^{\pi}(q),\\
+V^\mathrm{NLO}(\vec{q},\vec{k})=&V^\mathrm{LO}_\mathrm{NN}+C^\mathrm{NLO}_1\vec{q}^2+C^\mathrm{NLO}_2\vec{k}^2+
+\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\mathrm{NLO}_3\vec{q}^2+C^\mathrm{NLO}_4\vec{k}^2\right)\\
+&+iC^\mathrm{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\mathrm{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
++C^\mathrm{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2+V^{\pi}(q),
+\end{align*}
 !et
 where we have added
 !bt
@@ -47,28 +47,24 @@ cutoff parameter, see below for discussions of these factors.
 The aim is to use the results from project 1 and
 fit the parameters $C_1$, $C_2$, etc. to the low-energy phaseshifts from the previous project.  
  
- !bt
-\begin{align}
 
-\end{align}
-!et
 === Project 1a): Lowest-order pionless theory ===
 In order to get started, we start by fitting the lowest order pionless interaction model, given by (excluding isospin)
 !bt
 \[
-V^\text{LO}_\text{NN}(\vec{q},\vec{k})=&C^\text{LO}_1+C^\text{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2.
+V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2.
 \]
 !et
 Find these parameters by fitting the phase-shifts to those from project 1.
-=== Project 1b): Still pionless, bt adding the next order ===
+=== Project 1b): Still pionless, but adding the next order ===
 We add now the next-to-leading order term
 !bt
-\begin{align}
-V^\text{NLO}(\vec{q},\vec{k})=&V^\text{LO}_\text{NN}+C^\text{NLO}_1\vec{q}^2+C^\text{NLO}_2\vec{k}^2+
-\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\text{NLO}_3\vec{q}^2+C^\text{NLO}_4\vec{k}^2\right)\label{eq_nlo-pot-mom-space}\\
-&+iC^\text{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\text{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
-+C^\text{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2,
-\end{align}
+\begin{align*}
+V^\mathrm{NLO}(\vec{q},\vec{k})=&V^\mathrm{LO}_\mathrm{NN}+C^\mathrm{NLO}_1\vec{q}^2+C^\mathrm{NLO}_2\vec{k}^2+
+\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\mathrm{NLO}_3\vec{q}^2+C^\mathrm{NLO}_4\vec{k}^2\right)\\
+&+iC^\mathrm{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\mathrm{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
++C^\mathrm{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2,
+\end{align*}
 !et
 and fit the parameters to our phase shifts from project 1. This will allow you to see so-called power-law improvements ( a la those discussed in Lepage's article)
 when you increase to higher orders in effective field theory as well as the breakdown scale, which depends on $m_{\pi}$. You should also see what happens when you vary the cutoff $\Lambda$.  
@@ -76,22 +72,22 @@ when you increase to higher orders in effective field theory as well as the brea
 We will repeat part a) by including the one-pion exchange contribution and refit the parameters using now
 as the pionfull potential with expressions
 !bt
-\begin{align}
-V^\text{LO}_\text{NN}(\vec{q},\vec{k})=&C^\text{LO}_1+C^\text{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2+V^{\pi}(q).
-\end{align}
+\[
+V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2+V^{\pi}(q).
+\]
 !et
 Compare your results with those of part a).
 
 === Project 1d): Pionfull to the next leading order ===
 We move next to our pionfull theory to next leading order and refit the parameters using
 !bt
-\begin{align}
-V^\text{LO}_\text{NN}(\vec{q},\vec{k})=&C^\text{LO}_1+C^\text{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2+V^{\pi}(q),\\
-V^\text{NLO}(\vec{q},\vec{k})=&V^\text{LO}_\text{NN}+C^\text{NLO}_1\vec{q}^2+C^\text{NLO}_2\vec{k}^2+
-\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\text{NLO}_3\vec{q}^2+C^\text{NLO}_4\vec{k}^2\right)\label{eq_nlo-pot-mom-space}\\
-&+iC^\text{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\text{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
-+C^\text{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2+V^{\pi}(q).
-\end{align}
+\begin{align*}
+V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=&C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2+V^{\pi}(q),\\
+V^\mathrm{NLO}(\vec{q},\vec{k})=&V^\mathrm{LO}_\mathrm{NN}+C^\mathrm{NLO}_1\vec{q}^2+C^\mathrm{NLO}_2\vec{k}^2+
+\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\mathrm{NLO}_3\vec{q}^2+C^\mathrm{NLO}_4\vec{k}^2\right)\\
+&+iC^\mathrm{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\mathrm{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
++C^\mathrm{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2+V^{\pi}(q).
+\end{align*}
 !et
 You will obtain much of  the same qualitative behavior as in parts a) and b), with the difference 
 that the breakdown scale is 

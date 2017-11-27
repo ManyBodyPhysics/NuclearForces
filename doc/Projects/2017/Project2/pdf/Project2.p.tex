@@ -158,33 +158,82 @@ Fall semester 2017
 
 \subsection{Effective field theory}
 
-The aim of this project is to build your own Effective field theory (EFT) interaction model that approximates the phase shifts you extracted with the simple interaction model from project 1. We will thus use as input the phase shift analysis from the previous project and use these a our theoretical benchmark.
-We will follow closely \href{{https://arxiv.org/abs/nucl-th/9706029}}{Lepage's article {\it How to renormalize Schroedinger equation}}
+The aim of this project is to build your own Effective field theory (EFT) interaction model that approximates the phase shifts you extracted with the simple interaction model from project 1. We will thus use as input the phase shift analysis from the previous project and use these as our theoretical benchmarks.
+We will follow closely \href{{https://arxiv.org/abs/nucl-th/9706029}}{Lepage's article *How to renormalize Schroedinger equation*}
 
 We will start by building  a \emph{pionless} EFT potential
-\begin{align}
-\mathbox{LO} &= C_0,\\
-\mathbox{NLO} &= C_0 + C_2(k'^2+k^2),
-\end{align}
+\begin{align*}
+V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=&C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2,\\
+V^\mathrm{NLO}(\vec{q},\vec{k})=&V^\mathrm{LO}_\mathrm{NN}+C^\mathrm{NLO}_1\vec{q}^2+C^\mathrm{NLO}_2\vec{k}^2+
+\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\mathrm{NLO}_3\vec{q}^2+C^\mathrm{NLO}_4\vec{k}^2\right)\\
+&+iC^\mathrm{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\mathrm{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
++C^\mathrm{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2,
+\end{align*}
+Where $\vec{q}=\vec{p}-\vec{p'}$ is the momentum transfer and $\vec{k}=\frac{\vec{p}+\vec{p'}}{2}$ the average momentum.
+Thereafter we will add the one-pion exchange term to these interactions and label this
+as the pionfull potential with expressions
+\begin{align*}
+V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=&C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2+V^{\pi}(q),\\
+V^\mathrm{NLO}(\vec{q},\vec{k})=&V^\mathrm{LO}_\mathrm{NN}+C^\mathrm{NLO}_1\vec{q}^2+C^\mathrm{NLO}_2\vec{k}^2+
+\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\mathrm{NLO}_3\vec{q}^2+C^\mathrm{NLO}_4\vec{k}^2\right)\\
+&+iC^\mathrm{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\mathrm{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
++C^\mathrm{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2+V^{\pi}(q),
+\end{align*}
+where we have added
+\[
+V^{\pi}(q)=-\frac{g_A^{2}}{4f_{\pi}^2}
+\frac{(\sigma_{1}\cdot\mathbf{q})(\sigma_{2}\cdot\mathbf{q})}{\mathbf{q}^{2}+m_{\pi}^{2}}.
+\]
+where $g_A$ is the axial-vector coupling constant and $f_{\pi}$ is the pion-decay constant. The term
+proportional to $g_A/2f_{\pi}$ is the familiar axial-vector coupling of one pion to the nucleon.
+We use $g_A = 1.276$ and $f_{\pi}=92.4$ MeV.
+You need also to consider the isospin dependence by including $\tau_{1}\tau_{2}$. These interactions will depend on the so-called form factors that include a
+cutoff parameter, see below for discussions of these factors.
 
-where you would have to  fit $C_0$, $C_2$, etc. to the low-energy phaseshifts from project 1.  
+The aim is to use the results from project 1 and
+fit the parameters $C_1$, $C_2$, etc. to the low-energy phaseshifts from the previous project.  
 
-They could then make "Lepage plots" to I) see the power-law improvement as you increase the order, and II) see the breakdown scale (which should be of order m_pi or m_pi/2). They'd also see what happens when you vary the cutoff (which I would advise they use a Gaussian or super-Gaussian to avoid subtleties in the T-matrix calculation when the interaction has a sharp cutoff).
+
+\paragraph{Project 1a): Lowest-order pionless theory.}
+In order to get started, we start by fitting the lowest order pionless interaction model, given by (excluding isospin)
+\[
+V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2.
+\]
+Find these parameters by fitting the phase-shifts to those from project 1.
+\paragraph{Project 1b): Still pionless, but adding the next order.}
+We add now the next-to-leading order term
+\begin{align*}
+V^\mathrm{NLO}(\vec{q},\vec{k})=&V^\mathrm{LO}_\mathrm{NN}+C^\mathrm{NLO}_1\vec{q}^2+C^\mathrm{NLO}_2\vec{k}^2+
+\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\mathrm{NLO}_3\vec{q}^2+C^\mathrm{NLO}_4\vec{k}^2\right)\\
+&+iC^\mathrm{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\mathrm{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
++C^\mathrm{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2,
+\end{align*}
+and fit the parameters to our phase shifts from project 1. This will allow you to see so-called power-law improvements ( a la those discussed in Lepage's article)
+when you increase to higher orders in effective field theory as well as the breakdown scale, which depends on $m_{\pi}$. You should also see what happens when you vary the cutoff $\Lambda$.  
+\paragraph{Project 1c): Including the one-pion exchagne term.}
+We will repeat part a) by including the one-pion exchange contribution and refit the parameters using now
+as the pionfull potential with expressions
+\[
+V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2+V^{\pi}(q).
+\]
+Compare your results with those of part a).
+
+\paragraph{Project 1d): Pionfull to the next leading order.}
+We move next to our pionfull theory to next leading order and refit the parameters using
+\begin{align*}
+V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=&C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2+V^{\pi}(q),\\
+V^\mathrm{NLO}(\vec{q},\vec{k})=&V^\mathrm{LO}_\mathrm{NN}+C^\mathrm{NLO}_1\vec{q}^2+C^\mathrm{NLO}_2\vec{k}^2+
+\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\mathrm{NLO}_3\vec{q}^2+C^\mathrm{NLO}_4\vec{k}^2\right)\\
+&+iC^\mathrm{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\mathrm{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
++C^\mathrm{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2+V^{\pi}(q).
+\end{align*}
+You will obtain much of  the same qualitative behavior as in parts a) and b), with the difference 
+that the breakdown scale is 
+moved higher to of the order of the middle-range meson mass. Discuss and comment your results.
 
 
-You can  then repeat the exercise now for a pionfull EFT potential 
-where they explicitly include the OPE and refit the contacts. It would 
-illustrate the same points as above, but now with the breakdown scale being 
-moved higher to of the order of the middle-range meson mass.
 
-\begin{align}
-\mathbox{LO} &= C_0+V_{OPE},\\
-\mathbox{NLO} &= C_0 + C_2(k'^2+k^2)+V_{OPE}.
-\end{align}
-\paragraph{Project 1a): Setting up the integration domain, mesh points and weights.}
-\paragraph{Project 1b): Adding a potential model.}
-\paragraph{Project 1c): Handling the principal value problem.}
-\paragraph{Project 1d): Adding realistic models for the nuclear forces.}
+
 \subsection{Introduction to numerical projects}
 
 Here follows a brief recipe and recommendation on how to write a report for each
