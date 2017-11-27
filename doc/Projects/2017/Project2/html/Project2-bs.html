@@ -41,24 +41,22 @@ Automatically generated HTML file from DocOnce source
 <!-- tocinfo
 {'highest level': 2,
  'sections': [('Effective field theory', 2, None, '___sec0'),
-              ('Project 1a): Lowest-order pionless theory', 3, None, '___sec1'),
-              ('Project 1b): Still pionless, but adding the next order',
+              ('Project 2a): Lowest-order pionless theory', 3, None, '___sec1'),
+              ('Project 2b): Still pionless, but adding the next order',
                3,
                None,
                '___sec2'),
-              ('Project 1c): Including the one-pion exchagne term',
-               3,
-               None,
-               '___sec3'),
-              ('Project 1d): Pionfull to the next leading order',
+              ('Project 2c): Cutoff dependence', 3, None, '___sec3'),
+              ('Project 2d): Including the *one-pion exchange* term',
                3,
                None,
                '___sec4'),
-              ('Introduction to numerical projects', 2, None, '___sec5'),
+              ('Project 2e (optional)): Cutoff dependence', 3, None, '___sec5'),
+              ('Introduction to numerical projects', 2, None, '___sec6'),
               ('Format for electronic delivery of report and programs',
                2,
                None,
-               '___sec6')]}
+               '___sec7')]}
 end of tocinfo -->
 
 <body>
@@ -97,12 +95,13 @@ MathJax.Hub.Config({
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
      <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>Effective field theory</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Project 1a): Lowest-order pionless theory</a></li>
-     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Project 1b): Still pionless, but adding the next order</a></li>
-     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Project 1c): Including the one-pion exchagne term</a></li>
-     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Project 1d): Pionfull to the next leading order</a></li>
-     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;"><b>Introduction to numerical projects</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;"><b>Format for electronic delivery of report and programs</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Project 2a): Lowest-order pionless theory</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Project 2b): Still pionless, but adding the next order</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Project 2c): Cutoff dependence</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Project 2d): Including the <em>one-pion exchange</em> term</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Project 2e (optional)): Cutoff dependence</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;"><b>Introduction to numerical projects</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;"><b>Format for electronic delivery of report and programs</b></a></li>
 
         </ul>
       </li>
@@ -143,108 +142,155 @@ MathJax.Hub.Config({
 <h2 id="___sec0" class="anchor">Effective field theory </h2>
 
 <p>
-The aim of this project is to build your own Effective field theory (EFT) interaction model that approximates the phase shifts you extracted with the simple interaction model from project 1. We will thus use as input the phase shift analysis from the previous project and use these as our theoretical benchmarks.
-We will follow closely <a href="https://arxiv.org/abs/nucl-th/9706029" target="_self">Lepage's article *How to renormalize Schroedinger equation*</a>
+The aim of this project is to build your own Effective field theory
+(EFT) interaction model that approximates the phase shifts you
+extracted with the simple interaction model from project 1. We will
+thus use as input the phase shift analysis from the previous project
+and use these as our theoretical benchmarks.  We will follow closely
+<a href="https://arxiv.org/abs/nucl-th/9706029" target="_self">Lepage's article *How to renormalize Schroedinger
+equation*</a>, see especially
+pages 8-17.
 
 <p>
-We will start by building  a <em>pionless</em> EFT potential
+We will start by building a \emph{pionless} EFT potential to describe
+NN scattering low energies where even the longest range piece of the
+potential is unresolved.  Therefore, the EFT potential is just a
+series of contact interactions. Recall, this is the domain of the
+effective range expansion, which is valid up to onshell momentum
+\( k\sim m_{\pi}/2 \), which translates to about 10 MeV lab energy. If we
+were considering the <em>true</em> NN system with non-central terms (and full
+spin- and isospin-dependent terms), then the contact interactions take
+the form: 
 $$
 \begin{align*}
-V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=&C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2,\\
-V^\mathrm{NLO}(\vec{q},\vec{k})=&V^\mathrm{LO}_\mathrm{NN}+C^\mathrm{NLO}_1\vec{q}^2+C^\mathrm{NLO}_2\vec{k}^2+
-\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\mathrm{NLO}_3\vec{q}^2+C^\mathrm{NLO}_4\vec{k}^2\right)\\
-&+iC^\mathrm{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\mathrm{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
-+C^\mathrm{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2,
+V^\mathrm{LO}(\vec{q},\vec{k})=&C_S+C_T\vec{\sigma}_1\cdot\vec{\sigma}_2,\\
+V^\mathrm{NLO}(\vec{q},\vec{k})=&C_1\vec{q}^{\,2}+C_2\vec{k}^2+
+\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C_3\vec{q}^2+C_4\vec{k}^2\right)\\
+&+iC_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
++C_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2, 
 \end{align*}
 $$
 
-Where \( \vec{q}=\vec{p}-\vec{p'} \) is the momentum transfer and \( \vec{k}=\frac{\vec{p}+\vec{p'}}{2} \) the average momentum.
-Thereafter we will add the one-pion exchange term to these interactions and label this
-as the pionfull potential with expressions
-$$
-\begin{align*}
-V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=&C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2+V^{\pi}(q),\\
-V^\mathrm{NLO}(\vec{q},\vec{k})=&V^\mathrm{LO}_\mathrm{NN}+C^\mathrm{NLO}_1\vec{q}^2+C^\mathrm{NLO}_2\vec{k}^2+
-\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\mathrm{NLO}_3\vec{q}^2+C^\mathrm{NLO}_4\vec{k}^2\right)\\
-&+iC^\mathrm{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\mathrm{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
-+C^\mathrm{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2+V^{\pi}(q),
-\end{align*}
-$$
+where \( \vec{q}=\vec{p}-\vec{p'} \) is the momentum transfer,
+\( \vec{k}=\frac{\vec{p}+\vec{p'}}{2} \) the average momentum, and
+\( \vec{p},\vec{p'} \) the relative momenta.  However, since our
+&quot;underlying theory&quot; in Project 1 is spin- and isospin-independent,
+the above simplifies substantially, just strike out any terms with
+Pauli spin/isospin matrices!
 
-where we have added
-$$
-V^{\pi}(q)=-\frac{g_A^{2}}{4f_{\pi}^2}
-\frac{(\sigma_{1}\cdot\mathbf{q})(\sigma_{2}\cdot\mathbf{q})}{\mathbf{q}^{2}+m_{\pi}^{2}}.
-$$
+<h3 id="___sec1" class="anchor">Project 2a): Lowest-order pionless theory </h3>
 
-where \( g_A \) is the axial-vector coupling constant and \( f_{\pi} \) is the pion-decay constant. The term
-proportional to \( g_A/2f_{\pi} \) is the familiar axial-vector coupling of one pion to the nucleon.
-We use \( g_A = 1.276 \) and \( f_{\pi}=92.4 \) MeV.
-You need also to consider the isospin dependence by including \( \tau_{1}\tau_{2} \). These interactions will depend on so-called regulators  that include a
-cutoff parameter \( \Lambda \).
+We start by fitting the lowest order pionless interaction model. Projecting into the $^1$S$_0$ channel, the potential is given by (excluding spin/isospin-dependent terms)
+$$
+V^\mathrm{LO}_{^1S_0}(p',p)=C_0.
+$$
 
 <p>
-We will opt for the the same regulator for all vertices,
+Note that the coupling constants appearing in the $^1$S$_0$
+expressions are linear combinations of the coupling constants in the
+general expressions shown above. Their exact form doesn't concern us,
+though you can find the relevant details on pp. 32-33 of <a href="https://arxiv.org/abs/1105.2919" target="_self">Machleidt and Entem</a>.
+
+<p>
+As it stands, this potential would give UV
+divergences if you naively used it in the LS equation. Therefore, we
+need to regularize the potential to cutoff the problematic
+high-momentum modes in the loop integrals. In class, we used a sharp
+cutoff so that the above would by multiplied by \( \theta(\Lambda -
+p)\theta(\Lambda-p') \). While conceptually simple, sharp cutoffs can be
+tricky-- can you guess how you would need to modify the &quot;trick&quot; used
+to handle the principal value integral in the LS equation? (This is
+actually the least of our worries. If we try to use a sharp cutoff in
+some manybody method that relies on expanding the Hamiltonian in a
+harmonic oscillator basis, the expansion is very slowly converging in
+analogy with the <em>Gibbs overshoot</em> phenomena in Fourier analysis.) To
+avoid these subtleties, we instead will use a smooth UV regulator as
+
 $$
-f(\vec{p},\vec{p'},\Lambda)=e^{-\left(\vec{p}-\vec{p'}\right)^2/\Lambda^2}\;\;\;\rightarrow\;\;\;V(\vec{p},\vec{p'},\Lambda)\equiv f(\vec{p},\vec{p'},\Lambda)V^\text{(N)LO}(\vec{q},\vec{k})\;\;\;,
-$$
-
-The parameter \( \Lambda \) is the cutoff energy that determines the range of validity for a given interaction model.
-The aim is to use the results from project 1 and
-fit the parameters \( C_1 \), \( C_2 \), etc. to the low-energy phaseshifts from the previous project.
-
-<h3 id="___sec1" class="anchor">Project 1a): Lowest-order pionless theory </h3>
-
-In order to get started, we start by fitting the lowest order pionless interaction model, given by (excluding isospin)
-$$
-V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2.
-$$
-
-Find these parameters by fitting the phase-shifts to those from project 1.
-
-<h3 id="___sec2" class="anchor">Project 1b): Still pionless, but adding the next order </h3>
-
-We add now the next-to-leading order term
-$$
-\begin{align*}
-V^\mathrm{NLO}(\vec{q},\vec{k})=&V^\mathrm{LO}_\mathrm{NN}+C^\mathrm{NLO}_1\vec{q}^2+C^\mathrm{NLO}_2\vec{k}^2+
-\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\mathrm{NLO}_3\vec{q}^2+C^\mathrm{NLO}_4\vec{k}^2\right)\\
-&+iC^\mathrm{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\mathrm{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
-+C^\mathrm{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2,
-\end{align*}
+V(p',p)\Rightarrow f_{\Lambda}(p')V(p',p)f_{\Lambda}(p)\,
+\] 
+where we choose
+\[
+f_{\Lambda}(p) = \exp{[-p^4/\Lambda^4]}\,.
 $$
 
-and fit the parameters to our phase shifts from project 1. This will allow you to see so-called power-law improvements ( a la those discussed in Lepage's article)
-when you increase to higher orders in effective field theory as well as the breakdown scale, which depends on \( m_{\pi} \). You should also see what happens when you vary the cutoff \( \Lambda \).
+<p>
+Choose an <em>appropriate</em> value for \( \Lambda \) and fit \( C_0 \) to low
+energy phase shifts. Hint: Per Lepage, always use the <em>most infrared'</em> data possible when fitting the couplings of contact
+terms. Also, remember Lepage's discussion on choosing the value for
+\( \Lambda \).
 
-<h3 id="___sec3" class="anchor">Project 1c): Including the one-pion exchagne term </h3>
+<h3 id="___sec2" class="anchor">Project 2b): Still pionless, but adding the next order </h3>
 
-We will repeat part a) by including the one-pion exchange contribution and refit the parameters using now
-as the pionfull potential with expressions
+We add now the NLO correction term
 $$
-V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2+V^{\pi}(q).
-$$
-
-Compare your results with those of part a).
-
-<h3 id="___sec4" class="anchor">Project 1d): Pionfull to the next leading order </h3>
-
-We move next to our pionfull theory to next leading order and refit the parameters using
-$$
-\begin{align*}
-V^\mathrm{LO}_\mathrm{NN}(\vec{q},\vec{k})=&C^\mathrm{LO}_1+C^\mathrm{LO}_2\vec{\sigma}_1\cdot\vec{\sigma}_2+V^{\pi}(q),\\
-V^\mathrm{NLO}(\vec{q},\vec{k})=&V^\mathrm{LO}_\mathrm{NN}+C^\mathrm{NLO}_1\vec{q}^2+C^\mathrm{NLO}_2\vec{k}^2+
-\vec{\sigma}_1\cdot\vec{\sigma}_2\left(C^\mathrm{NLO}_3\vec{q}^2+C^\mathrm{NLO}_4\vec{k}^2\right)\\
-&+iC^\mathrm{NLO}_5\frac{\vec{\sigma}_1+\vec{\sigma}_2}{2}\cdot\vec{q}\times\vec{k}+C^\mathrm{NLO}_6\vec{q}\cdot\vec{\sigma}_1\vec{q}\cdot\vec{\sigma}_2
-+C^\mathrm{NLO}_7\vec{k}\cdot\vec{\sigma}_1\vec{k}\cdot\vec{\sigma}_2+V^{\pi}(q).
-\end{align*}
+V^\mathrm{NLO}_{^1S_0}(p',p)=C_2(p^2 + p'^2)\,
 $$
 
-You will obtain much of  the same qualitative behavior as in parts a) and b), with the difference 
-that the breakdown scale is 
-moved higher to of the order of the middle-range meson mass. Discuss and comment your results.
+and fit the parameters (\( C_0 \) and \( C_2 \)) to the low-energy phase shifts from project 1. Next, add the NNLO correction term
+$$
+V^\mathrm{NNLO}_{^1S_0}(p',p)=C_4(p^4 + p'^4) + C'_4 p^2p'^2\,
+$$
 
-<h2 id="___sec5" class="anchor">Introduction to numerical projects </h2>
+<p>
+and fit the four parameters \( C_0,C_2,C_4,C'_4 \) to the low-energy phase
+shifts.  Make a plot of your calculated LO, NLO, and NNLO phase shifts
+and compare them to the results from the Project 1 potential. Also
+make a plot a-la Fig. 3 in Lepage to show the power-law improvement
+with each additional order, and from this pick off the breakdown scale
+\( \Lambda_b \) where the EFT stops improving with additional
+orders. These log-log error plots are commonly known as <em>Lepage plots</em>, and they help show that an EFT is working as expected.
+
+<h3 id="___sec3" class="anchor">Project 2c): Cutoff dependence  </h3>
+
+Repeat the NLO pionless fits for several different values of \( \Lambda \), and make the analogous plot to Fig. 4 in Lepage. If we denote a generic momentum of some low-energy process by \( Q \), then the theoretical errors in an EFT calculation scale roughly as 
+$$
+\Delta(Q) \sim {\rm Max}\,{((Q/\Lambda)^n, (Q/\Lambda_b)^n)},
+$$
+
+which is why taking \( \Lambda >> \Lambda_b \) doesn't really buy you anything.
+
+<h3 id="___sec4" class="anchor">Project 2d): Including the <em>one-pion exchange</em> term </h3>
+
+<p>
+The pionless EFT basically reproduces the physics of the Effective
+Range Expansion, so we expect \( \Lambda_b\sim m_{\pi} \), which sets the
+scale of the longest-ranged Yukawa term in the toy potential of
+Project 1. We now want to build a toy EFT which works at higher
+energies. To do this, we now include the longest-ranged Yukawa
+potential as an explicit degree of freedom in our EFT. (We put
+quotation marks around the one-pion exchange moniker since our
+underlying theory is a toy model, without the full spin/isospin
+dependence that would come with the true OPE potential.)
+
+<p>
+We will repeat parts 2a)-2b) by including the <em>one-pion exchange</em>
+contribution and refitting the contact term couplings. Therefore, at
+LO our EFT potential takes the form
+$$
+V^\mathrm{LO}(p,p')= V_{\pi}(p,p') + C_0\,
+$$
+
+while at NLO our potential takes the form
+$$
+V^\mathrm{NLO}(p,p')= V_{\pi}(p,p') + C_0 + C_2(p^2+p'^2)\,,
+$$
+
+with the analogous form for the NNLO potential.
+
+<p>
+Redo the analysis of parts 2a-2b, taking care to modify your choice of
+\( \Lambda \) to an <em>appropriate</em> value.  Your analysis should be very
+similar as for the pionless theory, except that the value of
+\( \Lambda_b \) should be at a higher value, roughly equal to the mass of
+the next heaviest Yukawa term.
+
+<h3 id="___sec5" class="anchor">Project 2e (optional)): Cutoff dependence  </h3>
+
+<p>
+Redo the analysis of part 2c, and comment on any similarities/differences.
+
+<h2 id="___sec6" class="anchor">Introduction to numerical projects </h2>
 
 <p>
 Here follows a brief recipe and recommendation on how to write a report for each
@@ -262,7 +308,7 @@ project.
   <li> Try to establish a practice where you log your work at the  computerlab. You may find such a logbook very handy at later stages in your work, especially when you don't properly remember  what a previous test version  of your program did. Here you could also record  the time spent on solving the exercise, various algorithms you may have tested or other topics which you feel worthy of mentioning.</li>
 </ul>
 
-<h2 id="___sec6" class="anchor">Format for electronic delivery of report and programs </h2>
+<h2 id="___sec7" class="anchor">Format for electronic delivery of report and programs </h2>
 
 <p>
 The preferred format for the report is a PDF file. You can also use DOC or postscript formats or as an ipython notebook file.  As programming language we prefer that you choose between C/C++, Fortran2008 or Python. The following prescription should be followed when preparing the report:
@@ -277,7 +323,9 @@ The preferred format for the report is a PDF file. You can also use DOC or posts
 
 Finally, 
 we encourage you to work two and two together. Optimal working groups consist of 
-2-3 students. You can then hand in a common report. 
+2-3 students. You can then hand in a common report.
+
+<p>
 
 <!-- ------------------- end of main content --------------- -->
 
