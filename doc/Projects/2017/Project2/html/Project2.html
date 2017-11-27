@@ -141,10 +141,16 @@ $$
 where \( g_A \) is the axial-vector coupling constant and \( f_{\pi} \) is the pion-decay constant. The term
 proportional to \( g_A/2f_{\pi} \) is the familiar axial-vector coupling of one pion to the nucleon.
 We use \( g_A = 1.276 \) and \( f_{\pi}=92.4 \) MeV.
-You need also to consider the isospin dependence by including \( \tau_{1}\tau_{2} \). These interactions will depend on the so-called form factors that include a
-cutoff parameter, see below for discussions of these factors.
+You need also to consider the isospin dependence by including \( \tau_{1}\tau_{2} \). These interactions will depend on so-called regulators  that include a
+cutoff parameter \( \Lambda \).
 
 <p>
+We will opt for the the same regulator for all vertices,
+$$
+f(\vec{p},\vec{p'},\Lambda)=e^{-\left(\vec{p}-\vec{p'}\right)^2/\Lambda^2}\;\;\;\rightarrow\;\;\;V(\vec{p},\vec{p'},\Lambda)\equiv f(\vec{p},\vec{p'},\Lambda)V^\text{(N)LO}(\vec{q},\vec{k})\;\;\;,
+$$
+
+The parameter \( \Lambda \) is the cutoff energy that determines the range of validity for a given interaction model.
 The aim is to use the results from project 1 and
 fit the parameters \( C_1 \), \( C_2 \), etc. to the low-energy phaseshifts from the previous project.
 
