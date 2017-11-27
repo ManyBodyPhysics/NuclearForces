@@ -96,11 +96,11 @@ ${text_types(ch)}
 
 === Project 2 ===
  * LaTeX and PDF:
-     * "LaTex file":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project2/pdf"
-     * "PDF file":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project2/pdf"
+     * "LaTex file":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project2/pdf/Project2.tex"
+     * "PDF file":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project2/pdf/Project2.pdf"
  * HTML:
-   * "Plain html":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project2/html"
-   * "Bootstrap  slide style, easy for reading on mobile devices":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project2/html"
+   * "Plain html":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project2/html/Project2-bs.html"
+   * "Bootstrap  slide style, easy for reading on mobile devices":"https://manybodyphysics.github.io/NuclearForces/doc/Projects/2017/Project2/html/Project2.html"
 
 
 !split
