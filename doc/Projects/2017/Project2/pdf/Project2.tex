@@ -136,20 +136,20 @@ The aim of this project is to build your own Effective field theory
 (EFT) interaction model that approximates the phase shifts you
 extracted with the simple interaction model from project 1. We will
 thus use as input the phase shift analysis from the previous project
-and use these as our theoretical benchmarks.  We will follow closely
-\href{{https://arxiv.org/abs/nucl-th/9706029}}{Lepage's article *How to renormalize Schroedinger
+and use these as our theoretical benchmark data.  We will follow closely
+\href{{https://arxiv.org/abs/nucl-th/9706029}}{Lepage's article *How to renormalize the Schroedinger
 equation*}, see especially
 pages 8-17.
 
 
 We will start by building a \emph{pionless} EFT potential to describe
-NN scattering low energies where even the longest range piece of the
+nucleon-nucleon  scattering low energies where even the longest range piece of the
 potential is unresolved.  Therefore, the EFT potential is just a
-series of contact interactions. Recall, this is the domain of the
-effective range expansion, which is valid up to onshell momentum
-$k\sim m_{\pi}/2$, which translates to about 10 MeV lab energy. If we
+series of contact interactions. Recall that this is the domain of the
+effective range expansion, which is valid up to an onshell momentum
+$k\sim m_{\pi}/2$, which  translates to about 10 MeV lab energy. If we
 were considering the \emph{true} NN system with non-central terms (and full
-spin- and isospin-dependent terms), then the contact interactions take
+spin- and isospin-dependent terms, we drop isospin here), then the contact interactions take
 the form: 
 \begin{align*}
 V^\mathrm{LO}(\vec{q},\vec{k})=&C_S+C_T\vec{\sigma}_1\cdot\vec{\sigma}_2,\\
@@ -169,29 +169,29 @@ Pauli spin/isospin matrices!
 
 
 \paragraph{Project 2a): Lowest-order pionless theory.}
-We start by fitting the lowest order pionless interaction model. Projecting into the $^1$S$_0$ channel, the potential is given by (excluding spin/isospin-dependent terms)
+We start by fitting the lowest order pionless interaction model. Projecting into the $^1S_0$ channel, the potential is given by (excluding spin/isospin-dependent terms)
 \[
 V^\mathrm{LO}_{^1S_0}(p',p)=C_0.
 \]
 
-Note that the coupling constants appearing in the $^1$S$_0$
+Note that the coupling constants appearing in the $^1S_0$
 expressions are linear combinations of the coupling constants in the
-general expressions shown above. Their exact form doesn't concern us,
+general expressions shown above. Their exact form will not concern us here,
 though you can find the relevant details on pp. 32-33 of \href{{https://arxiv.org/abs/1105.2919}}{Machleidt and Entem}.
 
 As it stands, this potential would give UV
-divergences if you naively used it in the LS equation. Therefore, we
+divergences if you naively used it in the LS equation of project 1. Therefore, we
 need to regularize the potential to cutoff the problematic
 high-momentum modes in the loop integrals. In class, we used a sharp
 cutoff so that the above would by multiplied by $\theta(\Lambda -
 p)\theta(\Lambda-p')$. While conceptually simple, sharp cutoffs can be
-tricky-- can you guess how you would need to modify the ``trick'' used
+tricky, can you guess how you would need to modify the \emph{trick} used
 to handle the principal value integral in the LS equation? (This is
 actually the least of our worries. If we try to use a sharp cutoff in
 some manybody method that relies on expanding the Hamiltonian in a
 harmonic oscillator basis, the expansion is very slowly converging in
 analogy with the \emph{Gibbs overshoot} phenomena in Fourier analysis.) To
-avoid these subtleties, we instead will use a smooth UV regulator as
+avoid these subtleties, we will instead use a smooth UV regulator as
 
 \[
 V(p',p)\Rightarrow f_{\Lambda}(p')V(p',p)f_{\Lambda}(p)\,
@@ -202,7 +202,7 @@ f_{\Lambda}(p) = \exp{[-p^4/\Lambda^4]}\,.
 \]
 
 Choose an \emph{appropriate} value for $\Lambda$ and fit $C_0$ to low
-energy phase shifts. Hint: Per Lepage, always use the \emph{most infrared'} data possible when fitting the couplings of contact
+energy phase shifts. Hint: Following Lepage, always use the \emph{most infrared} data possible when fitting the couplings of contact
 terms. Also, remember Lepage's discussion on choosing the value for
 $\Lambda$.
 
@@ -210,11 +210,11 @@ $\Lambda$.
 \paragraph{Project 2b): Still pionless, but adding the next order.}
 We add now the NLO correction term
 \[
-V^\mathrm{NLO}_{^1S_0}(p',p)=C_2(p^2 + p'^2)\,
+V^\mathrm{NLO}_{^1S_0}(p',p)=C_2(p^2 + p'^2),
 \]
-and fit the parameters ($C_0$ and $C_2$) to the low-energy phase shifts from project 1. Next, add the NNLO correction term
+and fit the parameters ($C_0$ and $C_2$) to the low-energy phase shifts from project 1. Next, we add the NNLO correction term
 \[
-V^\mathrm{NNLO}_{^1S_0}(p',p)=C_4(p^4 + p'^4) + C'_4 p^2p'^2\,
+V^\mathrm{NNLO}_{^1S_0}(p',p)=C_4(p^4 + p'^4) + C'_4 p^2p'^2,
 \]
 
 and fit the four parameters $C_0,C_2,C_4,C'_4$ to the low-energy phase
@@ -238,12 +238,12 @@ Range Expansion, so we expect $\Lambda_b\sim m_{\pi}$, which sets the
 scale of the longest-ranged Yukawa term in the toy potential of
 Project 1. We now want to build a toy EFT which works at higher
 energies. To do this, we now include the longest-ranged Yukawa
-potential as an explicit degree of freedom in our EFT. (We put
+potential as an explicit degree of freedom in our EFT. (We should put
 quotation marks around the one-pion exchange moniker since our
 underlying theory is a toy model, without the full spin/isospin
 dependence that would come with the true OPE potential.)
 
-We will repeat parts 2a)-2b) by including the \emph{one-pion exchange}
+We will repeat parts 2a)-2b) by including the \emph{simple one-pion exchange}
 contribution and refitting the contact term couplings. Therefore, at
 LO our EFT potential takes the form
 \[
